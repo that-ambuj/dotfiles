@@ -127,7 +127,7 @@ require("el").setup {
       { " " },
       { sections.split, required = true },
       { git_icon },
-      { sections.maximum_width(builtin.file_relative, 0.60), required = true },
+      { sections.maximum_width(builtin.tail_file, 0.60), required = true },
       { sections.collapse_builtin { { " " }, { builtin.modified_flag } } },
       { sections.split, required = true },
       { diagnostic_display },
