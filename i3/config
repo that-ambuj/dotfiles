@@ -17,7 +17,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:SF Mono, JetBrains Mono Medium 10 
+font pango:Recursive, JetBrains Mono Regular 10
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -36,6 +36,9 @@ exec --no-startup-id nm-applet
 
 # Remap Left Ctrl and Left Alt
 exec --no-startup-id setxkbmap -option "ctrl:swap_lalt_lctl"
+
+# Start Picom Compositor for blurred and translucent bg
+exec --no-startup-id picom -b
 
 # Set wallpaper
 exec --no-startup-id feh --bg-scale ~/Downloads/samuel-ferrara-1527pjeb6jg-unsplash.jpg
