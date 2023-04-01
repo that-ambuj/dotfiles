@@ -10,7 +10,6 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 vim.opt.autoindent = true
-vim.opt.cindent = true
 
 vim.opt.wrap = false
 
@@ -19,15 +18,14 @@ vim.opt.list = true
 
 vim.opt.listchars = {
     eol = "↲",
-    tab = '»·',
-    trail = '-',
+    tab = "»·",
+    trail = "-",
 }
 
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
-
 vim.opt.showmode = false
 vim.opt.showcmd = true
 vim.opt.cmdheight = 1
@@ -44,9 +42,7 @@ local set_cursorline = function(event, value, pattern)
     vim.api.nvim_create_autocmd(event, {
         group = group,
         pattern = pattern,
-        callback = function()
-            vim.opt_local.cursorline = value
-        end
+        callback = function() vim.opt_local.cursorline = value end,
     })
 end
 
@@ -60,7 +56,6 @@ set_cursorline("FileType", false, "TelescopePrompt")
 -- "r" -- continue comments when pressing enter + "n" -- Indent past the
 -- formatlistpat, not underneath it. + "j" -- Auto-remove comments if possible.
 -- - "2" -- I'm not in gradeschool anymore
-
 
 vim.opt.fillchars = { eob = "~" }
 

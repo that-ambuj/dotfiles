@@ -1,3 +1,1 @@
-if vim.g.neovide then
-    vim.o.guifont = "JetBrains Mono"
-end
+if vim.g.neovide then vim.o.guifont = "JetBrains Mono" end
