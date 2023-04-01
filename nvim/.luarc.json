@@ -1,0 +1,32 @@
+{
+    "workspace.library": [
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/neodev.nvim/types/stable",
+        "/usr/share/nvim/runtime/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/LuaSnip/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/express_line.nvim/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/fidget.nvim/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/gruvbuddy.nvim/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/harpoon/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/lazygit.nvim/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/mason.nvim/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/material.nvim/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/neodev.nvim/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/nvim-autopairs/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/nvim-cmp/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/nvim-treesitter/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/packer.nvim/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/plenary.nvim/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/rose-pine/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/snazzybuddy.nvim/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/telescope.nvim/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/vitesse.nvim/lua",
+        "/home/ambuj/.local/share/nvim/site/pack/packer/start/which-key.nvim/lua",
+        "/home/ambuj/dotfiles/nvim/lua",
+        "${3rd}/luv/library"
+    ]
+}
