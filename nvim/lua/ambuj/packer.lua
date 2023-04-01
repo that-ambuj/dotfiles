@@ -18,6 +18,9 @@ return require('packer').startup(function (use)
     -- For status line
     use 'tjdevries/express_line.nvim'
 
+    -- Lazygit Integration
+    use 'kdheepak/lazygit.nvim'
+
     use 'mhinz/vim-startify'
 
     -- brackets and quotes autopairs
