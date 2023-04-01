@@ -11,6 +11,7 @@ return require('packer').startup(function (use)
     -- Colorscheme stuff
     use 'tjdevries/colorbuddy.nvim'
     use 'tjdevries/gruvbuddy.nvim'
+    use '2nthony/vitesse.nvim'
     use 'bbenzikry/snazzybuddy.nvim'
     use 'marko-cerovac/material.nvim'
     use 'nvim-lua/plenary.nvim'
