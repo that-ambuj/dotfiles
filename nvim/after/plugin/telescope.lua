@@ -5,7 +5,7 @@ require("telescope").load_extension("lazygit")
 
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Search for file by name in project root" })
 vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "Search for file name only in git files" })
-vim.keymap.set("n", "<leader>lg", builtin.live_grep, { desc = "Search for text in all files" })
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Search for text in all files" })
 
 -- Enable telescore lazygit plugin
 vim.keymap.set(
@@ -17,7 +17,10 @@ vim.keymap.set(
 
 vim.keymap.set(
     "n",
-    "<leader>gs",
+    "<leader>fs",
     function() builtin.grep_string({ search = vim.fn.input("Grep :> ") }) end,
     { desc = "Search for string in current file" }
 )
+
+vim.keymap.set("n", "<leader>fb", function() builtin.buffers() end, { desc = "Show all buffers in telescope" })
+vim.keymap.set("n", "<leader>fh", function() builtin.help_tags() end, { desc = "Show neovim help tags" })
