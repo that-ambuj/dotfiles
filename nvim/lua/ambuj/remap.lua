@@ -18,7 +18,10 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+-- Remaps Ctrl+Backspace to emacs Ctrl+W, which deletes a word
+vim.keymap.set("i", "<C-BS>", "<C-W>")
+
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 vim.keymap.set("n", "<leader>ps", ":PackerSync<CR>",
-{ desc = "Install and Update packages (:PackerSync)", silent = true })
+    { desc = "Install and Update packages (:PackerSync)", silent = true })

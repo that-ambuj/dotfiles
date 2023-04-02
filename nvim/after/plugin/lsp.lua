@@ -51,8 +51,8 @@ lsp.on_attach(function(client, bufnr)
     )
 end)
 
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    callback = function() vim.lsp.buf.format({ async = false, timeout_ms = 10000 }) end,
+vim.api.nvim_create_autocmd("BufWritePre", {
+    callback = function() vim.lsp.buf.format({ async = false, timeout_ms = 1000 }) end,
 })
 
 -- lsp.setup_nvim_cmp({ mappings = cmp_mappings })
