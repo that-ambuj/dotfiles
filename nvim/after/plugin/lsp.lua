@@ -43,17 +43,18 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
 
+    vim.api.nvim_create_autocmd("BufWrite", {
+        callback = function() vim.lsp.buf.format({ async = false, timeout = 10000 }) end,
+    })
+
     vim.keymap.set(
         "n",
         "<leader>fm",
-        function() vim.lsp.buf.format({ async = false, timeout_ms = 10000 }) end,
+        function() vim.lsp.buf.format({ async = false, timeout_ms = 10000, bufnr = bufnr }) end,
         { desc = "Format all code in this file" }
     )
 end)
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-    callback = function() vim.lsp.buf.format({ async = false, timeout_ms = 1000 }) end,
-})
 
 -- lsp.setup_nvim_cmp({ mappings = cmp_mappings })
 --
