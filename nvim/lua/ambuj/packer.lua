@@ -21,18 +21,18 @@ return require("packer").startup(function(use)
 
     use("projekt0n/github-nvim-theme")
 
-    -- use({
-    -- "rose-pine/neovim",
-    -- as = "rose-pine",
-    --        config = function()
-    --            require("rose-pine").setup({
-    --                --- @usage 'auto'|'main'|'moon'|'dawn'
-    --                variant = "moon",
-    --            })
-    --
-    --            vim.cmd("colorscheme rose-pine")
-    --        end,
-    -- })
+     use({
+     "rose-pine/neovim",
+     as = "rose-pine",
+            config = function()
+                require("rose-pine").setup({
+                    --- @usage 'auto'|'main'|'moon'|'dawn'
+                    variant = "moon",
+                })
+
+                vim.cmd("colorscheme rose-pine")
+            end,
+     })
 
     use("nvim-lua/plenary.nvim")
     -- For status line

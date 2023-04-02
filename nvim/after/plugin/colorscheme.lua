@@ -1,7 +1,7 @@
 vim.opt.winblend = 0
 vim.opt.pumblend = 0
 
-require("colorbuddy").colorscheme("gruvbuddy")
+-- require("colorbuddy").colorscheme("gruvbuddy")
 
 -- Enable Vitesse colorscheme
 -- require("vitesse").setup()
