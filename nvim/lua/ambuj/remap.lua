@@ -20,4 +20,5 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-vim.keymap.set("n", "<leader>ps", ":PackerSync<CR>", { desc = "Install and Update packages (:PackerSync)" })
+vim.keymap.set("n", "<leader>ps", ":PackerSync<CR>",
+{ desc = "Install and Update packages (:PackerSync)", silent = true })

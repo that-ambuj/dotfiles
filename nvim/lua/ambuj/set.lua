@@ -18,7 +18,8 @@ vim.opt.list = true
 
 vim.opt.listchars = {
     eol = "↲",
-    tab = "»·",
+    -- tab = "»·",
+    tab = "··",
     trail = "-",
 }
 
@@ -42,7 +43,9 @@ local set_cursorline = function(event, value, pattern)
     vim.api.nvim_create_autocmd(event, {
         group = group,
         pattern = pattern,
-        callback = function() vim.opt_local.cursorline = value end,
+        callback = function()
+            vim.opt_local.cursorline = value
+        end,
     })
 end
 
@@ -68,7 +71,7 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 99
-vim.opt.signcolumn = "no"
+vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
