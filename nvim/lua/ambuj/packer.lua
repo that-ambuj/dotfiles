@@ -70,6 +70,9 @@ return require("packer").startup(function(use)
     -- Shows git changes in sign column on the left
     use("airblade/vim-gitgutter")
 
+    -- Extension to remember cursor position
+    use("farmergreg/vim-lastplace")
+
     -- Git related plugins
     -- use 'tpope/vim-fugitive'
     use("tpope/vim-rhubarb")
