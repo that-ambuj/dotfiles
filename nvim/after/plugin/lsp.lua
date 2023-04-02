@@ -29,10 +29,10 @@ cmp.setup({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         }),
-        ["<Tab>"] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-        }),
+        --["<Tab>"] = cmp.mapping.confirm({
+        --    behavior = cmp.ConfirmBehavior.Replace,
+        --    select = true,
+        --}),
     }),
 })
 
