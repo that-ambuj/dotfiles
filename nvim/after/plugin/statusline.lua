@@ -69,7 +69,7 @@ local ws_diagnostic_counts = function(_, buffer)
 
     local x = "⬤"
     if error_count == 0 then
-    -- pass
+        -- pass
     elseif error_count < 5 then
         table.insert(messages, string.format("%s#%s#%s%%*", "%", "StatuslineError" .. error_count, x))
     else
@@ -104,22 +104,22 @@ require("el").setup({
         if is_sourcegraph then
             return {
                 { mode },
-                { sections.split, required = true },
+                { sections.split,  required = true },
                 { builtin.file },
-                { sections.split, required = true },
+                { sections.split,  required = true },
                 { builtin.filetype },
             }
         end
 
         local items = {
-            { mode, required = true },
+            { mode,                                                             required = true },
             { git_branch },
             { " " },
-            { sections.split, required = true },
+            { sections.split,                                                   required = true },
             { git_icon },
-            { sections.maximum_width(builtin.tail_file, 0.60), required = true },
+            { sections.maximum_width(builtin.tail_file, 0.60),                  required = true },
             { sections.collapse_builtin({ { " " }, { builtin.modified_flag } }) },
-            { sections.split, required = true },
+            { sections.split,                                                   required = true },
             { diagnostic_display },
             { show_current_func },
             -- { lsp_statusline.server_progress },

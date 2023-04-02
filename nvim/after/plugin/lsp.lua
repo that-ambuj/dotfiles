@@ -51,10 +51,28 @@ lsp.on_attach(function(client, bufnr)
     )
 end)
 
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    callback = function() lsp.buffer_autoformat() end,
+vim.api.nvim_create_autocmd({ "BufWrite" }, {
+    callback = function() vim.lsp.buf.format({ async = false, timeout_ms = 10000 }) end,
 })
 
 -- lsp.setup_nvim_cmp({ mappings = cmp_mappings })
+--
+
+--- Rust tools stuff
+lsp.skip_server_setup({ 'rust_analyzer' })
 
 lsp.setup()
+
+local rust_tools = require("rust-tools")
+
+-- Rust tools stuff
+rust_tools.setup({
+    server = {
+        on_attach = function(_, bufnr)
+            vim.keymap.set('n', '<leader>ca', rust_tools.hover_actions.hover_actions, { buffer = bufnr })
+            vim.keymap.set("n", "<leader>rc", rust_tools.open_cargo_toml.open_cargo_toml, { buffer = bufnr })
+
+            rust_tools.inlay_hints.enable()
+        end
+    }
+})

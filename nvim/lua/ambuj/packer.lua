@@ -40,6 +40,8 @@ return require("packer").startup(function(use)
 
     use("mhinz/vim-startify")
 
+    use("simrat39/rust-tools.nvim")
+
     -- brackets and quotes autopairs
     use({
         "windwp/nvim-autopairs",
@@ -65,6 +67,9 @@ return require("packer").startup(function(use)
     use("theprimeagen/harpoon")
     use("mbbill/undotree")
 
+    -- Shows git changes in sign column on the left
+    use("airblade/vim-gitgutter")
+
     -- Git related plugins
     -- use 'tpope/vim-fugitive'
     use("tpope/vim-rhubarb")
@@ -77,7 +82,7 @@ return require("packer").startup(function(use)
     use({
         "VonHeikemen/lsp-zero.nvim",
         branch = "v2.x",
-        requires = { -- LSP
+        requires = {                 -- LSP
             "neovim/nvim-lspconfig", -- Required
             {
                 "williamboman/mason.nvim",
@@ -86,9 +91,9 @@ return require("packer").startup(function(use)
             { "williamboman/mason-lspconfig.nvim" }, -- Optional
 
             --      -- Autocompletion
-            { "hrsh7th/nvim-cmp" }, -- Required
+            { "hrsh7th/nvim-cmp" },     -- Required
             { "hrsh7th/cmp-nvim-lsp" }, -- Required
-            { "L3MON4D3/LuaSnip" }, -- Required
+            { "L3MON4D3/LuaSnip" },     -- Required
         },
     })
 end)
