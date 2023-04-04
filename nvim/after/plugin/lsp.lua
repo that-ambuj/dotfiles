@@ -14,6 +14,15 @@ lspconfig.lua_ls.setup({
 
 lsp.preset("recommended")
 
+lsp.setup_nvim_cmp({
+    sources = {
+        { name = "nvim_lsp" },
+        { name = 'path' },
+        { name = 'luasnip', keyword_length = 2 },
+        { name = 'buffer',  keyword_length = 3 }
+    }
+})
+
 lsp.ensure_installed({
     "tsserver",
     "eslint",
@@ -29,10 +38,9 @@ cmp.setup({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         }),
-        --["<Tab>"] = cmp.mapping.confirm({
-        --    behavior = cmp.ConfirmBehavior.Replace,
-        --    select = true,
-        --}),
+        ["<Tab>"] = cmp.mapping.confirm({
+            select = false,
+        }),
     }),
 })
 
