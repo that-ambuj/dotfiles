@@ -21,18 +21,10 @@ return require("packer").startup(function(use)
 
     use("projekt0n/github-nvim-theme")
 
-     use({
-     "rose-pine/neovim",
-     as = "rose-pine",
-            config = function()
-                require("rose-pine").setup({
-                    --- @usage 'auto'|'main'|'moon'|'dawn'
-                    variant = "moon",
-                })
-
-                vim.cmd("colorscheme rose-pine")
-            end,
-     })
+    use({
+        "rose-pine/neovim",
+        as = "rose-pine",
+    })
 
     use("nvim-lua/plenary.nvim")
     -- For status line
@@ -69,6 +61,8 @@ return require("packer").startup(function(use)
     use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
     use("theprimeagen/harpoon")
     use("mbbill/undotree")
+
+    use("hrsh7th/cmp-path")
 
     -- Shows git changes in sign column on the left
     use("airblade/vim-gitgutter")
