@@ -22,5 +22,7 @@ vim.keymap.set(
     { desc = "Search for string in current file" }
 )
 
-vim.keymap.set("n", "<leader>fb", function() builtin.buffers() end, { desc = "Show all buffers in telescope" })
-vim.keymap.set("n", "<leader>fh", function() builtin.help_tags() end, { desc = "Show neovim help tags" })
+vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Show all buffers in telescope" })
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Show neovim help tags" })
+
+vim.keymap.set("n", "<leader>ft", builtin.colorscheme)
