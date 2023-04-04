@@ -90,6 +90,11 @@ return require("packer").startup(function(use)
     })
 
     use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
+    use({
         "VonHeikemen/lsp-zero.nvim",
         branch = "v2.x",
         requires = {                 -- LSP
