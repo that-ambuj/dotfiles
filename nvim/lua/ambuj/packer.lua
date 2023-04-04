@@ -26,6 +26,9 @@ return require("packer").startup(function(use)
         as = "rose-pine",
     })
 
+    use({ "sainnhe/everforest", as = "everforest" })
+    use({ "sainnhe/sonokai", as = "sonokai" })
+
     use("nvim-lua/plenary.nvim")
     -- For status line
     use("tjdevries/express_line.nvim")
@@ -78,6 +81,13 @@ return require("packer").startup(function(use)
     use("tpope/vim-sleuth")
 
     use("j-hui/fidget.nvim")
+
+    use({
+        'numToStr/Comment.nvim',
+        config = function()
+            require("Comment").setup()
+        end
+    })
 
     use({
         "VonHeikemen/lsp-zero.nvim",
