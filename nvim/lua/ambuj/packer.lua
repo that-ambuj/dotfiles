@@ -89,6 +89,8 @@ return require("packer").startup(function(use)
         end
     })
 
+    use("akinsho/toggleterm.nvim")
+
     -- install without yarn or npm
     -- use({
     --     "iamcco/markdown-preview.nvim",
