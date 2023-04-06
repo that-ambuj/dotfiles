@@ -13,6 +13,14 @@ vim.keymap.set("x", "<leader>p", '"_dP')
 
 vim.keymap.set("n", "Q", "<nop>")
 
+vim.keymap.set("n", "<C-h>", "<C-w>h<CR>")
+vim.keymap.set("n", "<C-j>", "<C-w>j<CR>")
+vim.keymap.set("n", "<C-k>", "<C-w>k<CR>")
+vim.keymap.set("n", "<C-l>", "<C-w>l<CR>")
+
+vim.keymap.set("n", "<C-b>", "<C-w>s<CR>")
+vim.keymap.set("n", "<C-v>", "<C-w>v<CR>")
+
 -- Quick fix maps (don't know what that is)
 -- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 -- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
