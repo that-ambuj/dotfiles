@@ -28,6 +28,15 @@ local github = function()
     require("github-theme").setup()
 end
 
+local material = function()
+    -- available variants: "darker" | "lighter" | "oceanic" | "palenight" | "deep ocean"
+    vim.g.material_style = "darker"
+
+    require("material").setup({})
+
+    vim.cmd.colorscheme("material")
+end
+
 local everforest = function()
     -- available variants "hard" | "medium"(default) | "soft"
     vim.g.everforest_background = "hard"
@@ -43,6 +52,12 @@ local sonokai = function()
 
     vim.g.sonokai_better_performance = true
     vim.cmd.colorscheme("sonokai")
+end
+
+local synthwave = function()
+    require("synthwave84").setup()
+
+    vim.cmd.colorscheme("synthwave84")
 end
 
 -- Call any of the above functions to use a theme
