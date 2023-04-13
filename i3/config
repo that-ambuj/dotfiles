@@ -41,7 +41,7 @@ exec --no-startup-id setxkbmap -option "ctrl:swap_lalt_lctl"
 exec --no-startup-id picom -b
 
 # Set wallpaper
-exec --no-startup-id feh --bg-scale ~/Downloads/samuel-ferrara-1527pjeb6jg-unsplash.jpg
+exec --no-startup-id feh --bg-fill ~/Downloads/torin-andrews-l9D3tQe1P5g-unsplash.jpg
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

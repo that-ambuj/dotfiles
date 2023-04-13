@@ -16,6 +16,7 @@ return require("packer").startup(function(use)
     use("bbenzikry/snazzybuddy.nvim")
     use("marko-cerovac/material.nvim")
     use("LunarVim/synthwave84.nvim")
+    use("cocopon/iceberg.vim")
 
     -- Non Colorbuddy themes
     use("2nthony/vitesse.nvim")

@@ -1,5 +1,5 @@
-vim.opt.winblend = 0
-vim.opt.pumblend = 0
+-- vim.opt.winblend = 0
+-- vim.opt.pumblend = 0
 
 -- For gruvbuddy
 local gruvbuddy = function()
@@ -47,10 +47,10 @@ end
 
 local sonokai = function()
     -- available values: 'default' | 'atlantis' | 'andromeda' | 'shusia' | 'maia' | 'espresso'
-    vim.g.sonokai_style = "atlantis"
-    vim.g.sonokai_transparent_background = true
+    vim.g.sonokai_style = "andromeda"
+    vim.g.sonokai_transparent_background = false
 
-    vim.g.sonokai_better_performance = true
+    vim.g.sonokai_better_performance = false
     vim.cmd.colorscheme("sonokai")
 end
 
@@ -60,6 +60,10 @@ local synthwave = function()
     vim.cmd.colorscheme("synthwave84")
 end
 
+local iceberg = function()
+    vim.cmd.colorscheme("iceberg")
+end
+
 -- Call any of the above functions to use a theme
 -- vitesse()
-gruvbuddy()
+iceberg()
