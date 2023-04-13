@@ -78,7 +78,16 @@ lsp.skip_server_setup({ 'rust_analyzer' })
 
 lsp.setup()
 
+--- Rust tools stuff
 local rust_tools = require("rust-tools")
+
+--- Flutter tools stuff
+local dart_lsp = lsp.build_options("dartls", {})
+require("flutter-tools").setup({
+    lsp = {
+        capabilities = dart_lsp.capabilities
+    }
+})
 
 -- Rust tools stuff
 rust_tools.setup({

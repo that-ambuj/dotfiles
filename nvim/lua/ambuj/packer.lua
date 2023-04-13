@@ -41,6 +41,7 @@ return require("packer").startup(function(use)
     use("mhinz/vim-startify")
 
     use("simrat39/rust-tools.nvim")
+    use("akinsho/flutter-tools.nvim")
 
     -- brackets and quotes autopairs
     use({
