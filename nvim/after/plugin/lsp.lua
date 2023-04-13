@@ -42,6 +42,10 @@ cmp.setup({
             select = false,
         }),
     }),
+    preselect = 'item',
+    completion = {
+        completeopt = 'menu,menuone,noinsert'
+    }
 })
 
 lsp.set_preferences({
@@ -54,6 +58,8 @@ lsp.on_attach(function(client, bufnr)
     vim.api.nvim_create_autocmd("BufWrite", {
         callback = function() vim.lsp.buf.format({ async = false, timeout = 10000 }) end,
     })
+
+    vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end)
 
     vim.keymap.set(
         "n",
