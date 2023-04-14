@@ -83,10 +83,18 @@ local rust_tools = require("rust-tools")
 
 --- Flutter tools stuff
 local dart_lsp = lsp.build_options("dartls", {})
+
+local flutter_tools = require('flutter-tools')
+
 require("flutter-tools").setup({
     lsp = {
-        capabilities = dart_lsp.capabilities
-    }
+        capabilities = dart_lsp.capabilities,
+        on_attach = function()
+            vim.api.nvim_create_autocmd("BufWritePost", {
+                command = ":FlutterReload"
+            })
+        end
+    },
 })
 
 -- Rust tools stuff
