@@ -21,11 +21,15 @@ end
 -- Enable Vitesse colorscheme
 local vitesse = function()
     require("vitesse").setup()
+
+    vim.cmd.colorscheme("vitesse")
 end
 
 -- Use github colorscheme
 local github = function()
     require("github-theme").setup()
+
+    vim.cmd.colorscheme("github_dark")
 end
 
 local material = function()
@@ -40,18 +44,21 @@ end
 local everforest = function()
     -- available variants "hard" | "medium"(default) | "soft"
     vim.g.everforest_background = "hard"
-
     vim.g.everforest_transparent_background = true
     vim.cmd.colorscheme("everforest")
 end
 
 local sonokai = function()
     -- available values: 'default' | 'atlantis' | 'andromeda' | 'shusia' | 'maia' | 'espresso'
-    vim.g.sonokai_style = "andromeda"
+    vim.g.sonokai_style = "default"
     vim.g.sonokai_transparent_background = false
 
     vim.g.sonokai_better_performance = false
     vim.cmd.colorscheme("sonokai")
+end
+
+local cobalt = function()
+    require("colorbuddy").colorscheme("cobalt2")
 end
 
 local synthwave = function()
@@ -65,5 +72,5 @@ local iceberg = function()
 end
 
 -- Call any of the above functions to use a theme
--- vitesse()
-iceberg()
+-- gruvbuddy()
+gruvbuddy()

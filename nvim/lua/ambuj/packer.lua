@@ -16,10 +16,11 @@ return require("packer").startup(function(use)
     use("bbenzikry/snazzybuddy.nvim")
     use("marko-cerovac/material.nvim")
     use("LunarVim/synthwave84.nvim")
-    use("cocopon/iceberg.vim")
+    use("lalitmee/cobalt2.nvim")
 
     -- Non Colorbuddy themes
     use("2nthony/vitesse.nvim")
+    use("cocopon/iceberg.vim")
 
     use("projekt0n/github-nvim-theme")
 
@@ -107,6 +108,8 @@ return require("packer").startup(function(use)
         ft = { "markdown" },
     })
 
+    use("norcalli/nvim-colorizer.lua")
+
     use({
         "VonHeikemen/lsp-zero.nvim",
         branch = "v2.x",
@@ -114,7 +117,7 @@ return require("packer").startup(function(use)
             "neovim/nvim-lspconfig", -- Required
             {
                 "williamboman/mason.nvim",
-                run = function() pcall(vim.cmd, "MasonUpdate") end,
+                run = function() vim.cmd("MasonUpdate") end,
             },
             { "williamboman/mason-lspconfig.nvim" }, -- Optional
 
