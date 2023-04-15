@@ -73,4 +73,4 @@ end
 
 -- Call any of the above functions to use a theme
 -- gruvbuddy()
-gruvbuddy()
+rose_pine()

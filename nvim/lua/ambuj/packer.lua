@@ -128,5 +128,11 @@ return require("packer").startup(function(use)
         },
     })
 
+    use("saadparwaiz1/cmp_luasnip")
+
+    -- Snipppets
+    use("rafamadriz/friendly-snippets")
+    use("Nash0x7E2/awesome-flutter-snippets")
+
     use('mfussenegger/nvim-dap')
 end)
