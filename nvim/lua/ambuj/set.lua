@@ -17,7 +17,7 @@ vim.opt.wrap = false
 vim.opt.list = true
 
 vim.opt.listchars = {
-    eol = "↲",
+    -- eol = "↲",
     -- tab = "»·",
     tab = "··",
     trail = "-",

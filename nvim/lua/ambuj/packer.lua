@@ -22,6 +22,8 @@ return require("packer").startup(function(use)
     use("2nthony/vitesse.nvim")
     use("cocopon/iceberg.vim")
     use("Mofiqul/vscode.nvim")
+    -- use({ "dracula/vim", as = "dracula" })
+    use("Mofiqul/dracula.nvim")
 
     use("projekt0n/github-nvim-theme")
 

@@ -72,11 +72,17 @@ local function iceberg()
 end
 
 local function vscode()
-    vim.o.background = "dark"
+    vim.opt.background = "dark"
 
     require("vscode").load()
 end
 
+local function dracula()
+    require("dracula").setup()
+
+    vim.cmd.colorscheme("dracula")
+end
+
 -- Call any of the above functions to use a theme
 -- gruvbuddy()
-vscode()
+dracula()
