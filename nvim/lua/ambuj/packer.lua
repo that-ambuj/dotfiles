@@ -21,6 +21,7 @@ return require("packer").startup(function(use)
     -- Non Colorbuddy themes
     use("2nthony/vitesse.nvim")
     use("cocopon/iceberg.vim")
+    use("Mofiqul/vscode.nvim")
 
     use("projekt0n/github-nvim-theme")
 

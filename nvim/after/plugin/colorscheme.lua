@@ -2,14 +2,14 @@
 -- vim.opt.pumblend = 0
 
 -- For gruvbuddy
-local gruvbuddy = function()
+local function gruvbuddy()
     require("colorbuddy").colorscheme("gruvbuddy")
 
     vim.cmd.colorscheme("gruvbuddy")
 end
 
 -- Setup for Rose Pine
-local rose_pine = function()
+local function rose_pine()
     require("rose-pine").setup({
         --- @usage 'auto'|'main'|'moon'|'dawn'
         variant = "moon",
@@ -19,20 +19,20 @@ local rose_pine = function()
 end
 
 -- Enable Vitesse colorscheme
-local vitesse = function()
+local function vitesse()
     require("vitesse").setup()
 
     vim.cmd.colorscheme("vitesse")
 end
 
 -- Use github colorscheme
-local github = function()
+local function github()
     require("github-theme").setup()
 
     vim.cmd.colorscheme("github_dark")
 end
 
-local material = function()
+local function material()
     -- available variants: "darker" | "lighter" | "oceanic" | "palenight" | "deep ocean"
     vim.g.material_style = "darker"
 
@@ -41,36 +41,42 @@ local material = function()
     vim.cmd.colorscheme("material")
 end
 
-local everforest = function()
+local function everforest()
     -- available variants "hard" | "medium"(default) | "soft"
     vim.g.everforest_background = "hard"
     vim.g.everforest_transparent_background = true
     vim.cmd.colorscheme("everforest")
 end
 
-local sonokai = function()
+local function sonokai()
     -- available values: 'default' | 'atlantis' | 'andromeda' | 'shusia' | 'maia' | 'espresso'
-    vim.g.sonokai_style = "default"
+    vim.g.sonokai_style = "andromeda"
     vim.g.sonokai_transparent_background = false
 
     vim.g.sonokai_better_performance = false
     vim.cmd.colorscheme("sonokai")
 end
 
-local cobalt = function()
+local function cobalt()
     require("colorbuddy").colorscheme("cobalt2")
 end
 
-local synthwave = function()
+local function synthwave()
     require("synthwave84").setup()
 
     vim.cmd.colorscheme("synthwave84")
 end
 
-local iceberg = function()
+local function iceberg()
     vim.cmd.colorscheme("iceberg")
+end
+
+local function vscode()
+    vim.o.background = "dark"
+
+    require("vscode").load()
 end
 
 -- Call any of the above functions to use a theme
 -- gruvbuddy()
-rose_pine()
+vscode()
