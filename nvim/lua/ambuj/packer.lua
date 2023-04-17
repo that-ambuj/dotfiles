@@ -137,5 +137,8 @@ return require("packer").startup(function(use)
     use("rafamadriz/friendly-snippets")
     use("Nash0x7E2/awesome-flutter-snippets")
 
+    -- Indent Highlighting
+    use("lukas-reineke/indent-blankline.nvim")
+
     use('mfussenegger/nvim-dap')
 end)

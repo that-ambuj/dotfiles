@@ -34,3 +34,10 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 vim.keymap.set("n", "<leader>ps", ":PackerSync<CR>",
     { desc = "Install and Update packages (:PackerSync)", silent = true })
+
+vim.keymap.set("n", "<leader>bt", function()
+    local buftype = vim.bo.buftype
+    local filetype = vim.o.filetype
+
+    print(vim.bo.filetype)
+end)
