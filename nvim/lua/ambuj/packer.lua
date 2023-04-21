@@ -133,6 +133,9 @@ return require("packer").startup(function(use)
 
     use("saadparwaiz1/cmp_luasnip")
 
+    -- C/C++ stuff
+    use("p00f/clangd_extensions.nvim")
+
     -- Snipppets
     use("rafamadriz/friendly-snippets")
     use("Nash0x7E2/awesome-flutter-snippets")

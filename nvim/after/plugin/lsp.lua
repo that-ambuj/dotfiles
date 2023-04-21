@@ -85,7 +85,7 @@ end)
 --
 
 --- Rust tools stuff
-lsp.skip_server_setup({ 'rust_analyzer' })
+lsp.skip_server_setup({ 'rust_analyzer', 'clangd' })
 
 lsp.setup()
 
@@ -121,3 +121,6 @@ rust_tools.setup({
         end
     }
 })
+
+-- CXX / ClangD-extensions.nvim setup
+require("clangd_extensions").setup()
