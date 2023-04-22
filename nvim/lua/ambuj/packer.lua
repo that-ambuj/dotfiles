@@ -143,5 +143,8 @@ return require("packer").startup(function(use)
     -- Indent Highlighting
     use("lukas-reineke/indent-blankline.nvim")
 
+    -- Typescript stuff
+    use("jose-elias-alvarez/typescript.nvim")
+
     use('mfussenegger/nvim-dap')
 end)

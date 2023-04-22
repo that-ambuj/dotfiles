@@ -1,6 +1,3 @@
--- vim.opt.winblend = 0
--- vim.opt.pumblend = 0
-
 -- For gruvbuddy
 local function gruvbuddy()
     require("colorbuddy").colorscheme("gruvbuddy")
@@ -85,4 +82,4 @@ end
 
 -- Call any of the above functions to use a theme
 -- gruvbuddy()
-dracula()
+vscode()

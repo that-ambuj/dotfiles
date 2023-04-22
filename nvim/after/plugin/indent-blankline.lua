@@ -12,6 +12,6 @@ require("indent_blankline").setup({
         "man",
         "startify"
     },
-    char = " ",
+    -- char = "|",
     show_trailing_blankline_indent = false
 })

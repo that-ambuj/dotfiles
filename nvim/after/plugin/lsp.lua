@@ -85,7 +85,7 @@ end)
 --
 
 --- Rust tools stuff
-lsp.skip_server_setup({ 'rust_analyzer', 'clangd' })
+lsp.skip_server_setup({ 'rust_analyzer', 'clangd', 'tsserver' })
 
 lsp.setup()
 
@@ -97,6 +97,7 @@ local dart_lsp = lsp.build_options("dartls", {})
 
 local flutter_tools = require('flutter-tools')
 
+-- Flutter tools setup
 require("flutter-tools").setup({
     lsp = {
         capabilities = dart_lsp.capabilities,
@@ -124,3 +125,12 @@ rust_tools.setup({
 
 -- CXX / ClangD-extensions.nvim setup
 require("clangd_extensions").setup()
+
+-- Typescript nvim setup
+require("typescript").setup({
+    server = {
+        on_attach = function(client, bufnr)
+            vim.keymap.set("n", "<leader>mi", "<cmd>TypescriptAddMissingImports<CR>", { buffer = bufnr })
+        end
+    }
+})

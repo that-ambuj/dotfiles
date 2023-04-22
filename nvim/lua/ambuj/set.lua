@@ -17,9 +17,9 @@ vim.opt.wrap = false
 vim.opt.list = true
 
 vim.opt.listchars = {
-    -- eol = "↲",
+    eol = "↲",
     -- tab = "»·",
-    -- space = "⋅",
+    -- space = "·",
     space = " ",
     tab = "··",
     trail = "-",
@@ -54,13 +54,6 @@ end
 set_cursorline("WinLeave", false)
 set_cursorline("WinEnter", true)
 set_cursorline("FileType", false, "TelescopePrompt")
-
--- vim.opt.formatoptions = vim.opt.formatoptions + "a" -- Enables auto
--- formatting + "t" -- also enables auto formatting - "c" -- formats comments +
--- "q" -- allow formatting comments with gq - "o" -- don't continue comments +
--- "r" -- continue comments when pressing enter + "n" -- Indent past the
--- formatlistpat, not underneath it. + "j" -- Auto-remove comments if possible.
--- - "2" -- I'm not in gradeschool anymore
 
 vim.opt.fillchars = { eob = "~" }
 
