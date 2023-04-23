@@ -15,7 +15,6 @@ return require("packer").startup(function(use)
     use("tjdevries/gruvbuddy.nvim")
     use("bbenzikry/snazzybuddy.nvim")
     use("marko-cerovac/material.nvim")
-    use("LunarVim/synthwave84.nvim")
     use("lalitmee/cobalt2.nvim")
 
     -- Non Colorbuddy themes
@@ -52,6 +51,7 @@ return require("packer").startup(function(use)
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup({}) end,
     })
+    use("windwp/nvim-ts-autotag")
 
     use({
         "folke/which-key.nvim",
@@ -146,7 +146,6 @@ return require("packer").startup(function(use)
     -- Typescript stuff
     use("jose-elias-alvarez/typescript.nvim")
 
-    use("windwp/nvim-ts-autotag")
 
     use('mfussenegger/nvim-dap')
 end)

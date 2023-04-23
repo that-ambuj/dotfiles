@@ -47,7 +47,7 @@ end
 
 local function sonokai()
     -- available values: 'default' | 'atlantis' | 'andromeda' | 'shusia' | 'maia' | 'espresso'
-    vim.g.sonokai_style = "andromeda"
+    vim.g.sonokai_style = "default"
     vim.g.sonokai_transparent_background = false
 
     vim.g.sonokai_better_performance = false
@@ -58,20 +58,15 @@ local function cobalt()
     require("colorbuddy").colorscheme("cobalt2")
 end
 
-local function synthwave()
-    require("synthwave84").setup()
-
-    vim.cmd.colorscheme("synthwave84")
-end
-
 local function iceberg()
     vim.cmd.colorscheme("iceberg")
 end
 
 local function vscode()
     vim.opt.background = "dark"
-
     require("vscode").load()
+
+    vim.cmd.colorscheme("vscode")
 end
 
 local function dracula()
