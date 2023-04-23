@@ -146,5 +146,7 @@ return require("packer").startup(function(use)
     -- Typescript stuff
     use("jose-elias-alvarez/typescript.nvim")
 
+    use("windwp/nvim-ts-autotag")
+
     use('mfussenegger/nvim-dap')
 end)
