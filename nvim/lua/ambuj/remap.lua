@@ -19,7 +19,7 @@ vim.keymap.set("n", "<C-k>", "<C-w>k<CR>")
 vim.keymap.set("n", "<C-l>", "<C-w>l<CR>")
 
 vim.keymap.set("n", "<C-b>", "<C-w>s<CR>")
-vim.keymap.set("n", "<C-v>", "<C-w>v<CR>")
+vim.keymap.set("n", "<C-g>", "<C-w>v<CR>")
 
 -- Quick fix maps (don't know what that is)
 -- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")

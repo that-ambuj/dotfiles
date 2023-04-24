@@ -53,6 +53,7 @@ return require("packer").startup(function(use)
     })
     use("windwp/nvim-ts-autotag")
 
+
     use({
         "folke/which-key.nvim",
         config = function()
@@ -67,6 +68,8 @@ return require("packer").startup(function(use)
         "folke/neodev.nvim",
         config = function() require("neodev").setup({}) end,
     })
+
+    use("folke/todo-comments.nvim")
 
     use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
     use("theprimeagen/harpoon")

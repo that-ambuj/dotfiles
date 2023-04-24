@@ -70,6 +70,7 @@ lsp.on_attach(function(client, bufnr)
         callback = function() vim.lsp.buf.format({ async = false, timeout = 10000 }) end,
     })
 
+    -- HACK: Omnisharp lsp warnings hacky workarounds
     if client.name == "omnisharp" then
         client.server_capabilities.semanticTokensProvider = {
             full = vim.empty_dict(),
