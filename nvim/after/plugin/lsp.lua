@@ -67,8 +67,29 @@ lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
 
     vim.api.nvim_create_autocmd("BufWrite", {
-        callback = function() vim.lsp.buf.format({ async = false, timeout = 10000 }) end,
+        callback = function()
+            pcall(vim.lsp.buf.format, {
+                async = false,
+                timeout = 10000,
+                filter = function(cl) return cl.name ~= "tsserver" end
+            })
+
+            -- vim.lsp.buf.format({
+            --     async = false,
+            --     timeout = 10000,
+            --     filter = function(cl) return cl.name ~= "tsserver" end
+            -- })
+        end,
     })
+
+    vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end)
+
+    vim.keymap.set(
+        "n",
+        "<leader>fm",
+        function() vim.lsp.buf.format({ async = false, timeout_ms = 10000, bufnr = bufnr }) end,
+        { desc = "Format all code in this file" }
+    )
 
     -- HACK: Omnisharp lsp warnings hacky workarounds
     if client.name == "omnisharp" then
@@ -147,15 +168,6 @@ lsp.on_attach(function(client, bufnr)
             range = true,
         }
     end
-
-    vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end)
-
-    vim.keymap.set(
-        "n",
-        "<leader>fm",
-        function() vim.lsp.buf.format({ async = false, timeout_ms = 10000, bufnr = bufnr }) end,
-        { desc = "Format all code in this file" }
-    )
 end)
 
 

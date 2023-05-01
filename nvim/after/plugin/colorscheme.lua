@@ -2,7 +2,7 @@
 local function gruvbuddy()
     require("colorbuddy").colorscheme("gruvbuddy")
 
-    vim.cmd.colorscheme("gruvbuddy")
+    vim.cmd("colorscheme gruvbuddy")
 end
 
 -- Setup for Rose Pine
@@ -76,5 +76,4 @@ local function dracula()
 end
 
 -- Call any of the above functions to use a theme
--- gruvbuddy()
-vscode()
+dracula()
