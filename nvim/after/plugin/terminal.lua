@@ -11,8 +11,35 @@ require("toggleterm").setup({
 
 local opts = { buffer = 0 }
 
-vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
--- vim.keymap.set("t", "jk", [[<C-\><C-n>]])
+local function skip_filetype(key, filetype)
+    if vim.bo.filetype == filetype then
+        return key
+    end
+end
+
+vim.keymap.set("t", "<Esc>",
+    function()
+        if vim.bo.filetype == "lazygit" then
+            return "<Esc>"
+        end
+
+        return [[<C-\><C-n>]]
+    end, {
+        expr = true
+    })
+
+
+-- vim.keymap.set("t", "jk",
+--     function()
+--         if vim.bo.filetype == "lazygit" then
+--             return "jk"
+--         end
+--
+--         return [[<C-\><C-n>]]
+--     end, {
+--         expr = true,
+--     })
+
 vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
 vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
 vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
