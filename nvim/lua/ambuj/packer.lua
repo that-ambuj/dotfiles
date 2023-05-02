@@ -134,6 +134,11 @@ return require("packer").startup(function(use)
         },
     })
 
+    -- prettier
+    use("prettier/vim-prettier")
+
+    use("jose-elias-alvarez/null-ls.nvim")
+
     use("saadparwaiz1/cmp_luasnip")
 
     -- C/C++ stuff

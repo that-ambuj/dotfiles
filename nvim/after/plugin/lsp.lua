@@ -71,14 +71,9 @@ lsp.on_attach(function(client, bufnr)
             pcall(vim.lsp.buf.format, {
                 async = false,
                 timeout = 10000,
-                filter = function(cl) return cl.name ~= "tsserver" end
             })
 
-            -- vim.lsp.buf.format({
-            --     async = false,
-            --     timeout = 10000,
-            --     filter = function(cl) return cl.name ~= "tsserver" end
-            -- })
+            -- lsp.buffer_autoformat()
         end,
     })
 
