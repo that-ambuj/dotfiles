@@ -66,6 +66,12 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
 
+    local allow_format = { 'lua_ls', 'rust_analyzer', 'tsserver', 'null-ls' }
+
+    if vim.tbl_contains(allow_format, client.name) then
+        require("lsp-format").on_attach(client)
+    end
+
     -- vim.api.nvim_create_autocmd("BufWrite", {
     --     callback = function()
     --         vim.lsp.buf.format({
