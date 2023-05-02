@@ -195,8 +195,6 @@ local rust_tools = require("rust-tools")
 --- Flutter tools stuff
 local dart_lsp = lsp.build_options("dartls", {})
 
-local flutter_tools = require('flutter-tools')
-
 -- Flutter tools setup
 require("flutter-tools").setup({
     lsp = {
