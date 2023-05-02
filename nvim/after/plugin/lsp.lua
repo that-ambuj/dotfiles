@@ -66,16 +66,14 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
 
-    vim.api.nvim_create_autocmd("BufWrite", {
-        callback = function()
-            pcall(vim.lsp.buf.format, {
-                async = false,
-                timeout = 10000,
-            })
-
-            -- lsp.buffer_autoformat()
-        end,
-    })
+    -- vim.api.nvim_create_autocmd("BufWrite", {
+    --     callback = function()
+    --         vim.lsp.buf.format({
+    --             async = false,
+    --             timeout = 500,
+    --         })
+    --     end,
+    -- })
 
     vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end)
 
@@ -170,11 +168,16 @@ end)
 --
 
 --- Rust tools stuff
-lsp.skip_server_setup({ 'rust_analyzer', 'clangd', 'tsserver' })
+lsp.skip_server_setup({ 'rust_analyzer', 'clangd' })
 
 lsp.setup()
 
 require("mason").setup()
+
+require('mason-null-ls').setup({
+    ensure_installed = nil,
+    automatic_installation = false,
+})
 
 local null_ls = require("null-ls")
 null_ls.setup({
@@ -182,11 +185,6 @@ null_ls.setup({
         -- null_ls.builtins.formatting.prettier,
         null_ls.builtins.formatting.prettierd,
     }
-})
-
-require('mason-null-ls').setup({
-    ensure_installed = nil,
-    automatic_installation = true,
 })
 
 --- Rust tools stuff
