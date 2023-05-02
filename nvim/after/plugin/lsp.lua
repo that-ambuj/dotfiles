@@ -1,4 +1,4 @@
-local lsp = require("lsp-zero")
+local lsp = require("lsp-zero").preset("recommended")
 
 local lspconfig = require("lspconfig")
 
@@ -12,7 +12,7 @@ lspconfig.lua_ls.setup({
     },
 })
 
-lsp.preset("recommended")
+-- lsp.preset("recommended")
 
 lsp.setup_nvim_cmp({
     sources = {
@@ -82,7 +82,7 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set(
         "n",
         "<leader>fm",
-        function() vim.lsp.buf.format({ async = false, timeout_ms = 10000, bufnr = bufnr }) end,
+        function() vim.lsp.buf.format({ async = true, timeout_ms = 10000, bufnr = bufnr }) end,
         { desc = "Format all code in this file" }
     )
 
@@ -173,6 +173,21 @@ end)
 lsp.skip_server_setup({ 'rust_analyzer', 'clangd', 'tsserver' })
 
 lsp.setup()
+
+require("mason").setup()
+
+local null_ls = require("null-ls")
+null_ls.setup({
+    sources = {
+        -- null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.prettierd,
+    }
+})
+
+require('mason-null-ls').setup({
+    ensure_installed = nil,
+    automatic_installation = true,
+})
 
 --- Rust tools stuff
 local rust_tools = require("rust-tools")
