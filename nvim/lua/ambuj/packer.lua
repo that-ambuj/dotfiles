@@ -23,6 +23,10 @@ return require("packer").startup(function(use)
     use("Mofiqul/vscode.nvim")
     -- use({ "dracula/vim", as = "dracula" })
     use("Mofiqul/dracula.nvim")
+    use("olivercederborg/poimandres.nvim")
+
+    use("tanvirtin/monokai.nvim")
+    use("loctvl842/monokai-pro.nvim")
 
     use("projekt0n/github-nvim-theme")
 

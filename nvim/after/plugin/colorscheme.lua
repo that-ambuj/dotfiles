@@ -5,7 +5,6 @@ local function gruvbuddy()
     vim.cmd("colorscheme gruvbuddy")
 end
 
--- Setup for Rose Pine
 local function rose_pine()
     require("rose-pine").setup({
         --- @usage 'auto'|'main'|'moon'|'dawn'
@@ -15,14 +14,12 @@ local function rose_pine()
     vim.cmd("colorscheme rose-pine")
 end
 
--- Enable Vitesse colorscheme
 local function vitesse()
     require("vitesse").setup()
 
     vim.cmd.colorscheme("vitesse")
 end
 
--- Use github colorscheme
 local function github()
     require("github-theme").setup()
 
@@ -30,8 +27,8 @@ local function github()
 end
 
 local function material()
-    -- available variants: "darker" | "lighter" | "oceanic" | "palenight" | "deep ocean"
-    vim.g.material_style = "darker"
+    --- @usage "darker" | "lighter" | "oceanic" | "palenight" | "deep ocean"
+    vim.g.material_style = "deep ocean"
 
     require("material").setup({})
 
@@ -46,7 +43,7 @@ local function everforest()
 end
 
 local function sonokai()
-    -- available values: 'default' | 'atlantis' | 'andromeda' | 'shusia' | 'maia' | 'espresso'
+    --- @usage: 'default' | 'atlantis' | 'andromeda' | 'shusia' | 'maia' | 'espresso'
     vim.g.sonokai_style = "default"
     vim.g.sonokai_transparent_background = false
 
@@ -75,5 +72,25 @@ local function dracula()
     vim.cmd.colorscheme("dracula")
 end
 
+local function poimandres()
+    require("poimandres").setup()
+
+    vim.cmd.colorscheme("poimandres")
+end
+
+local function monokai()
+    require("monokai").setup({
+        palette = require("monokai").soda
+    })
+end
+
+local function monokai_pro()
+    require("monokai-pro").setup({
+        filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
+    })
+
+    vim.cmd.colorscheme("monokai-pro")
+end
+
 -- Call any of the above functions to use a theme
-sonokai()
+gruvbuddy()

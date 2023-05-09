@@ -220,6 +220,7 @@ rust_tools.setup({
             vim.keymap.set("n", "<leader>rc", rust_tools.open_cargo_toml.open_cargo_toml,
                 { buffer = bufnr, desc = "Rust tools: Open Cargo.toml" })
 
+            rust_tools.inlay_hints.set()
             rust_tools.inlay_hints.enable()
         end
     }
