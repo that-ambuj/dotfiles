@@ -17,7 +17,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:SF Mono Medium 10
+font pango:Iosevka Term Medium 10
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -194,19 +194,32 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
+# Active window colors
+# class                 border  backgr. text    indicator border
+client.focused_inactive #282a36 #282a36 #6272a4 
+client.unfocused        #282a36 #282a36 #6272a4 
+client.focused          #44475a #44475a #eeeeee 
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status --config ~/.config/i3status/config
+        font pango:Iosevka Term, FontAwesome Medium 11
+        status_command i3status-rs ~/.config/i3status-rust/config.toml
 	# status_command i3status
-	padding 1px 10px
+	# padding 1px 10px
 
-	separator_symbol "::"
+	separator_symbol " "
 
-	colors {
-	 	background #141414
-		statusline #eeeeee
-	}
+    colors {
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #6272a4 #6272a4 #eeeeee
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #ff5555 #ffffff
+    }
 }
 
 # Moving workspace between screens
