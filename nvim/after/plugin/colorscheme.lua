@@ -85,4 +85,4 @@ local function monokai()
 end
 
 -- Call any of the above functions to use a theme
-dracula()
+vscode()

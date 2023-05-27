@@ -91,7 +91,7 @@ return require("packer").startup(function(use)
     use("tpope/vim-rhubarb")
 
     -- Detect tabstop and shiftwidth automatically
-    -- use("tpope/vim-sleuth")
+    use("tpope/vim-sleuth")
 
     use("j-hui/fidget.nvim")
 

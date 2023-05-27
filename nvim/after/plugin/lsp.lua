@@ -66,9 +66,13 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
 
-    local allow_format = { 'lua_ls', 'rust_analyzer', 'tsserver', 'null-ls' }
+    local allow_format = { 'lua_ls', 'rust_analyzer', 'tsserver', 'prettierd', 'prettier' }
 
-    if vim.tbl_contains(allow_format, client.name) then
+    -- if vim.tbl_contains(allow_format, client.name) then
+    --     require("lsp-format").on_attach(client)
+    -- end
+
+    if client.supports_method('textDocument/formatting') then
         require("lsp-format").on_attach(client)
     end
 
@@ -169,9 +173,6 @@ lsp.on_attach(function(client, bufnr)
     end
 end)
 
-
--- lsp.setup_nvim_cmp({ mappings = cmp_mappings })
---
 
 --- Rust tools stuff
 lsp.skip_server_setup({ 'rust_analyzer', 'clangd' })
