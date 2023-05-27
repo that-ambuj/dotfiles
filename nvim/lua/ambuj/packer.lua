@@ -26,7 +26,6 @@ return require("packer").startup(function(use)
     use("olivercederborg/poimandres.nvim")
 
     use("tanvirtin/monokai.nvim")
-    use("loctvl842/monokai-pro.nvim")
 
     use("projekt0n/github-nvim-theme")
 
@@ -92,7 +91,7 @@ return require("packer").startup(function(use)
     use("tpope/vim-rhubarb")
 
     -- Detect tabstop and shiftwidth automatically
-    use("tpope/vim-sleuth")
+    -- use("tpope/vim-sleuth")
 
     use("j-hui/fidget.nvim")
 
@@ -153,7 +152,6 @@ return require("packer").startup(function(use)
 
     -- Snipppets
     use("rafamadriz/friendly-snippets")
-    use("Nash0x7E2/awesome-flutter-snippets")
 
     -- Indent Highlighting
     use("lukas-reineke/indent-blankline.nvim")

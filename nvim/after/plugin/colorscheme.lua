@@ -84,13 +84,5 @@ local function monokai()
     })
 end
 
-local function monokai_pro()
-    require("monokai-pro").setup({
-        filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
-    })
-
-    vim.cmd.colorscheme("monokai-pro")
-end
-
 -- Call any of the above functions to use a theme
-gruvbuddy()
+dracula()
