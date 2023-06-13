@@ -17,7 +17,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Iosevka Term Medium 10
+font pango:IBM Plex Mono Text, FontAwesome Medium 10
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -38,10 +38,10 @@ exec --no-startup-id nm-applet
 exec --no-startup-id setxkbmap -option "ctrl:swap_lalt_lctl"
 
 # Start Picom Compositor for blurred and translucent bg
-exec --no-startup-id picom -b
+# exec --no-startup-id picom -b
 
 # Set wallpaper
-exec --no-startup-id feh --bg-fill ~/.wallpapers/wallhaven-zygeko.jpg
+exec --no-startup-id feh --bg-fill ~/.wallpapers/kelly-vohs-soSTXmIxTDU-unsplash.jpg
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -199,12 +199,12 @@ bindsym $mod+r mode "resize"
 # class                 border  backgr. text    indicator border
 client.focused_inactive #282a36 #282a36 #6272a4 
 client.unfocused        #282a36 #282a36 #6272a4 
-client.focused          #44475a #44475a #eeeeee 
+client.focused          #6272a4 #6272a4 #eeeeee 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        font pango:Iosevka Term, FontAwesome Medium 11
+        # font pango:Iosevka Term, FontAwesome Medium 11
         status_command i3status-rs ~/.config/i3status-rust/config.toml
 	# status_command i3status
 	# padding 1px 10px
