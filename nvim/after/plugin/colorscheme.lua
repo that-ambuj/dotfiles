@@ -70,6 +70,9 @@ local function dracula()
     require("dracula").setup()
 
     vim.cmd.colorscheme("dracula")
+
+    -- Soft variant
+    -- vim.cmd.colorscheme("dracula-soft")
 end
 
 local function poimandres()
@@ -84,5 +87,14 @@ local function monokai()
     })
 end
 
+local function ayu()
+    require("ayu").setup({
+        mirage = true,
+        overrides = {}
+    })
+
+    vim.cmd.colorscheme("ayu-mirage")
+end
+
 -- Call any of the above functions to use a theme
-vscode()
+ayu()

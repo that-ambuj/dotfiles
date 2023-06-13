@@ -24,6 +24,7 @@ return require("packer").startup(function(use)
     -- use({ "dracula/vim", as = "dracula" })
     use("Mofiqul/dracula.nvim")
     use("olivercederborg/poimandres.nvim")
+    use("Shatur/neovim-ayu")
 
     use("tanvirtin/monokai.nvim")
 
@@ -158,7 +159,6 @@ return require("packer").startup(function(use)
 
     -- Typescript stuff
     use("jose-elias-alvarez/typescript.nvim")
-
 
     use('mfussenegger/nvim-dap')
 end)
