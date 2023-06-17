@@ -96,5 +96,13 @@ local function ayu()
     vim.cmd.colorscheme("ayu-mirage")
 end
 
+local function catppuccin()
+    require("catppuccin").setup({
+        flavour = "mocha" -- latte, frappe, macchiato, mocha
+    })
+
+    vim.cmd.colorscheme("catppuccin")
+end
+
 -- Call any of the above functions to use a theme
-ayu()
+catppuccin()

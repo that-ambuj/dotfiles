@@ -35,6 +35,8 @@ return require("packer").startup(function(use)
         as = "rose-pine",
     })
 
+    use({ "catppuccin/nvim", as = "catppuccin" })
+
     use({ "sainnhe/everforest", as = "everforest" })
     use({ "sainnhe/sonokai", as = "sonokai" })
 
