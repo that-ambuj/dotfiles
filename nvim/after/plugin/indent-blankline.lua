@@ -1,4 +1,4 @@
-vim.cmd [[highlight IndentBlanklineIndent1 guifg=#444444 gui=nocombine]]
+-- vim.cmd [[highlight IndentBlanklineIndent1 guifg=#444444 gui=nocombine]]
 -- vim.cmd [[highlight IndentBlanklineIndent2 guifg=#1a1a1a gui=nocombine]]
 
 require("indent_blankline").setup({
