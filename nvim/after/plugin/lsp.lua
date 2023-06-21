@@ -12,6 +12,12 @@ lspconfig.lua_ls.setup({
     },
 })
 
+local lsp_util = require("lspconfig.util")
+
+lspconfig.angularls.setup({
+    root_dir = lsp_util.root_pattern("project.json", "angular.json")
+})
+
 -- lsp.preset("recommended")
 
 lsp.setup_nvim_cmp({

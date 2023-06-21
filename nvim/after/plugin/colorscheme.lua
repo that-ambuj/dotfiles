@@ -102,7 +102,7 @@ local function catppuccin()
         term_colors = true,
         custom_highlights = function(colors)
             return {
-                Whitespace = { fg = colors.surface2 },
+                -- Whitespace = { fg = colors.surface2 },
 
                 -- For indent-blankline
                 IndentBlanklineChar = { fg = colors.surface1, nocombine = true },
@@ -114,7 +114,7 @@ local function catppuccin()
         end
     })
 
-    vim.cmd.colorscheme("catppuccin")
+    vim.cmd [[colorscheme catppuccin"]]
 end
 
 -- Call any of the above functions to use a theme
