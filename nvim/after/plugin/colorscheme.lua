@@ -121,8 +121,17 @@ end
 
 local function kanagawa()
     --- Available variants are "kanagawa-wave" | "kanagawa-dragon" | "kanagawa-lotus"
-    vim.cmd("colorscheme kanagawa-dragon")
+    vim.cmd("colorscheme kanagawa-wave")
+end
+
+local function tokyo_night()
+    require("tokyonight").setup({
+        --- @variants: "storm" | "moon" | "night"
+        style = "moon"
+    })
+
+    vim.cmd("colorscheme tokyonight")
 end
 
 -- Call any of the above functions to use a theme
-kanagawa()
+oxocarbon()
