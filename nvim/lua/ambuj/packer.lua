@@ -39,6 +39,8 @@ return require("packer").startup(function(use)
 
     use({ "sainnhe/everforest", as = "everforest" })
     use({ "sainnhe/sonokai", as = "sonokai" })
+    use("nyoom-engineering/oxocarbon.nvim")
+    use("rebelot/kanagawa.nvim")
 
     use("nvim-lua/plenary.nvim")
     -- For status line

@@ -102,8 +102,6 @@ local function catppuccin()
         term_colors = true,
         custom_highlights = function(colors)
             return {
-                -- Whitespace = { fg = colors.surface2 },
-
                 -- For indent-blankline
                 IndentBlanklineChar = { fg = colors.surface1, nocombine = true },
                 IndentBlanklineSpaceChar = { fg = colors.surface1, nocombine = true },
@@ -114,8 +112,17 @@ local function catppuccin()
         end
     })
 
-    vim.cmd [[colorscheme catppuccin"]]
+    vim.cmd("colorscheme catppuccin")
+end
+
+local function oxocarbon()
+    vim.cmd("colorscheme oxocarbon")
+end
+
+local function kanagawa()
+    --- Available variants are "kanagawa-wave" | "kanagawa-dragon" | "kanagawa-lotus"
+    vim.cmd("colorscheme kanagawa-dragon")
 end
 
 -- Call any of the above functions to use a theme
-catppuccin()
+kanagawa()
