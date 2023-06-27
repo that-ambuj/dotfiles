@@ -1,5 +1,7 @@
--- vim.cmd [[highlight IndentBlanklineIndent1 guifg=#444444 gui=nocombine]]
--- vim.cmd [[highlight IndentBlanklineIndent2 guifg=#1a1a1a gui=nocombine]]
+vim.api.nvim_set_hl(0, "IndentBlanklineSpaceChar", { link = "Comment", nocombine = true })
+vim.api.nvim_set_hl(0, "IndentBlanklineSpaceCharBlankline", { link = "Comment", nocombine = true })
+vim.api.nvim_set_hl(0, "IndentBlanklineIndent1", { link = "Comment", nocombine = true })
+
 
 require("indent_blankline").setup({
     show_current_context = true,
@@ -16,6 +18,5 @@ require("indent_blankline").setup({
         "IndentBlanklineIndent1",
         -- "IndentBlanklineIndent2",
     },
-    -- char = "|",
     show_trailing_blankline_indent = false
 })

@@ -116,16 +116,12 @@ local function catppuccin()
 end
 
 local function oxocarbon()
-    vim.api.nvim_set_hl(0, "IndentBlanklineSpaceChar", { fg = "#3d3d3d", nocombine = true })
-    vim.api.nvim_set_hl(0, "IndentBlanklineSpaceCharBlankline", { fg = "#3d3d3d", nocombine = true })
-    vim.api.nvim_set_hl(0, "IndentBlanklineIndent1", { fg = "#3d3d3d", nocombine = true })
-
     vim.cmd("colorscheme oxocarbon")
 end
 
 local function kanagawa()
     --- Available variants are "kanagawa-wave" | "kanagawa-dragon" | "kanagawa-lotus"
-    vim.cmd("colorscheme kanagawa-wave")
+    vim.cmd("colorscheme kanagawa-dragon")
 end
 
 local function tokyo_night()
@@ -138,4 +134,4 @@ local function tokyo_night()
 end
 
 -- Call any of the above functions to use a theme
-oxocarbon()
+tokyo_night()
