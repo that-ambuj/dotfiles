@@ -116,8 +116,9 @@ local function catppuccin()
 end
 
 local function oxocarbon()
-    vim.api.nvim_set_hl(0, "IndentBlanklineSpaceChar", { fg = "#2d2d2d", nocombine = true })
-    vim.api.nvim_set_hl(0, "IndentBlanklineSpaceCharBlankline", { fg = "#2d2d2d", nocombine = true })
+    vim.api.nvim_set_hl(0, "IndentBlanklineSpaceChar", { fg = "#3d3d3d", nocombine = true })
+    vim.api.nvim_set_hl(0, "IndentBlanklineSpaceCharBlankline", { fg = "#3d3d3d", nocombine = true })
+    vim.api.nvim_set_hl(0, "IndentBlanklineIndent1", { fg = "#3d3d3d", nocombine = true })
 
     vim.cmd("colorscheme oxocarbon")
 end
