@@ -100,6 +100,9 @@ return require("packer").startup(function(use)
     -- Detect tabstop and shiftwidth automatically
     use("tpope/vim-sleuth")
 
+    -- Surround Brackets
+    use("tpope/vim-surround")
+
     use("j-hui/fidget.nvim")
 
     use({
