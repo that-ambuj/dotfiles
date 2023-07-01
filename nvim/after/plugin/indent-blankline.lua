@@ -1,6 +1,6 @@
 vim.api.nvim_set_hl(0, "IndentBlanklineSpaceChar", { link = "Whitespace", nocombine = true })
-vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { link = "Comment", nocombine = true })
-vim.api.nvim_set_hl(0, "IndentBlanklineContextSpaceChar", { link = "Comment", nocombine = true })
+-- vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { link = "Comment", nocombine = true })
+vim.api.nvim_set_hl(0, "IndentBlanklineContextSpaceChar", { link = "Whitespace", nocombine = true })
 vim.api.nvim_set_hl(0, "IndentBlanklineIndent1", { link = "Whitespace", nocombine = true })
 -- vim.api.nvim_set_hl(0, "IndentBlanklineSpaceCharBlankline", { link = "LineNr", nocombine = true })
 -- vim.api.nvim_set_hl(0, "IndentBlanklineChar", { link = "LineNr", nocombine = true })
