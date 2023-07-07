@@ -54,6 +54,7 @@ return require("packer").startup(function(use)
 
     use("simrat39/rust-tools.nvim")
     use("akinsho/flutter-tools.nvim")
+    use("mrcjkb/haskell-tools.nvim")
 
     -- brackets and quotes autopairs
     use({
@@ -162,6 +163,7 @@ return require("packer").startup(function(use)
 
     -- Snipppets
     use("rafamadriz/friendly-snippets")
+    use("wyattferguson/jinja2-kit-vscode")
 
     -- Indent Highlighting
     use("lukas-reineke/indent-blankline.nvim")

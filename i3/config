@@ -35,7 +35,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Remap Left Ctrl and Left Alt
-exec --no-startup-id setxkbmap -option "ctrl:swap_lalt_lctl"
+# exec --no-startup-id setxkbmap -option "ctrl:swap_lalt_lctl"
 
 # Start Picom Compositor for blurred and translucent bg
 # exec --no-startup-id picom -b
