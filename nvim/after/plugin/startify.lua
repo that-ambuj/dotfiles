@@ -2,7 +2,7 @@ vim.g.startify_bookmarks = {
     "~/dotfiles/nvim",
     "~/.zshrc",
     "~/.config/kitty/kitty.conf",
-    "~/.config/kitty/colors.conf",
+    "~/.config/alacritty/alacritty.yml",
     "~/.config/i3/config",
 }
 

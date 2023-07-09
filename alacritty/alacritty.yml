@@ -1,0 +1,67 @@
+font:
+  normal:
+    family: SF Mono
+    style: Regular
+  bold:
+    style: Medium
+  italic:
+    style: Italic
+  bold_italic:
+    style: Medium Italic
+  size: 14.0
+  offset:
+    y: 4
+    x: -1
+  glyph_offset:
+    y: 2
+
+draw_bold_text_with_bright_colors: true
+
+custom_cursor_colors: true
+
+cursor:
+  style: Beam
+  unfocused_hollow: true
+
+window:
+  padding:
+    x: 4
+    y: 0
+  startup_mode: Fullscreen
+
+mouse:
+  hide_when_typing: true
+
+live_config_reload: true
+
+selection:
+  save_to_clipboard: true
+
+# Colors
+colors:
+  primary:
+    background: "#121212"
+    foreground: "#DEDEDE"
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: "0xffffff"
+    cursor: "0x4d4d4c"
+  # Normal colors
+  normal:
+    black: "#929292"
+    red: "#E27373"
+    green: "#94B979"
+    yellow: "#FFBA7B"
+    blue: "#97BEDC"
+    magenta: "#E1C0FA"
+    cyan: "#00988E"
+    white: "#DEDEDE"
+  bright:
+    black: "#BDBDBD"
+    red: "#FFA1A1"
+    green: "#BDDEAB"
+    yellow: "#FFDCA0"
+    blue: "#B1D8F6"
+    magenta: "#FBDAFF"
+    cyan: "#1AB2A8"
+    white: "#FFFFFF"
