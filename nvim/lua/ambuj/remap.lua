@@ -29,6 +29,7 @@ vim.keymap.set("n", "<C-g>", "<C-w>v<CR>")
 
 -- Remaps Ctrl+Backspace to emacs Ctrl+W, which deletes a word
 vim.keymap.set("i", "<C-BS>", "<C-W>")
+vim.keymap.set("i", "<C-H>", "<C-W>")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 

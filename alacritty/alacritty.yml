@@ -1,13 +1,13 @@
 font:
   normal:
     family: SF Mono
-    style: Regular
-  bold:
     style: Medium
+  bold:
+    style: Bold
   italic:
     style: Italic
   bold_italic:
-    style: Medium Italic
+    style: Bold Italic
   size: 14.0
   offset:
     y: 4
@@ -27,10 +27,13 @@ window:
   padding:
     x: 4
     y: 0
-  startup_mode: Fullscreen
+  startup_mode: Maximized
 
 mouse:
   hide_when_typing: true
+
+keyboard:
+  - { key: Back, mods: Control, chars: "\x17" }
 
 live_config_reload: true
 
