@@ -43,6 +43,10 @@ return require("packer").startup(function(use)
     use("rebelot/kanagawa.nvim")
     use("folke/tokyonight.nvim")
 
+    -- Lush.nvim themes
+    use("rktjmp/lush.nvim")
+    use("metalelf0/jellybeans-nvim")
+
     use("nvim-lua/plenary.nvim")
     -- For status line
     use("tjdevries/express_line.nvim")
