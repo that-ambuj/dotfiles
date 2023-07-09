@@ -176,4 +176,6 @@ return require("packer").startup(function(use)
     use("jose-elias-alvarez/typescript.nvim")
 
     use('mfussenegger/nvim-dap')
+
+    use('wakatime/vim-wakatime')
 end)
