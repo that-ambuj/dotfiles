@@ -93,7 +93,7 @@ return require("packer").startup(function(use)
     use("hrsh7th/cmp-path")
 
     -- Shows git changes in sign column on the left
-    use("airblade/vim-gitgutter")
+    use("lewis6991/gitsigns.nvim")
 
     -- Extension to remember cursor position
     use("farmergreg/vim-lastplace")
