@@ -23,7 +23,7 @@ end
 local function github()
     require("github-theme").setup()
 
-    vim.cmd.colorscheme("github_dark")
+    vim.cmd.colorscheme("github_dark_dimmed")
 end
 
 local function material()
@@ -93,7 +93,7 @@ local function ayu()
         overrides = {}
     })
 
-    vim.cmd.colorscheme("ayu-mirage")
+    vim.cmd.colorscheme("ayu-dark")
 end
 
 local function catppuccin()

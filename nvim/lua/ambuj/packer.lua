@@ -109,6 +109,7 @@ return require("packer").startup(function(use)
     use("tpope/vim-surround")
 
     use({ "j-hui/fidget.nvim", branch = "legacy" })
+    use("nvim-tree/nvim-web-devicons")
 
     use({
         'numToStr/Comment.nvim',
