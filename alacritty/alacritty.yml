@@ -1,25 +1,27 @@
 font:
+  size: 15.0
   normal:
     family: SF Mono
     style: Medium
   bold:
-    style: Bold
+    style: Semibold
   italic:
-    style: Italic
+    style: Medium Italic
   bold_italic:
-    style: Bold Italic
-  size: 14.0
+    style: Semibold Italic
   offset:
-    y: 4
     x: -1
-  glyph_offset:
     y: 2
-
-custom_cursor_colors: true
+  glyph_offset:
+    y: 1
 
 cursor:
   style: Beam
   unfocused_hollow: true
+
+custom_cursor_colors: true
+
+draw_bold_text_with_bright_colors: true
 
 window:
   padding:
@@ -32,6 +34,7 @@ mouse:
 
 keyboard:
   - { key: Back, mods: Control, chars: "\x17" }
+  - { key: Return, mods: Super, action: SpawnNewInstance }
 
 live_config_reload: true
 
@@ -45,8 +48,8 @@ colors:
     foreground: "#DEDEDE"
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: "0xffffff"
-    cursor: "0x4d4d4c"
+    text: CellBackground
+    cursor: CellForeground
   # Normal colors
   normal:
     black: "#929292"
