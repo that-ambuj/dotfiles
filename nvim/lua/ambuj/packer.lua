@@ -108,7 +108,7 @@ return require("packer").startup(function(use)
     -- Surround Brackets
     use("tpope/vim-surround")
 
-    use("j-hui/fidget.nvim")
+    use({ "j-hui/fidget.nvim", branch = "legacy" })
 
     use({
         'numToStr/Comment.nvim',
