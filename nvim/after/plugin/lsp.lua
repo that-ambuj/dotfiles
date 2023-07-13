@@ -231,6 +231,34 @@ rust_tools.setup({
             rust_tools.inlay_hints.enable()
         end
     },
+    tools = {
+        -- These apply to the default RustSetInlayHints command
+        inlay_hints = {
+            -- Only show inlay hints for the current line
+            only_current_line = false,
+
+            -- prefix for parameter hints
+            -- default: "<-"
+            parameter_hints_prefix = "<- ",
+
+            -- prefix for all the other hints (type, chaining)
+            -- default: "=>"
+            other_hints_prefix = "=> ",
+
+            -- whether to align to the length of the longest line in the file
+            max_len_align = true,
+
+            -- padding from the left if max_len_align is true
+            max_len_align_padding = 1,
+
+            -- whether to align to the extreme right or not
+            right_align = false,
+
+
+            -- The color of the hints
+            highlight = "Whitespace",
+        },
+    }
 })
 
 -- CXX / ClangD-extensions.nvim setup
