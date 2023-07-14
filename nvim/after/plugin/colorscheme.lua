@@ -1,11 +1,13 @@
+local themes = {}
+
 -- For gruvbuddy
-local function gruvbuddy()
+themes.gruvbuddy = function()
     require("colorbuddy").colorscheme("gruvbuddy")
 
     vim.cmd("colorscheme gruvbuddy")
 end
 
-local function rose_pine()
+themes.rose_pine = function()
     require("rose-pine").setup({
         --- @usage 'auto'|'main'|'moon'|'dawn'
         variant = "moon",
@@ -14,19 +16,19 @@ local function rose_pine()
     vim.cmd("colorscheme rose-pine")
 end
 
-local function vitesse()
+themes.vitesse = function()
     require("vitesse").setup()
 
     vim.cmd.colorscheme("vitesse")
 end
 
-local function github()
+themes.github = function()
     require("github-theme").setup()
 
     vim.cmd.colorscheme("github_dark_dimmed")
 end
 
-local function material()
+themes.material = function()
     --- @usage "darker" | "lighter" | "oceanic" | "palenight" | "deep ocean"
     vim.g.material_style = "deep ocean"
 
@@ -35,14 +37,14 @@ local function material()
     vim.cmd.colorscheme("material")
 end
 
-local function everforest()
+themes.everforest = function()
     -- available variants "hard" | "medium"(default) | "soft"
     vim.g.everforest_background = "hard"
     vim.g.everforest_transparent_background = true
     vim.cmd.colorscheme("everforest")
 end
 
-local function sonokai()
+themes.sonokai = function()
     --- @usage: 'default' | 'atlantis' | 'andromeda' | 'shusia' | 'maia' | 'espresso'
     vim.g.sonokai_style = "default"
     vim.g.sonokai_transparent_background = false
@@ -51,22 +53,22 @@ local function sonokai()
     vim.cmd.colorscheme("sonokai")
 end
 
-local function cobalt()
+themes.cobalt = function()
     require("colorbuddy").colorscheme("cobalt2")
 end
 
-local function iceberg()
+themes.iceberg = function()
     vim.cmd.colorscheme("iceberg")
 end
 
-local function vscode()
+themes.vscode = function()
     vim.opt.background = "dark"
     require("vscode").load()
 
     vim.cmd.colorscheme("vscode")
 end
 
-local function dracula()
+themes.dracula = function()
     require("dracula").setup()
 
     vim.cmd.colorscheme("dracula")
@@ -75,19 +77,19 @@ local function dracula()
     -- vim.cmd.colorscheme("dracula-soft")
 end
 
-local function poimandres()
+themes.poimandres = function()
     require("poimandres").setup()
 
     vim.cmd.colorscheme("poimandres")
 end
 
-local function monokai()
+themes.monokai = function()
     require("monokai").setup({
         palette = require("monokai").soda
     })
 end
 
-local function ayu()
+themes.ayu = function()
     require("ayu").setup({
         mirage = true,
         overrides = {}
@@ -96,7 +98,7 @@ local function ayu()
     vim.cmd.colorscheme("ayu-dark")
 end
 
-local function catppuccin()
+themes.catppuccin = function()
     require("catppuccin").setup({
         flavour = "mocha", -- latte, frappe, macchiato, mocha
         term_colors = true,
@@ -115,15 +117,15 @@ local function catppuccin()
     vim.cmd("colorscheme catppuccin")
 end
 
-local function oxocarbon()
+themes.oxocarbon = function()
     vim.cmd("colorscheme oxocarbon")
 end
 
-local function kanagawa()
+themes.kanagawa = function()
     vim.cmd("colorscheme kanagawa-wave")
 end
 
-local function tokyo_night()
+themes.tokyo_night = function()
     require("tokyonight").setup({
         --- @variants: "storm" | "moon" | "night"
         style = "moon"
@@ -132,9 +134,9 @@ local function tokyo_night()
     vim.cmd("colorscheme tokyonight")
 end
 
-local function jellybeans()
+themes.jellybeans = function()
     vim.cmd("colorscheme jellybeans-nvim")
 end
 
 -- Call any of the above functions to use a theme
-jellybeans()
+themes.iceberg()
