@@ -84,6 +84,9 @@ require("el").setup({
             { ":" },
             { builtin.column_with_width(2) },
             { "]" },
+            { " " },
+            { builtin.percentage_through_window },
+            { " " },
             {
                 sections.collapse_builtin {
                     "[",
