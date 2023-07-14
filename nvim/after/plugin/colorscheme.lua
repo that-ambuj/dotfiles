@@ -138,5 +138,9 @@ themes.jellybeans = function()
     vim.cmd("colorscheme jellybeans-nvim")
 end
 
+themes.darcula = function()
+    vim.cmd("colorscheme darcula")
+end
+
 -- Call any of the above functions to use a theme
-themes.iceberg()
+themes.darcula()

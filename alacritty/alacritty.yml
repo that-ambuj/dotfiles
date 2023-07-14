@@ -1,16 +1,16 @@
 font:
-  size: 15.0
+  size: 14.0
   normal:
-    family: SF Mono
-    style: Medium
+    family: Menlo Nerd
+    style: Regular
   bold:
     style: Semibold
   italic:
-    style: Medium Italic
+    style: Italic
   bold_italic:
     style: Semibold Italic
   offset:
-    x: -1
+    # x: -1
     y: 2
   glyph_offset:
     y: 1
@@ -21,13 +21,13 @@ cursor:
 
 custom_cursor_colors: true
 
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: false
 
 window:
   padding:
     x: 4
     y: 0
-  startup_mode: Maximized
+  startup_mode: Fullscreen
 
 mouse:
   hide_when_typing: true
@@ -44,28 +44,28 @@ selection:
 # Colors
 colors:
   primary:
-    background: "#121212"
-    foreground: "#DEDEDE"
+    background: "#1A1A1A"
+    foreground: "#C4C5B5"
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: CellBackground
-    cursor: CellForeground
+    text: "#1A1A1A"
+    cursor: "#C4C5B5"
   # Normal colors
   normal:
-    black: "#929292"
-    red: "#E27373"
-    green: "#94B979"
-    yellow: "#FFBA7B"
-    blue: "#97BEDC"
-    magenta: "#E1C0FA"
-    cyan: "#00988E"
-    white: "#DEDEDE"
+    black: "#1A1A1A"
+    red: "#F4005F"
+    green: "#98E024"
+    yellow: "#FA8419"
+    blue: "#9D65FF"
+    magenta: "#F4005F"
+    cyan: "#58D1EB"
+    white: "#C4C5B5"
   bright:
-    black: "#BDBDBD"
-    red: "#FFA1A1"
-    green: "#BDDEAB"
-    yellow: "#FFDCA0"
-    blue: "#B1D8F6"
-    magenta: "#FBDAFF"
-    cyan: "#1AB2A8"
-    white: "#FFFFFF"
+    black: "#625E4C"
+    red: "#F4005F"
+    green: "#98E024"
+    yellow: "#E0D561"
+    blue: "#9D65FF"
+    magenta: "#F4005F"
+    cyan: "#58D1EB"
+    white: "#F6F6EF"

@@ -256,7 +256,7 @@ rust_tools.setup({
 
 
             -- The color of the hints
-            highlight = "Whitespace",
+            highlight = "Comment",
         },
     }
 })

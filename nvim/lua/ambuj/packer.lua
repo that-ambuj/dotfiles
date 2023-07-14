@@ -42,10 +42,12 @@ return require("packer").startup(function(use)
     use("nyoom-engineering/oxocarbon.nvim")
     use("rebelot/kanagawa.nvim")
     use("folke/tokyonight.nvim")
+    use("doums/darcula")
 
     -- Lush.nvim themes
     use("rktjmp/lush.nvim")
     use("metalelf0/jellybeans-nvim")
+
 
     use("nvim-lua/plenary.nvim")
     -- For status line
