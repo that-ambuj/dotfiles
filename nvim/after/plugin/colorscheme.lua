@@ -30,7 +30,7 @@ end
 
 themes.material = function()
     --- @usage "darker" | "lighter" | "oceanic" | "palenight" | "deep ocean"
-    vim.g.material_style = "deep ocean"
+    vim.g.material_style = "darker"
 
     require("material").setup({})
 
@@ -95,7 +95,7 @@ themes.ayu = function()
         overrides = {}
     })
 
-    vim.cmd.colorscheme("ayu-dark")
+    vim.cmd.colorscheme("ayu-mirage")
 end
 
 themes.catppuccin = function()
@@ -122,6 +122,7 @@ themes.oxocarbon = function()
 end
 
 themes.kanagawa = function()
+    -- @variants: "kanagawa-wave", "kanagawa-dragon" and "kanagawa-lotus"(the light one)
     vim.cmd("colorscheme kanagawa-wave")
 end
 
@@ -142,5 +143,13 @@ themes.darcula = function()
     vim.cmd("colorscheme darcula")
 end
 
+themes.gruvbox = function()
+    require("gruvbox").setup({
+        contrast = "hard",
+    })
+
+    vim.cmd("colorscheme gruvbox")
+end
+
 -- Call any of the above functions to use a theme
-themes.darcula()
+themes.iceberg()

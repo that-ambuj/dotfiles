@@ -13,6 +13,8 @@ vim.opt.autoindent = true
 
 vim.opt.wrap = false
 
+vim.opt.background = "dark"
+
 -- Render white space and other characters
 vim.opt.list = true
 
