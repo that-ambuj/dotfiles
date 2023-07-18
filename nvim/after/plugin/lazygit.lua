@@ -1,1 +1,1 @@
-vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { desc = "Open lazygit console" })
+vim.keymap.set("n", "<leader>lz", ":LazyGit<CR>", { desc = "Open lazygit console" })
