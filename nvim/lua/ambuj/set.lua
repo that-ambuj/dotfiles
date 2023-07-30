@@ -11,7 +11,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.background = "dark"
 
@@ -77,7 +77,7 @@ vim.g.mapleader = " "
 
 vim.opt.wrap = true
 
-vim.opt.clipboard = "unnamedplus"
+-- vim.opt.clipboard = "unnamedplus"
 
 vim.opt.belloff = "all"
 
