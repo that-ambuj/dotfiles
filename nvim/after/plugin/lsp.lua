@@ -36,21 +36,39 @@ lsp.ensure_installed({
 })
 
 local cmp = require("cmp")
+local cmp_action = require("lsp-zero").cmp_action();
+local luasnip = require("luasnip")
+
+local has_words_before = function()
+    unpack = unpack or table.unpack
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
+end
 
 cmp.setup({
+    enabled = true,
     mapping = cmp.mapping.preset.insert({
         ["<C-Space>"] = cmp.mapping.complete({}),
-        ["<CR>"] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-        }),
-        ["<Tab>"] = cmp.mapping.confirm({
-            select = false,
-        }),
+        ["<CR>"] = cmp.mapping.confirm({ select = true, }),
+        ["<S-Tab>"] = cmp_action.select_prev_or_fallback(),
+        ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                -- cmp_action.tab_complete();
+                cmp.mapping.confirm({ select = false })();
+                -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+                -- they way you will only jump inside the snippet region
+            elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+            elseif has_words_before() then
+                cmp.complete()
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
     }),
     preselect = 'item',
     completion = {
-        completeopt = 'menu,menuone,noinsert'
+        completeopt = 'menu,menuone,noinsert',
     },
     snippet = {
         expand = function(args)
@@ -59,11 +77,20 @@ cmp.setup({
     },
     sources = {
         { name = "nvim_lsp" },
+        { name = "nvim_lsp_signature_help" },
+        { name = "lua" },
         { name = 'luasnip' },
         { name = 'path' },
-        { name = 'buffer' }
+        -- { name = 'buffer' }
     }
 })
+
+-- If you want insert `(` after select function or method item
+-- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+-- cmp.event:on(
+--     'confirm_done',
+--     cmp_autopairs.on_confirm_done()
+-- )
 
 lsp.set_preferences({
     sign_icons = {},
@@ -72,7 +99,7 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
 
-    local allow_format = { 'lua_ls', 'rust_analyzer', 'tsserver', 'prettierd', 'prettier' }
+    -- local allow_format = { 'lua_ls', 'rust_analyzer', 'tsserver', 'prettierd', 'prettier', 'pint' }
 
     -- if vim.tbl_contains(allow_format, client.name) then
     --     require("lsp-format").on_attach(client)
@@ -198,6 +225,8 @@ null_ls.setup({
         -- null_ls.builtins.formatting.prettier,
         null_ls.builtins.formatting.prettierd,
         null_ls.builtins.formatting.goimports,
+        null_ls.builtins.formatting.blade_formatter,
+        null_ls.builtins.formatting.pint
     }
 })
 
