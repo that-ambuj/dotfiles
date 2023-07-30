@@ -43,6 +43,7 @@ return require("packer").startup(function(use)
     use("folke/tokyonight.nvim")
     use("doums/darcula")
     use("ellisonleao/gruvbox.nvim")
+    use("kvrohit/mellow.nvim")
 
     -- Lush.nvim themes
     use("rktjmp/lush.nvim")
@@ -157,7 +158,7 @@ return require("packer").startup(function(use)
     use("lukas-reineke/lsp-format.nvim")
 
     -- prettier
-    use("prettier/vim-prettier")
+    -- use("prettier/vim-prettier")
 
     use("jose-elias-alvarez/null-ls.nvim")
     use("jay-babu/mason-null-ls.nvim")

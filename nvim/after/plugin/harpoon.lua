@@ -1,8 +1,11 @@
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
+local utils = require("harpoon.utils")
 
 vim.keymap.set("n", "<leader>a", mark.add_file, { desc = "Add current file to harpoon" })
 vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu, { desc = "Toggle harpoon quick menu" })
+
+-- vim.keymap.set("n", "<C-]>", function() ui.nav_next() end, { desc = "Go to Next Harpoon Mark" })
 
 vim.keymap.set("n", "<C-1>", function() ui.nav_file(1) end, { desc = "Switch to harpoon mark 1" })
 vim.keymap.set("n", "<C-2>", function() ui.nav_file(2) end, { desc = "Switch to harpoon mark 2" })

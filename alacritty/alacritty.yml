@@ -1,7 +1,7 @@
 font:
-  size: 14.0
+  size: 15.0
   normal:
-    family: Menlo Nerd
+    family: Iosevka Term Nerd
     style: Regular
   bold:
     style: Semibold
@@ -10,10 +10,9 @@ font:
   bold_italic:
     style: Semibold Italic
   offset:
-    # x: -1
-    y: 2
+    y: 0
   glyph_offset:
-    y: 1
+    y: 0
 
 cursor:
   style: Beam
@@ -27,7 +26,7 @@ window:
   padding:
     x: 4
     y: 0
-  startup_mode: Fullscreen
+  startup_mode: Maximized
 
 mouse:
   hide_when_typing: true

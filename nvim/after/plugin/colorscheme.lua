@@ -30,7 +30,7 @@ end
 
 themes.material = function()
     --- @usage "darker" | "lighter" | "oceanic" | "palenight" | "deep ocean"
-    vim.g.material_style = "darker"
+    vim.g.material_style = "deep ocean"
 
     require("material").setup({})
 
@@ -145,11 +145,16 @@ end
 
 themes.gruvbox = function()
     require("gruvbox").setup({
-        contrast = "hard",
+        --- @variants: "soft", "hard", "" (empty string for default )
+        contrast = "",
     })
 
     vim.cmd("colorscheme gruvbox")
 end
 
+themes.mello = function()
+    vim.cmd("colorscheme mellow")
+end
+
 -- Call any of the above functions to use a theme
-themes.iceberg()
+themes.mellow()
