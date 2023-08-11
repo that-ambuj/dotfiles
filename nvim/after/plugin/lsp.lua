@@ -277,10 +277,8 @@ local inlay_hints_options = {
 rust_tools.setup({
     server = {
         on_attach = function(_, bufnr)
-            vim.keymap.set('n', '<leader>ca', rust_tools.hover_actions.hover_actions,
-                { buffer = bufnr, desc = "Rust tools: Hover actions" })
-            vim.keymap.set("n", "<leader>rc", rust_tools.open_cargo_toml.open_cargo_toml,
-                { buffer = bufnr, desc = "Rust tools: Open Cargo.toml" })
+            -- vim.keymap.set('n', '<leader>ca', rust_tools.hover_actions.hover_actions,
+            --     { buffer = bufnr, desc = "Rust tools: Hover actions" })
 
             rust_tools.inlay_hints.enable()
         end
