@@ -65,10 +65,7 @@ return require("packer").startup(function(use)
     use("mrcjkb/haskell-tools.nvim")
 
     -- brackets and quotes autopairs
-    use({
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup({}) end,
-    })
+    use("windwp/nvim-autopairs")
     use("windwp/nvim-ts-autotag")
 
 

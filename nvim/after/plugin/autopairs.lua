@@ -1,5 +1,9 @@
-local npairs   = require 'nvim-autopairs'
-local Rule     = require 'nvim-autopairs.rule'
+local npairs = require 'nvim-autopairs'
+local Rule   = require 'nvim-autopairs.rule'
+
+npairs.setup({
+    check_ts = true
+})
 
 local brackets = { { '(', ')' }, { '[', ']' }, { '{', '}' } }
 npairs.add_rules {
@@ -28,6 +32,18 @@ local angle_braces = { '<', '>' }
 
 
 
-npairs.add_rule(Rule(angle_braces[1], angle_braces[2])
-    :with_pair(function() return true end)
-)
+npairs.add_rules {
+    Rule(angle_braces[1], angle_braces[2])
+        :with_move(function() return true end)
+}
+
+for _, punct in pairs { ",", ";", ">" } do
+    require "nvim-autopairs".add_rules {
+        require "nvim-autopairs.rule" ("", punct)
+            :with_move(function(opts) return opts.char == punct end)
+            :with_pair(function() return false end)
+            :with_del(function() return false end)
+            :with_cr(function() return false end)
+            :use_key(punct)
+    }
+end
