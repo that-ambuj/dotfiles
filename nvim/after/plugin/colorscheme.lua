@@ -10,7 +10,7 @@ end
 themes.rose_pine = function()
     require("rose-pine").setup({
         --- @usage 'auto'|'main'|'moon'|'dawn'
-        variant = "moon",
+        variant = "main",
     })
 
     vim.cmd("colorscheme rose-pine")
@@ -152,9 +152,22 @@ themes.gruvbox = function()
     vim.cmd("colorscheme gruvbox")
 end
 
-themes.mello = function()
+themes.mellow = function()
     vim.cmd("colorscheme mellow")
 end
 
+themes.habamax = function()
+    vim.cmd("colorscheme habamax")
+end
+
+themes.onedark_nvim = function()
+    require("onedark").setup({
+        -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+        style = "darker"
+    })
+
+    require("onedark").load()
+end
+
 -- Call any of the above functions to use a theme
-themes.mellow()
+themes.rose_pine()

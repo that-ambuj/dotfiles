@@ -23,7 +23,7 @@ vim.opt.listchars = {
     -- tab = "»·",
     -- space = "·",
     space = " ",
-    tab = "··",
+    tab = "  ",
     trail = "-",
 }
 

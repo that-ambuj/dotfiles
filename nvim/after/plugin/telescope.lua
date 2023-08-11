@@ -26,3 +26,11 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Show all buffers in
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Show neovim help tags" })
 
 vim.keymap.set("n", "<leader>ft", builtin.colorscheme)
+
+-- Keymaps for LSP Symbols
+vim.keymap.set("n", "<leader>lds", builtin.lsp_document_symbols, { desc = "Search for LSP Symbols in this file." })
+vim.keymap.set("n", "<leader>lws", builtin.lsp_dynamic_workspace_symbols,
+    { desc = "Search for LSP Symbols in this Workspace." })
+
+vim.keymap.set("n", "<leader>lic", builtin.lsp_incoming_calls, { desc = "Search/Show all Incoming calls to function" })
+vim.keymap.set("n", "<leader>loc", builtin.lsp_outgoing_calls, { desc = "Search/Show all Outgoing calls from function" })

@@ -54,10 +54,10 @@ cmp.setup({
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 -- cmp_action.tab_complete();
-                cmp.mapping.confirm({ select = false })();
+                cmp.mapping.confirm({ select = true })();
                 -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
                 -- they way you will only jump inside the snippet region
-            elseif luasnip.expand_or_jumpable() then
+            elseif luasnip.expand_or_locally_jumpable() then
                 luasnip.expand_or_jump()
             elseif has_words_before() then
                 cmp.complete()
@@ -248,6 +248,31 @@ require("flutter-tools").setup({
     },
 })
 
+local inlay_hints_options = {
+    -- Only show inlay hints for the current line
+    only_current_line = false,
+
+    -- prefix for parameter hints
+    -- default: "<-"
+    parameter_hints_prefix = "<- ",
+
+    -- prefix for all the other hints (type, chaining)
+    -- default: "=>"
+    other_hints_prefix = "=> ",
+
+    -- whether to align to the length of the longest line in the file
+    max_len_align = true,
+
+    -- padding from the left if max_len_align is true
+    max_len_align_padding = 1,
+
+    -- whether to align to the extreme right or not
+    right_align = false,
+
+    -- The color of the hints
+    highlight = "Comment",
+}
+
 -- Rust tools stuff
 rust_tools.setup({
     server = {
@@ -262,36 +287,16 @@ rust_tools.setup({
     },
     tools = {
         -- These apply to the default RustSetInlayHints command
-        inlay_hints = {
-            -- Only show inlay hints for the current line
-            only_current_line = false,
-
-            -- prefix for parameter hints
-            -- default: "<-"
-            parameter_hints_prefix = "<- ",
-
-            -- prefix for all the other hints (type, chaining)
-            -- default: "=>"
-            other_hints_prefix = "=> ",
-
-            -- whether to align to the length of the longest line in the file
-            max_len_align = true,
-
-            -- padding from the left if max_len_align is true
-            max_len_align_padding = 1,
-
-            -- whether to align to the extreme right or not
-            right_align = false,
-
-
-            -- The color of the hints
-            highlight = "Comment",
-        },
+        inlay_hints = inlay_hints_options,
     }
 })
 
 -- CXX / ClangD-extensions.nvim setup
-require("clangd_extensions").setup()
+require("clangd_extensions").setup({
+    extensions = {
+        inlay_hints = inlay_hints_options
+    }
+})
 
 -- Typescript nvim setup
 require("typescript").setup({

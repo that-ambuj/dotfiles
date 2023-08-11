@@ -44,6 +44,7 @@ return require("packer").startup(function(use)
     use("doums/darcula")
     use("ellisonleao/gruvbox.nvim")
     use("kvrohit/mellow.nvim")
+    use("navarasu/onedark.nvim")
 
     -- Lush.nvim themes
     use("rktjmp/lush.nvim")
