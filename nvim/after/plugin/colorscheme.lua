@@ -30,7 +30,7 @@ end
 
 themes.material = function()
     --- @usage "darker" | "lighter" | "oceanic" | "palenight" | "deep ocean"
-    vim.g.material_style = "deep ocean"
+    vim.g.material_style = "darker"
 
     require("material").setup({})
 
@@ -163,11 +163,11 @@ end
 themes.onedark_nvim = function()
     require("onedark").setup({
         -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-        style = "darker"
+        style = "warmer"
     })
 
     require("onedark").load()
 end
 
 -- Call any of the above functions to use a theme
-themes.rose_pine()
+themes.onedark_nvim()
