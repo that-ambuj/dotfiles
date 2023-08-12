@@ -45,6 +45,7 @@ local has_words_before = function()
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
+
 cmp.setup({
     enabled = true,
     mapping = cmp.mapping.preset.insert({
@@ -109,6 +110,7 @@ lsp.on_attach(function(client, bufnr)
         require("lsp-format").on_attach(client)
     end
 
+
     -- vim.api.nvim_create_autocmd("BufWrite", {
     --     callback = function()
     --         vim.lsp.buf.format({
@@ -126,6 +128,17 @@ lsp.on_attach(function(client, bufnr)
         function() vim.lsp.buf.format({ async = true, timeout_ms = 10000, bufnr = bufnr }) end,
         { desc = "Format all code in this file" }
     )
+
+    -- vim.keymap.set("n", "<leader>lq", vim.diagnostic.setqflist, { desc = "Open LSP Diagnostics in quickfix list" })
+    vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next LSP Diagnostic" })
+    vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous LSP Diagnostic" })
+
+    vim.api.nvim_create_autocmd("BufWrite", {
+        callback = function()
+            -- Update Location List automatically
+            vim.diagnostic.setloclist({ open = false })
+        end
+    })
 
     -- HACK: Omnisharp lsp warnings hacky workarounds
     if client.name == "omnisharp" then

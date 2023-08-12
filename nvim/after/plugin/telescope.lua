@@ -1,6 +1,8 @@
 local builtin = require("telescope.builtin")
 local trouble = require("trouble.providers.telescope")
 
+local actions = require("telescope.actions")
+
 local telescope = require("telescope")
 
 -- Load lazygit extension for telescope
@@ -9,8 +11,11 @@ telescope.load_extension("lazygit")
 telescope.setup {
     defaults = {
         mappings = {
-            i = { ["<c-t>"] = trouble.open_with_trouble },
-            n = { ["<c-t>"] = trouble.open_with_trouble },
+            i = {
+                ["<c-t>"] = actions.smart_send_to_qflist,
+                ["<c-d>"] = actions.delete_buffer + actions.move_to_top,
+            },
+            n = { ["<c-t>"] = actions.smart_send_to_qflist },
         },
     },
 }
@@ -47,3 +52,4 @@ vim.keymap.set("n", "<leader>lw", builtin.lsp_dynamic_workspace_symbols,
 vim.keymap.set("n", "<leader>li", builtin.lsp_incoming_calls, { desc = "Search/Show all Incoming calls to function" })
 vim.keymap.set("n", "<leader>lo", builtin.lsp_outgoing_calls, { desc = "Search/Show all Outgoing calls from function" })
 vim.keymap.set("n", "<leader>lm", builtin.lsp_implementations, { desc = "Search/Show Implementations" })
+vim.keymap.set("n", "gR", builtin.lsp_references, { desc = "Go To References" })

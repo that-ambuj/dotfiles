@@ -66,6 +66,8 @@ return require("packer").startup(function(use)
     use("akinsho/flutter-tools.nvim")
     use("mrcjkb/haskell-tools.nvim")
 
+    use({ "that-ambuj/zig.vim", tag = "fix-disable-loclist" })
+
     -- brackets and quotes autopairs
     use("windwp/nvim-autopairs")
     use("windwp/nvim-ts-autotag")

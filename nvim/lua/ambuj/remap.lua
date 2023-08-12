@@ -14,16 +14,20 @@ vim.keymap.set({ "n", "v" }, "<leader>pp", '"_dP', { desc = "Overwrite current l
 vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set("n", "<C-h>", "<C-w>h<CR>")
--- vim.keymap.set("n", "<C-j>", "<C-w>j<CR>")
--- vim.keymap.set("n", "<C-k>", "<C-w>k<CR>")
 vim.keymap.set("n", "<C-l>", "<C-w>l<CR>")
+vim.keymap.set("n", "<M-j>", "<C-w>j<CR>")
+vim.keymap.set("n", "<M-k>", "<C-w>k<CR>")
 
 vim.keymap.set("n", "<C-b>", "<C-w>s<CR>")
 vim.keymap.set("n", "<C-g>", "<C-w>v<CR>")
 
--- Quick fix maps (don't know what that is)
+-- Quick fix maps (I now know what that is) [Synced with Telescope]
+vim.keymap.set("n", "<M-q>", "<cmd>copen<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
+
+-- Location List (Synced with Location List)
+vim.keymap.set("n", "<M-l>", "<cmd>lopen<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 
