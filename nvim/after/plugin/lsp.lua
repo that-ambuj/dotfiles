@@ -68,7 +68,7 @@ cmp.setup({
     }),
     preselect = 'item',
     completion = {
-        completeopt = 'menu,menuone,noinsert',
+        completeopt = 'menu,menuone,noinsert,noselect',
     },
     snippet = {
         expand = function(args)
@@ -85,15 +85,15 @@ cmp.setup({
     }
 })
 
--- If you want insert `(` after select function or method item
--- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
--- cmp.event:on(
---     'confirm_done',
---     cmp_autopairs.on_confirm_done()
--- )
-
 lsp.set_preferences({
     sign_icons = {},
+})
+
+vim.diagnostic.config({
+    virtual_text = {
+        prefix = '●', -- Could be '●', '▎', 'x'
+    },
+    update_in_insert = true,
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -276,17 +276,21 @@ local inlay_hints_options = {
 -- Rust tools stuff
 rust_tools.setup({
     server = {
-        on_attach = function(_, bufnr)
-            -- vim.keymap.set('n', '<leader>ca', rust_tools.hover_actions.hover_actions,
-            --     { buffer = bufnr, desc = "Rust tools: Hover actions" })
+        on_attach = function(client, bufnr)
+            -- Hover actions
+            vim.keymap.set("n", "<C-space>", rust_tools.hover_actions.hover_actions, { buffer = bufnr })
+            -- Code action groups
+            vim.keymap.set("n", "<leader>ca", rust_tools.code_action_group.code_action_group, { buffer = bufnr })
 
             rust_tools.inlay_hints.enable()
-        end
+        end,
+        standalone = false,
     },
     tools = {
         -- These apply to the default RustSetInlayHints command
         inlay_hints = inlay_hints_options,
     }
+
 })
 
 -- CXX / ClangD-extensions.nvim setup
@@ -303,4 +307,10 @@ require("typescript").setup({
             vim.keymap.set("n", "<leader>mi", "<cmd>TypescriptAddMissingImports<CR>", { buffer = bufnr })
         end
     }
+})
+
+lspconfig.zls.setup({
+    on_attach = function(client, bufnr)
+        vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    end
 })
