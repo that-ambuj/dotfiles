@@ -9,6 +9,8 @@ return require("packer").startup(function(use)
         requires = { { "nvim-lua/plenary.nvim" } },
     })
 
+    use("folke/trouble.nvim");
+
     -- Colorscheme stuff
     use("tjdevries/colorbuddy.nvim")
     -- Colorbuddy themes
@@ -67,7 +69,6 @@ return require("packer").startup(function(use)
     -- brackets and quotes autopairs
     use("windwp/nvim-autopairs")
     use("windwp/nvim-ts-autotag")
-
 
     use({
         "folke/which-key.nvim",
