@@ -14,18 +14,18 @@ vim.keymap.set({ "n", "v" }, "<leader>pp", '"_dP', { desc = "Overwrite current l
 vim.keymap.set("n", "Q", "<nop>")
 
 vim.keymap.set("n", "<C-h>", "<C-w>h<CR>")
-vim.keymap.set("n", "<C-j>", "<C-w>j<CR>")
-vim.keymap.set("n", "<C-k>", "<C-w>k<CR>")
+-- vim.keymap.set("n", "<C-j>", "<C-w>j<CR>")
+-- vim.keymap.set("n", "<C-k>", "<C-w>k<CR>")
 vim.keymap.set("n", "<C-l>", "<C-w>l<CR>")
 
 vim.keymap.set("n", "<C-b>", "<C-w>s<CR>")
 vim.keymap.set("n", "<C-g>", "<C-w>v<CR>")
 
 -- Quick fix maps (don't know what that is)
--- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
--- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
--- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
--- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 
 -- Remaps Ctrl+Backspace to emacs Ctrl+W, which deletes a word
 vim.keymap.set("i", "<C-BS>", "<C-W>")
