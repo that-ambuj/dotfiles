@@ -66,7 +66,7 @@ return require("packer").startup(function(use)
     use("akinsho/flutter-tools.nvim")
     use("mrcjkb/haskell-tools.nvim")
 
-    use({ "that-ambuj/zig.vim", tag = "fix-disable-loclist" })
+    -- use({ "that-ambuj/zig.vim", tag = "fix-disable-loclist" })
 
     -- brackets and quotes autopairs
     use("windwp/nvim-autopairs")
@@ -106,7 +106,7 @@ return require("packer").startup(function(use)
     -- use 'tpope/vim-fugitive'
     use("tpope/vim-rhubarb")
 
-    -- Detect tabstop and shiftwidth automatically
+    -- Detect `tabstop` and `shiftwidth` automatically
     use("tpope/vim-sleuth")
 
     -- Surround Brackets
@@ -149,7 +149,7 @@ return require("packer").startup(function(use)
             },
             { "williamboman/mason-lspconfig.nvim" }, -- Optional
 
-            --      -- Autocompletion
+            --  auto-completion
             { "hrsh7th/nvim-cmp" },     -- Required
             { "hrsh7th/cmp-nvim-lsp" }, -- Required
             { "L3MON4D3/LuaSnip" },     -- Required
@@ -169,7 +169,7 @@ return require("packer").startup(function(use)
     -- C/C++ stuff
     use("p00f/clangd_extensions.nvim")
 
-    -- Snipppets
+    -- Snippets
     use("rafamadriz/friendly-snippets")
     use("wyattferguson/jinja2-kit-vscode")
 
