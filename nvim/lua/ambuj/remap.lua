@@ -13,8 +13,8 @@ vim.keymap.set({ "n", "v" }, "<leader>pp", '"_dP', { desc = "Overwrite current l
 
 vim.keymap.set("n", "Q", "<nop>")
 
-vim.keymap.set("n", "<C-h>", "<C-w>h<CR>")
-vim.keymap.set("n", "<C-l>", "<C-w>l<CR>")
+vim.keymap.set("n", "<M-h>", "<C-w>h<CR>")
+vim.keymap.set("n", "<M-l>", "<C-w>l<CR>")
 vim.keymap.set("n", "<M-j>", "<C-w>j<CR>")
 vim.keymap.set("n", "<M-k>", "<C-w>k<CR>")
 

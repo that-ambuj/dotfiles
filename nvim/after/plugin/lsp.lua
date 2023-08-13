@@ -46,9 +46,12 @@ local has_words_before = function()
 end
 
 
+--- @diagnostic disable-next-line
 cmp.setup({
     enabled = true,
     mapping = cmp.mapping.preset.insert({
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete({}),
         ["<CR>"] = cmp.mapping.confirm({ select = true, }),
         ["<S-Tab>"] = cmp_action.select_prev_or_fallback(),
@@ -68,6 +71,7 @@ cmp.setup({
         end, { "i", "s" }),
     }),
     preselect = 'item',
+    --- @diagnostic disable-next-line
     completion = {
         completeopt = 'menu,menuone,noinsert,noselect',
     },
@@ -133,9 +137,8 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next LSP Diagnostic" })
     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous LSP Diagnostic" })
 
-    vim.api.nvim_create_autocmd("BufWrite", {
+    vim.api.nvim_create_autocmd({ "BufEnter", "BufWrite", "FileWritePost", "InsertLeave" }, {
         callback = function()
-            -- Update Location List automatically
             vim.diagnostic.setloclist({ open = false })
         end
     })
@@ -289,7 +292,7 @@ local inlay_hints_options = {
 -- Rust tools stuff
 rust_tools.setup({
     server = {
-        on_attach = function(client, bufnr)
+        on_attach = function(_, bufnr)
             -- Hover actions
             vim.keymap.set("n", "<C-space>", rust_tools.hover_actions.hover_actions, { buffer = bufnr })
             -- Code action groups
@@ -316,14 +319,14 @@ require("clangd_extensions").setup({
 -- Typescript nvim setup
 require("typescript").setup({
     server = {
-        on_attach = function(client, bufnr)
+        on_attach = function(_, bufnr)
             vim.keymap.set("n", "<leader>mi", "<cmd>TypescriptAddMissingImports<CR>", { buffer = bufnr })
         end
     }
 })
 
 lspconfig.zls.setup({
-    on_attach = function(client, bufnr)
+    on_attach = function(_, bufnr)
         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
     end
 })

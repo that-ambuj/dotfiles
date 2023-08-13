@@ -84,3 +84,6 @@ vim.opt.belloff = "all"
 vim.opt.foldmethod = "marker"
 vim.opt.foldlevel = 0
 vim.opt.modelines = 1
+
+vim.opt.spell = true
+vim.opt.spelllang = { 'en_us' }
