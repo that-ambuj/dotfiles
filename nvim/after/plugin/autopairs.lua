@@ -28,15 +28,6 @@ for _, bracket in pairs(brackets) do
     }
 end
 
-local angle_braces = { '<', '>' }
-
-
-
-npairs.add_rules {
-    Rule(angle_braces[1], angle_braces[2])
-        :with_move(function() return true end)
-}
-
 for _, punct in pairs { ",", ";", ">" } do
     require "nvim-autopairs".add_rules {
         require "nvim-autopairs.rule" ("", punct)
