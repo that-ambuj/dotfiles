@@ -11,7 +11,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 vim.opt.background = "dark"
 
@@ -75,8 +75,6 @@ vim.opt.updatetime = 200
 
 vim.g.mapleader = " "
 
-vim.opt.wrap = true
-
 -- vim.opt.clipboard = "unnamedplus"
 
 vim.opt.belloff = "all"
@@ -85,5 +83,5 @@ vim.opt.foldmethod = "marker"
 vim.opt.foldlevel = 0
 vim.opt.modelines = 1
 
-vim.opt.spell = true
-vim.opt.spelllang = { 'en_us' }
+-- vim.opt.spell = true
+-- vim.opt.spelllang = { 'en_us' }
