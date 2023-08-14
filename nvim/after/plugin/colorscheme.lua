@@ -163,7 +163,7 @@ end
 themes.onedark_nvim = function()
     require("onedark").setup({
         -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-        style = "warm"
+        style = "warmer"
     })
 
     require("onedark").load()
