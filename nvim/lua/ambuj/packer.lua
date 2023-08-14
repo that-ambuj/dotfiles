@@ -33,6 +33,7 @@ return require("packer").startup(function(use)
 
     use({
         "rose-pine/neovim",
+        tag = "main",
         as = "rose-pine",
     })
 

@@ -39,8 +39,8 @@ end
 
 themes.everforest = function()
     -- available variants "hard" | "medium"(default) | "soft"
-    vim.g.everforest_background = "hard"
-    vim.g.everforest_transparent_background = true
+    vim.g.everforest_background = "medium"
+    vim.g.everforest_transparent_background = false
     vim.cmd.colorscheme("everforest")
 end
 
@@ -129,7 +129,7 @@ end
 themes.tokyo_night = function()
     require("tokyonight").setup({
         --- @variants: "storm" | "moon" | "night"
-        style = "moon"
+        style = "night"
     })
 
     vim.cmd("colorscheme tokyonight")
@@ -163,7 +163,7 @@ end
 themes.onedark_nvim = function()
     require("onedark").setup({
         -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-        style = "warmer"
+        style = "warm"
     })
 
     require("onedark").load()
