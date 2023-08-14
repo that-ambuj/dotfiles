@@ -33,6 +33,11 @@ lsp.ensure_installed({
     "tsserver",
     "eslint",
     "rust_analyzer",
+    "gopls",
+    "clangd",
+    "pyright",
+    "lua_ls",
+    "zls"
 })
 
 local cmp = require("cmp")
@@ -117,6 +122,8 @@ lsp.on_attach(function(client, bufnr)
         require("lsp-format").on_attach(client)
     end
 
+    require("clangd_extensions.inlay_hints").setup_autocmd()
+    require("clangd_extensions.inlay_hints").set_inlay_hints()
 
     -- vim.api.nvim_create_autocmd("BufWrite", {
     --     callback = function()
@@ -227,7 +234,7 @@ end)
 
 
 --- Rust tools stuff
-lsp.skip_server_setup({ 'rust_analyzer', 'clangd' })
+lsp.skip_server_setup({ 'rust_analyzer' })
 
 lsp.setup()
 
@@ -268,6 +275,7 @@ require("flutter-tools").setup({
 })
 
 local inlay_hints_options = {
+    inline = vim.fn.has("nvim-0.10") == 1,
     -- Only show inlay hints for the current line
     only_current_line = false,
 
@@ -295,7 +303,7 @@ local inlay_hints_options = {
 -- Rust tools stuff
 rust_tools.setup({
     server = {
-        on_attach = function(_, bufnr)
+        on_attach = function(client, bufnr)
             -- Hover actions
             vim.keymap.set("n", "<C-space>", rust_tools.hover_actions.hover_actions, { buffer = bufnr })
             -- Code action groups
@@ -306,7 +314,6 @@ rust_tools.setup({
         standalone = false,
     },
     tools = {
-        -- These apply to the default RustSetInlayHints command
         inlay_hints = inlay_hints_options,
     }
 
@@ -314,9 +321,7 @@ rust_tools.setup({
 
 -- CXX / ClangD-extensions.nvim setup
 require("clangd_extensions").setup({
-    extensions = {
-        inlay_hints = inlay_hints_options
-    }
+    inlay_hints = inlay_hints_options
 })
 
 -- Typescript nvim setup
