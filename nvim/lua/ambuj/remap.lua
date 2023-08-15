@@ -35,6 +35,9 @@ vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 vim.keymap.set("i", "<C-BS>", "<C-W>")
 vim.keymap.set("i", "<C-H>", "<C-W>")
 
+-- Remaps Ctrl+v in insert mode to paste from system clipboard
+vim.keymap.set("i", "<C-v>", "<C-r>+")
+
 -- vim.keymap.set('n', "<tab>", ":tabnext<CR>")
 vim.keymap.set('n', "<C-t>", ":tabnew .<CR>")
 vim.keymap.set('n', "<C-w>", ":tabclose<CR>")
