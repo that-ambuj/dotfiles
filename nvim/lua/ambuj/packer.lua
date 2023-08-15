@@ -67,6 +67,8 @@ return require("packer").startup(function(use)
     use("akinsho/flutter-tools.nvim")
     use("mrcjkb/haskell-tools.nvim")
 
+    use("simrat39/inlay-hints.nvim")
+
     -- use({ "that-ambuj/zig.vim", tag = "fix-disable-loclist" })
 
     -- brackets and quotes autopairs
@@ -184,4 +186,6 @@ return require("packer").startup(function(use)
 
     use('wakatime/vim-wakatime')
     use("nvim-tree/nvim-web-devicons")
+
+    use("rest-nvim/rest.nvim")
 end)
