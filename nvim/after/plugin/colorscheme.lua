@@ -102,16 +102,6 @@ themes.catppuccin = function()
     require("catppuccin").setup({
         flavour = "mocha", -- latte, frappe, macchiato, mocha
         term_colors = true,
-        custom_highlights = function(colors)
-            return {
-                -- For indent-blankline
-                -- IndentBlanklineChar = { fg = colors.surface1, nocombine = true },
-                -- IndentBlanklineSpaceChar = { fg = colors.surface1, nocombine = true },
-                -- IndentBlanklineSpaceCharBlankline = { fg = colors.surface1, nocombine = true },
-                -- IndentBlanklineContextChar = { fg = colors.surface2, style = { "bold" }, nocombine = true },
-                -- IndentBlanklineIndent1 = { fg = colors.surface0, nocombine = true }
-            }
-        end
     })
 
     vim.cmd("colorscheme catppuccin")
@@ -170,4 +160,4 @@ themes.onedark_nvim = function()
 end
 
 -- Call any of the above functions to use a theme
-themes.sonokai()
+themes.catppuccin()
