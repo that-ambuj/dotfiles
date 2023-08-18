@@ -112,27 +112,24 @@ vim.diagnostic.config({
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
 
-    -- local allow_format = { 'lua_ls', 'rust_analyzer', 'tsserver', 'prettierd', 'prettier', 'pint' }
 
-    -- if vim.tbl_contains(allow_format, client.name) then
-    --     require("lsp-format").on_attach(client)
-    -- end
+    local conceal_files = { 'org', 'markdown' }
 
-    if client.supports_method('textDocument/formatting') then
+    if vim.tbl_contains(conceal_files, vim.bo.filetype) then
+        vim.opt.conceallevel = 1
+        vim.opt.concealcursor = nc
+    end
+
+
+    local deny_format = { "tsserver" }
+
+    if client.supports_method('textDocument/formatting') and
+        not vim.tbl_contains(deny_format, client.name) then
         require("lsp-format").on_attach(client)
     end
 
     require("clangd_extensions.inlay_hints").setup_autocmd()
     require("clangd_extensions.inlay_hints").set_inlay_hints()
-
-    -- vim.api.nvim_create_autocmd("BufWrite", {
-    --     callback = function()
-    --         vim.lsp.buf.format({
-    --             async = false,
-    --             timeout = 500,
-    --         })
-    --     end,
-    -- })
 
     vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end)
 
@@ -143,7 +140,6 @@ lsp.on_attach(function(client, bufnr)
         { desc = "Format all code in this file" }
     )
 
-    -- vim.keymap.set("n", "<leader>lq", vim.diagnostic.setqflist, { desc = "Open LSP Diagnostics in quickfix list" })
     vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next LSP Diagnostic" })
     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous LSP Diagnostic" })
 
