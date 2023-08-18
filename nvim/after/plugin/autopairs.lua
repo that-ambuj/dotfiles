@@ -5,7 +5,10 @@ npairs.setup({
     check_ts = true
 })
 
-local brackets = { { '(', ')' }, { '[', ']' }, { '{', '}' } }
+-- TODO: Don't insert extra these space for markdown and org mode
+-- { '[', ']' }
+
+local brackets = { { '(', ')' }, { '{', '}' } }
 npairs.add_rules {
     Rule(' ', ' ')
         :with_pair(function(opts)
@@ -13,7 +16,7 @@ npairs.add_rules {
             return vim.tbl_contains({
                 brackets[1][1] .. brackets[1][2],
                 brackets[2][1] .. brackets[2][2],
-                brackets[3][1] .. brackets[3][2],
+                -- brackets[3][1] .. brackets[3][2],
             }, pair)
         end)
 }

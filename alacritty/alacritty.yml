@@ -1,18 +1,19 @@
 font:
-  size: 14.0
+  size: 15.0
   normal:
-    family: Menlo Nerd
-    style: Regular
-  # bold:
-  #   style: Semibold
-  # italic:
-  #   style: Italic
-  # bold_italic:
-  #   style: Semibold Italic
+    family: JetBrains Mono
+    style: Medium
+  bold:
+    style: Semibold
+  italic:
+    style: Medium Italic
+  bold_italic:
+    style: Semibold Italic
   offset:
-    y: 4
-  glyph_offset:
+    # x: -1
     y: 2
+  glyph_offset:
+    y: 1
 
 cursor:
   style: Beam
@@ -20,7 +21,7 @@ cursor:
 
 custom_cursor_colors: true
 
-draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
 window:
   padding:

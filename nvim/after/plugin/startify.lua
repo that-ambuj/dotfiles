@@ -1,4 +1,5 @@
 vim.g.startify_bookmarks = {
+    "~/org-files",
     "~/dotfiles/nvim",
     "~/.zshrc",
     "~/.config/kitty/kitty.conf",

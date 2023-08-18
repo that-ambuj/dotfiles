@@ -22,12 +22,12 @@ vim.keymap.set("n", "<C-b>", "<C-w>s<CR>")
 vim.keymap.set("n", "<C-g>", "<C-w>v<CR>")
 
 -- Quick fix maps (I now know what that is) [Synced with Telescope]
-vim.keymap.set("n", "<M-q>", "<cmd>copen<CR>zz")
+vim.keymap.set("n", "<C-q>", "<cmd>copen<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
 
 -- Location List (Synced with Location List)
-vim.keymap.set("n", "<M-l>", "<cmd>lopen<CR>zz")
+vim.keymap.set("n", "<C-l>", "<cmd>lopen<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 

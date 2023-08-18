@@ -188,4 +188,9 @@ return require("packer").startup(function(use)
     use("nvim-tree/nvim-web-devicons")
 
     use("rest-nvim/rest.nvim")
+    use("nvim-orgmode/orgmode")
+
+    use({
+        "f-person/git-blame.nvim",
+    })
 end)
