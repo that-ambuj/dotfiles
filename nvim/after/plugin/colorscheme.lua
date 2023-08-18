@@ -160,4 +160,4 @@ themes.onedark_nvim = function()
 end
 
 -- Call any of the above functions to use a theme
-themes.catppuccin()
+themes.onedark_nvim()
