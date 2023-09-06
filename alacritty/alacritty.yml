@@ -1,17 +1,17 @@
 font:
   size: 15.0
   normal:
-    family: JetBrains Mono
-    style: Medium
-  bold:
-    style: Semibold
-  italic:
-    style: Medium Italic
-  bold_italic:
-    style: Semibold Italic
+    family: Menlo
+    style: Regular
+  # bold:
+  #   style: Semibold
+  # italic:
+  #   style: Medium Italic
+  # bold_italic:
+  #   style: Semibold Italic
   offset:
-    # x: -1
-    y: 2
+    x: -1
+    y: 3
   glyph_offset:
     y: 1
 
@@ -44,28 +44,28 @@ selection:
 # Colors
 colors:
   primary:
-    background: "#1A1A1A"
-    foreground: "#C4C5B5"
+    background: "#1F1F28"
+    foreground: "#DCD7BA"
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
     text: "#1A1A1A"
     cursor: "#C4C5B5"
   # Normal colors
   normal:
-    black: "#1A1A1A"
-    red: "#F4005F"
-    green: "#98E024"
-    yellow: "#FA8419"
-    blue: "#9D65FF"
-    magenta: "#F4005F"
-    cyan: "#58D1EB"
-    white: "#C4C5B5"
+    black: "#090618"
+    red: "#C34043"
+    green: "#76946A"
+    yellow: "#C0A36E"
+    blue: "#7E9CD8"
+    magenta: "#957FB8"
+    cyan: "#6A9589"
+    white: "#DCD7BA"
   bright:
-    black: "#625E4C"
-    red: "#F4005F"
-    green: "#98E024"
-    yellow: "#E0D561"
-    blue: "#9D65FF"
-    magenta: "#F4005F"
-    cyan: "#58D1EB"
-    white: "#F6F6EF"
+    black: "#727169"
+    red: "#E82424"
+    green: "#98BB6C"
+    yellow: "#E6C384"
+    blue: "#7FB4CA"
+    magenta: "#938AA9"
+    cyan: "#7AA89F"
+    white: "#C8C093"

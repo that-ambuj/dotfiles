@@ -11,7 +11,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.background = "dark"
 
@@ -82,6 +82,9 @@ vim.opt.belloff = "all"
 vim.opt.foldmethod = "marker"
 vim.opt.foldlevel = 0
 vim.opt.modelines = 1
+
+vim.opt.conceallevel = 2
+vim.opt.concealcursor = nc
 
 -- vim.opt.spell = true
 -- vim.opt.spelllang = { 'en_us' }

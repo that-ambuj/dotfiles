@@ -43,7 +43,7 @@ exec --no-startup-id nm-applet
 # exec --no-startup-id picom -b
 
 # Set wallpaper
-exec --no-startup-id feh --bg-fill ~/Downloads/pawel-czerwinski-arwTpnIUHdM-unsplash.jpg
+exec --no-startup-id feh --bg-fill ~/.wallpapers/iMac-2021-Wallpaper-6-YTECHB.jpg
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -202,9 +202,9 @@ bindsym $mod+r mode "resize"
 
 # Active window colors
 # class                 border  backgr. text    indicator border
-client.focused_inactive #313244 #313244 #6c7086 
-client.unfocused        #313244 #313244 #6c7086 
-client.focused          #6c7086 #6c7086 #1e1e2e 
+client.focused_inactive #313244 #313244 #89b4fa 
+client.unfocused        #313244 #313244 #89b4fa 
+client.focused          #89b4fa #89b4fa #1e1e2e 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -217,14 +217,14 @@ bar {
 	separator_symbol " "
         position top
 
-        height 28
+        height 24
 
 
     colors {
         separator #666666
         background #222222
         statusline #dddddd
-        focused_workspace #6c7086 #6c7086 #ffffff
+        focused_workspace #89b4fa #89b4fa #1e1e2e
         active_workspace #333333 #333333 #ffffff
         inactive_workspace #333333 #333333 #aaaaaa
         urgent_workspace #2f343a #ff5555 #ffffff
@@ -256,5 +256,6 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 # i3 gaps rounded stuff
 for_window [class=".*"] border pixel 0
 gaps inner 8
+gaps horizontal 4
 border_radius 8
 # smart_borders on

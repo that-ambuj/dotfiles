@@ -150,7 +150,7 @@ themes.habamax = function()
     vim.cmd("colorscheme habamax")
 end
 
-themes.onedark_nvim = function()
+themes.onedark = function()
     require("onedark").setup({
         -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
         style = "warmer"
@@ -160,4 +160,4 @@ themes.onedark_nvim = function()
 end
 
 -- Call any of the above functions to use a theme
-themes.onedark_nvim()
+themes.onedark()

@@ -80,13 +80,8 @@ require("el").setup({
             { show_current_func },
             { git_changes },
             { "[" },
-            { builtin.line_with_width(3) },
-            { ":" },
-            { builtin.column_with_width(2) },
-            { "]" },
-            { " " },
             { builtin.percentage_through_window },
-            { " " },
+            { "]" },
             {
                 sections.collapse_builtin {
                     "[",

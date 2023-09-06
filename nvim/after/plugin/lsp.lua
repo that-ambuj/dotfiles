@@ -56,7 +56,17 @@ cmp.setup({
     enabled = true,
     mapping = cmp.mapping.preset.insert({
         ["<C-Space>"] = cmp.mapping.complete({}),
-        ["<CR>"] = cmp.mapping.confirm({ select = true, }),
+        ["<CR>"] = cmp.mapping({
+            i = function(fallback)
+                if cmp.visible() and cmp.get_active_entry() then
+                    cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+                else
+                    fallback()
+                end
+            end,
+            s = cmp.mapping.confirm({ select = true }),
+            c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+        }),
         ["<S-Tab>"] = cmp_action.select_prev_or_fallback(),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
@@ -111,14 +121,6 @@ vim.diagnostic.config({
 
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
-
-
-    local conceal_files = { 'org', 'markdown' }
-
-    if vim.tbl_contains(conceal_files, vim.bo.filetype) then
-        vim.opt.conceallevel = 1
-        vim.opt.concealcursor = nc
-    end
 
 
     local deny_format = { "tsserver" }
@@ -248,7 +250,9 @@ null_ls.setup({
         null_ls.builtins.formatting.prettierd,
         null_ls.builtins.formatting.goimports,
         null_ls.builtins.formatting.blade_formatter,
-        null_ls.builtins.formatting.pint
+        null_ls.builtins.formatting.pint,
+        null_ls.builtins.formatting.sql_formatter,
+        null_ls.builtins.formatting.black
     }
 })
 
