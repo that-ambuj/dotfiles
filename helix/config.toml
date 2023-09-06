@@ -1,0 +1,30 @@
+theme = "ayu_mirage"
+
+[editor]
+line-number = "relative"
+scrolloff = 99
+cursorline = true
+auto-save = true
+completion-replace = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.statusline]
+left = ["mode", "version-control", "spinner"]
+center = ["file-name"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[keys.insert]
+j = { k = "normal_mode" }
+"C-backspace" = "delete_word_backward"
+"C-space" = "completion"
+
+[keys.normal]
+"space" = { w = ":write", q = ":quit" }
