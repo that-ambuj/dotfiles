@@ -1,10 +1,11 @@
-theme = "ayu_mirage"
+theme = "rose_pine"
 
 [editor]
 line-number = "relative"
 scrolloff = 99
 cursorline = true
 auto-save = true
+auto-format = true
 completion-replace = true
 
 [editor.cursor-shape]
@@ -21,10 +22,13 @@ mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
 
+[editor.soft-wrap]
+enable = true
+
 [keys.insert]
 j = { k = "normal_mode" }
 "C-backspace" = "delete_word_backward"
 "C-space" = "completion"
 
 [keys.normal]
-"space" = { w = ":write", q = ":quit" }
+"space" = { w = ":write", q = ":quit", "=" = ":format" }
