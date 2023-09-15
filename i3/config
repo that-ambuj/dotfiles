@@ -43,7 +43,7 @@ exec --no-startup-id nm-applet
 # exec --no-startup-id picom -b
 
 # Set wallpaper
-exec --no-startup-id feh --bg-fill ~/.wallpapers/iMac-2021-Wallpaper-6-YTECHB.jpg
+exec --no-startup-id feh --bg-fill ~/.wallpapers/iMac-2021-Wallpaper-4-YTECHB.jpg
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -256,6 +256,6 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 # i3 gaps rounded stuff
 for_window [class=".*"] border pixel 0
 gaps inner 8
-gaps horizontal 4
+gaps horizontal 2
 border_radius 8
 # smart_borders on
