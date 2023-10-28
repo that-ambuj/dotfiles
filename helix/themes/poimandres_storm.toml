@@ -51,7 +51,7 @@ string = { fg = "brightMint" }
 "ui.linenr.selected" = "offWhite"
 "ui.cursor" = { bg = "gray", fg = "bg" }
 "ui.cursor.match" = { bg = "focus" }
-"ui.cursorline" = { bg = "#212434" }
+"ui.cursorline" = { bg = "#353a50" }
 
 "ui.popup" = { fg = "darkerGray" }
 
@@ -102,7 +102,7 @@ bluishGray = "#607487"
 focus = "#404350"
 bg = "#252b37"
 offWhite = "#e4f0fb"
-selection = "#3d435c"
+selection = "#4f5778"
 # selection = "#818cc425"
 white = "#ffffff"
 black = "#101010"
