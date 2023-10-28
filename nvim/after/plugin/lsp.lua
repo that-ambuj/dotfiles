@@ -310,6 +310,7 @@ rust_tools.setup({
             vim.keymap.set("n", "<leader>ca", rust_tools.code_action_group.code_action_group, { buffer = bufnr })
 
             rust_tools.inlay_hints.enable()
+            rust_tools.inlay_hints.set()
         end,
         standalone = false,
     },

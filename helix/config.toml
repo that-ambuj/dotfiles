@@ -1,12 +1,13 @@
-theme = "darcula"
+theme = "poimandres_storm"
 
 [editor]
 line-number = "relative"
 scrolloff = 99
 cursorline = true
-auto-save = true
 auto-format = true
-completion-replace = true
+completion-trigger-len = 1
+color-modes = true
+idle-timeout = 100
 
 [editor.cursor-shape]
 insert = "bar"
@@ -16,15 +17,21 @@ normal = "block"
 display-inlay-hints = true
 
 [editor.statusline]
-left = ["mode", "version-control", "spacer", "spinner"]
+left = ["mode", "spacer", "version-control", "spacer", "spinner"]
 center = ["file-name", "file-modification-indicator"]
-right = ["diagnostics", "selections", "spacer", "position-percentage", "file-type"]
+right = [
+  "diagnostics",
+  "selections",
+  "spacer",
+  "position-percentage",
+  "file-type",
+]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
 
 [editor.indent-guides]
-render = false
+render = true
 skip-levels = 1
 
 [editor.soft-wrap]
@@ -37,3 +44,5 @@ j = { k = "normal_mode" }
 
 [keys.normal]
 "space" = { w = [":format", ":write"], q = ":quit", "=" = ":format" }
+"V" = "extend_line_below"
+"X" = "extend_line_above"

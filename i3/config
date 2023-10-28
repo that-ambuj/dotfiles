@@ -43,7 +43,7 @@ exec --no-startup-id nm-applet
 # exec --no-startup-id picom -b
 
 # Set wallpaper
-exec --no-startup-id feh --bg-fill ~/.wallpapers/iMac-2021-Wallpaper-4-YTECHB.jpg
+exec --no-startup-id feh --bg-fill ~/.wallpapers/iMac-2021-Wallpaper-6-YTECHB.jpg
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -70,7 +70,7 @@ bindsym $mod+q kill
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
-bindsym $mod+space exec "rofi -modi drun,calc,window,emoji -show drun"
+bindsym $mod+space exec "rofi -modi drun,run,calc,window,emoji -show drun"
 bindsym $mod+period exec "rofi -show emoji"
 bindsym $mod+c exec "rofi -show calc -no-show-match -no-sort"
 bindsym $mod+Shift+p exec "zsh /home/ambuj/.local/bin/powermenu"
@@ -255,7 +255,7 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 
 # i3 gaps rounded stuff
 for_window [class=".*"] border pixel 0
-gaps inner 8
+gaps inner 5
 gaps horizontal 2
 border_radius 8
 # smart_borders on

@@ -5,7 +5,6 @@ return require("packer").startup(function(use)
 
     use({
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.1",
         requires = { { "nvim-lua/plenary.nvim" } },
     })
 
@@ -177,7 +176,7 @@ return require("packer").startup(function(use)
     use("wyattferguson/jinja2-kit-vscode")
 
     -- Indent Highlighting
-    use("lukas-reineke/indent-blankline.nvim")
+    -- use("lukas-reineke/indent-blankline.nvim")
 
     -- Typescript stuff
     use("jose-elias-alvarez/typescript.nvim")
