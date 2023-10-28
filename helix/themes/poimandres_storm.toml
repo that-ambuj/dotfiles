@@ -66,10 +66,10 @@ string = { fg = "brightMint" }
 "ui.menu.selected" = { fg = "bg", bg = "gray" }
 "ui.menu.scroll" = { fg = "gray", bg = "bg" }
 
-"ui.statusline" = { fg = "bg", bg = "desaturatedBlue" }
-"ui.statusline.inactive" = { bg = "bg", fg = "desaturatedBlue" }
-"ui.statusline.normal" = { bg = "brightMint", fg = "bg", modifiers = ["bold"] }
-"ui.statusline.insert" = { bg = "lightBlue", fg = "bg", modifiers = ["bold"] }
+"ui.statusline" = { fg = "offWhite", bg = "selection" }
+"ui.statusline.inactive" = { fg = "lightBlue", bg = "bg" }
+"ui.statusline.normal" = { bg = "lightBlue", fg = "bg", modifiers = ["bold"] }
+"ui.statusline.insert" = { bg = "brightMint", fg = "bg", modifiers = ["bold"] }
 "ui.statusline.select" = { bg = "hotRed", fg = "bg", modifiers = ["bold"] }
 
 "diagnostic.hint" = { underline = { color = "lowerMint", style = "curl" } }
