@@ -1,21 +1,24 @@
-# tokens
+# Author: Ambuj Kumar <ambujs89@gmail.com
+# Ported from: https://github.com/drcmda/poimandres-theme
 
 attribute = { fg = "desaturatedBlue", modifiers = ["italic"] }
 keyword = "brightMint"
-"keyword.directive" = "brightMint"
-"keyword.storage" = "desaturatedBlue"
+"keyword.directive" = "gray"
+"keyword.storage.type" = "desaturatedBlue"
 "keyword.storage.modifier" = "lowerMint"
+"keyword.other" = "brightMint"
+"keyword.operator" = "desaturatedBlue"
 namespace = "lightBlue"
-punctuation = "desaturatedBlue"
-"punctuation.delimeter" = "desaturatedBlue"
+punctuation = "gray"
+"punctuation.bracket" = "desaturatedBlue"
 operator = "desaturatedBlue"
 special = "desaturatedBlue"
 variable = "offWhite"
 "variable.parameter" = { fg = "offWhite" }
 "variable.builtin" = { fg = "lightBlue", modifiers = ["italic"] }
-"variable.other.member" = "offWhite"
+"variable.other" = "offWhite"
 type = { fg = "#a6accdc0" }
-"type.builtin" = { fg = "#a6accdc0" }
+"type.builtin" = { fg = "desaturatedBlue" }
 constructor = "lightBlue"
 function = "lightBlue"
 "function.method" = { fg = "lightBlue" }
