@@ -1,4 +1,4 @@
-# Author: Ambuj Kumar <ambujs89@gmail.com
+# Author: Ambuj Kumar <ambujs89@gmail.com>
 # Ported from: https://github.com/drcmda/poimandres-theme
 
 attribute = { fg = "desaturatedBlue", modifiers = ["italic"] }
@@ -25,7 +25,7 @@ function = "lightBlue"
 tag = "brightMint"
 comment = { fg = "darkerGray.b0", modifiers = ["italic"] }
 constant = "brightMint"
-"constant.character.escape" = { fg = "lowerMint" }
+"constant.character.escape" = { fg = "offWhite" }
 "constant.numeric" = { fg = "brightMint" }
 "constant.builtin" = { fg = "hotRed" }
 label = { fg = "gray.c0" }
@@ -44,17 +44,17 @@ string = { fg = "brightMint" }
 # UI
 "ui.background" = { bg = "bg" }
 "ui.background.separator" = { fg = "darkerGray" }
-"ui.linenr" = "#767c9d50"
+"ui.linenr" = "darkerGray.50"
 "ui.linenr.selected" = "offWhite"
 "ui.cursor" = { bg = "gray", fg = "bg" }
 "ui.cursor.match" = { bg = "focus" }
 "ui.cursorline" = { bg = "#303747" }
 
 "ui.popup" = { bg = "#2a303c" }
-"ui.window" = "gray"
+"ui.window" = "gray.c0"
 
 "ui.text" = "gray"
-"ui.text.focus" = { fg = "offWhite", bg = "focus", modifiers = ["bold"] }
+"ui.text.focus" = { fg = "offWhite", bg = "focus" }
 "ui.text.inactive" = "darkerGray"
 "ui.virtual" = { fg = "darkerGray.b0" }
 "ui.virtual.indent-guide" = "#3a4151"

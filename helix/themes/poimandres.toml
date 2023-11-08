@@ -1,4 +1,4 @@
-# Author: Ambuj Kumar <ambujs89@gmail.com
+# Author: Ambuj Kumar <ambujs89@gmail.com>
 # Ported from: https://github.com/drcmda/poimandres-theme
 
 attribute = { fg = "desaturatedBlue", modifiers = ["italic"] }
@@ -25,7 +25,7 @@ function = "lightBlue"
 tag = "brightMint"
 comment = { fg = "darkerGray.b0", modifiers = ["italic"] }
 constant = "brightMint"
-"constant.character.escape" = { fg = "lowerMint" }
+"constant.character.escape" = { fg = "offWhite" }
 "constant.numeric" = { fg = "brightMint" }
 "constant.builtin" = { fg = "hotRed" }
 label = { fg = "gray.c0" }
