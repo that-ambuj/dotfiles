@@ -133,7 +133,7 @@ lsp.on_attach(function(client, bufnr)
     require("clangd_extensions.inlay_hints").setup_autocmd()
     require("clangd_extensions.inlay_hints").set_inlay_hints()
 
-    vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end)
+    vim.keymap.set("n", "<leader>a", function() vim.lsp.buf.code_action() end, { desc = "Code Action" })
 
     vim.keymap.set(
         "n",
@@ -144,6 +144,8 @@ lsp.on_attach(function(client, bufnr)
 
     vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next LSP Diagnostic" })
     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous LSP Diagnostic" })
+    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "Global LSP Rename" })
+
 
     vim.api.nvim_create_autocmd({ "BufEnter", "BufWrite", "FileWritePost", "InsertLeave" }, {
         callback = require("plenary.async.async").void(function()
@@ -307,7 +309,7 @@ rust_tools.setup({
             -- Hover actions
             vim.keymap.set("n", "<C-space>", rust_tools.hover_actions.hover_actions, { buffer = bufnr })
             -- Code action groups
-            vim.keymap.set("n", "<leader>ca", rust_tools.code_action_group.code_action_group, { buffer = bufnr })
+            vim.keymap.set("n", "<leader>a", rust_tools.code_action_group.code_action_group, { buffer = bufnr })
 
             rust_tools.inlay_hints.enable()
             rust_tools.inlay_hints.set()
