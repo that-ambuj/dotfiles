@@ -17,9 +17,13 @@ local opts = {
 
 -- trouble.setup(opts)
 
-vim.keymap.set("n", "<leader>xx", function() trouble.open() end)
-vim.keymap.set("n", "<leader>xw", function() trouble.open("workspace_diagnostics") end)
-vim.keymap.set("n", "<leader>xd", function() trouble.open("document_diagnostics") end)
-vim.keymap.set("n", "<leader>xq", function() trouble.open("quickfix") end)
-vim.keymap.set("n", "<leader>xl", function() trouble.open("loclist") end)
-vim.keymap.set("n", "gR", function() trouble.open("lsp_references") end)
+vim.keymap.set("n", "<leader>xx", function() trouble.open() end, { desc = "Open Trouble" })
+vim.keymap.set("n", "<leader>xw", function() trouble.open("workspace_diagnostics") end,
+    { desc = "Open Workspace Diagnotics in Trouble" })
+vim.keymap.set("n", "<leader>xd", function() trouble.open("document_diagnostics") end,
+    { desc = "Open Document Diagnotics in Trouble" })
+vim.keymap.set("n", "<leader>xq", function() trouble.open("quickfix") end,
+    { desc = "Open QuickFix List in Trouble" })
+vim.keymap.set("n", "<leader>xl", function() trouble.open("loclist") end, { desc = "Open LocList in Trouble" })
+vim.keymap.set("n", "gR", function() trouble.open("lsp_references") end,
+    { desc = "Open References to Current Functions" })
