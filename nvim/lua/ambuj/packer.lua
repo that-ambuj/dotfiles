@@ -91,7 +91,7 @@ return require("packer").startup(function(use)
 
     use("folke/todo-comments.nvim")
 
-    use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate", tag = "0.9.0" })
+    use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate", tag = "0.9.1" })
     use("nvim-treesitter/nvim-treesitter-context")
     use("theprimeagen/harpoon")
     use("mbbill/undotree")
