@@ -38,11 +38,11 @@ skip-levels = 1
 enable = true
 
 [keys.insert]
-j = { k = "normal_mode" }
+j = { k = "normal_mode", q = "normal_mode" }
 "C-backspace" = "delete_word_backward"
 "C-space" = "completion"
 
 [keys.normal]
-"space" = { w = [":format", ":write"], q = ":quit", "=" = ":format" }
+"space" = { w = ":write", q = ":quit", "=" = ":format" }
 "V" = "extend_line_below"
 "X" = "extend_line_above"

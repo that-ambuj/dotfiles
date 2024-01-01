@@ -153,11 +153,11 @@ end
 themes.onedark = function()
     require("onedark").setup({
         -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-        style = "warmer"
+        style = "warm"
     })
 
     require("onedark").load()
 end
 
 -- Call any of the above functions to use a theme
-themes.onedark()
+themes.sonokai()

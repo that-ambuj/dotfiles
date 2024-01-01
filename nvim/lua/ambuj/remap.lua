@@ -18,8 +18,8 @@ vim.keymap.set("n", "<M-l>", "<C-w>l<CR>")
 vim.keymap.set("n", "<M-j>", "<C-w>j<CR>")
 vim.keymap.set("n", "<M-k>", "<C-w>k<CR>")
 
-vim.keymap.set("n", "<C-b>", "<C-w>s<CR>")
-vim.keymap.set("n", "<C-g>", "<C-w>v<CR>")
+-- vim.keymap.set("n", "<C-b>", "<C-w>s<CR>")
+-- vim.keymap.set("n", "<C-g>", "<C-w>v<CR>")
 
 -- Quick fix maps (I now know what that is) [Synced with Telescope]
 vim.keymap.set("n", "<C-q>", "<cmd>copen<CR>zz")
@@ -39,11 +39,13 @@ vim.keymap.set("i", "<C-H>", "<C-W>")
 vim.keymap.set("i", "<C-v>", "<C-r>+")
 
 -- vim.keymap.set('n', "<tab>", ":tabnext<CR>")
-vim.keymap.set('n', "<C-t>", ":tabnew .<CR>")
-vim.keymap.set('n', "<C-w>", ":tabclose<CR>")
+-- vim.keymap.set('n', "<C-t>", ":tabnew .<CR>")
+-- vim.keymap.set('n', "<C-w>", ":tabclose<CR>")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-    { desc = "Rename below cursor globally" })
+    { desc = "Rename All Instances below in the file" })
+vim.keymap.set("v", "<leader>s", [[:s//g<Left><Left>]],
+    { desc = "Rename All Instances below in the file" })
 
 -- vim.keymap.set("n", "<leader>ps", ":PackerSync<CR>",
 --     { desc = "Install and Update packages (:PackerSync)", silent = true })
@@ -59,3 +61,7 @@ vim.keymap.set("n", "<leader>bt", function()
 
     print(vim.bo.filetype)
 end)
+
+
+-- Golang specific
+vim.keymap.set("n", "<leader>ge", "oif err != nil {<CR>log.Error(err)<CR>return err<CR>}<Esc>")

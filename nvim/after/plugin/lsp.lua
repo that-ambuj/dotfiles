@@ -59,7 +59,7 @@ cmp.setup({
         ["<CR>"] = cmp.mapping({
             i = function(fallback)
                 if cmp.visible() and cmp.get_active_entry() then
-                    cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+                    cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })()
                 else
                     fallback()
                 end
@@ -70,7 +70,7 @@ cmp.setup({
         ["<S-Tab>"] = cmp_action.select_prev_or_fallback(),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
-                cmp.mapping.confirm({ select = true })();
+                cmp.mapping.confirm({ select = true })()
                 return
             end
             -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()

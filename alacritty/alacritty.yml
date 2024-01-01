@@ -1,19 +1,19 @@
 font:
-  size: 16.0
+  size: 14.0
   normal:
-    family: Iosevka Term
+    family: Consolas
     style: Regular
   bold:
-    style: Semibold
+    style: Medium
   italic:
-    style: Medium Italic
+    style: Italic
   bold_italic:
-    style: Semibold Italic
+    style: Medium Italic
   offset:
     # x: -1
-    y: 2
+    y: 5
   glyph_offset:
-    y: 1
+    y: 3
 
 cursor:
   style: Beam
@@ -33,8 +33,8 @@ mouse:
   hide_when_typing: true
 
 keyboard:
-  - { key: Back, mods: Control, chars: "\x17" }
-  - { key: Return, mods: Super, action: SpawnNewInstance }
+  - {key: Back, mods: Control, chars: "\x7f"}
+  - {key: Return, mods: Super, action: SpawnNewInstance}
 
 live_config_reload: true
 
@@ -44,28 +44,28 @@ selection:
 # Colors
 colors:
   primary:
-    background: "#1F1F28"
-    foreground: "#DCD7BA"
+    background: '#1A1A1A'
+    foreground: '#C4C5B5'
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: "#1A1A1A"
-    cursor: "#C4C5B5"
+    text: '#1A1A1A'
+    cursor: '#C4C5B5'
   # Normal colors
   normal:
-    black: "#090618"
-    red: "#C34043"
-    green: "#76946A"
-    yellow: "#C0A36E"
-    blue: "#7E9CD8"
-    magenta: "#957FB8"
-    cyan: "#6A9589"
-    white: "#DCD7BA"
+    black: '#1A1A1A'
+    red: '#F4005F'
+    green: '#98E024'
+    yellow: '#FA8419'
+    blue: '#9D65FF'
+    magenta: '#F4005F'
+    cyan: '#58D1EB'
+    white: '#C4C5B5'
   bright:
-    black: "#727169"
-    red: "#E82424"
-    green: "#98BB6C"
-    yellow: "#E6C384"
-    blue: "#7FB4CA"
-    magenta: "#938AA9"
-    cyan: "#7AA89F"
-    white: "#C8C093"
+    black: '#625E4C'
+    red: '#F4005F'
+    green: '#98E024'
+    yellow: '#E0D561'
+    blue: '#9D65FF'
+    magenta: '#F4005F'
+    cyan: '#58D1EB'
+    white: '#F6F6EF'

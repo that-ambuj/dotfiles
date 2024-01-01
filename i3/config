@@ -255,7 +255,7 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 
 # i3 gaps rounded stuff
 for_window [class=".*"] border pixel 0
-gaps inner 5
+gaps inner 8
 gaps horizontal 2
 border_radius 8
 # smart_borders on
