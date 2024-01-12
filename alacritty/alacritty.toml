@@ -1,0 +1,70 @@
+live_config_reload = true
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#625E4C"
+blue = "#9D65FF"
+cyan = "#58D1EB"
+green = "#98E024"
+magenta = "#F4005F"
+red = "#F4005F"
+white = "#F6F6EF"
+yellow = "#E0D561"
+
+[colors.cursor]
+cursor = "#C4C5B5"
+text = "#1A1A1A"
+
+[colors.normal]
+black = "#1A1A1A"
+blue = "#9D65FF"
+cyan = "#58D1EB"
+green = "#98E024"
+magenta = "#F4005F"
+red = "#F4005F"
+white = "#C4C5B5"
+yellow = "#FA8419"
+
+[colors.primary]
+background = "#1A1A1A"
+foreground = "#C4C5B5"
+
+[cursor]
+style = "Beam"
+unfocused_hollow = true
+
+[font]
+size = 18.0
+
+[font.bold]
+style = "Medium"
+
+[font.bold_italic]
+style = "Medium Italic"
+
+[font.glyph_offset]
+y = 3
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "Menlo"
+style = "Regular"
+
+[font.offset]
+y = 6
+
+[mouse]
+hide_when_typing = true
+
+[selection]
+save_to_clipboard = true
+
+[window]
+startup_mode = "Maximized"
+
+[window.padding]
+y = 0
