@@ -104,14 +104,4 @@ require("el").setup({
     end
 })
 
-require("fidget").setup {
-    text = {
-        spinner = "moon",
-    },
-    align = {
-        bottom = true,
-    },
-    window = {
-        relative = "editor",
-    },
-}
+require("fidget").setup { }

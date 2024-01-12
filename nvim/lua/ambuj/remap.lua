@@ -33,6 +33,7 @@ vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
 
 -- Remaps Ctrl+Backspace to emacs Ctrl+W, which deletes a word
 vim.keymap.set("i", "<C-BS>", "<C-W>")
+vim.keymap.set("i", "<M-BS>", "<C-W>")
 vim.keymap.set("i", "<C-H>", "<C-W>")
 
 -- Remaps Ctrl+v in insert mode to paste from system clipboard

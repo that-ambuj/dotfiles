@@ -46,7 +46,7 @@ end
 
 themes.sonokai = function()
     --- @usage: 'default' | 'atlantis' | 'andromeda' | 'shusia' | 'maia' | 'espresso'
-    vim.g.sonokai_style = "default"
+    vim.g.sonokai_style = "atlantis"
     vim.g.sonokai_transparent_background = false
 
     vim.g.sonokai_better_performance = false

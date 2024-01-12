@@ -114,7 +114,7 @@ return require("packer").startup(function(use)
     -- Surround Brackets
     use("tpope/vim-surround")
 
-    use({ "j-hui/fidget.nvim", tag = "legacy" })
+    use({ "j-hui/fidget.nvim", tag = "v1.2.0" })
 
     use({
         'numToStr/Comment.nvim',
@@ -183,7 +183,6 @@ return require("packer").startup(function(use)
 
     use('mfussenegger/nvim-dap')
 
-    use('wakatime/vim-wakatime')
     use("nvim-tree/nvim-web-devicons")
 
     use("rest-nvim/rest.nvim")
