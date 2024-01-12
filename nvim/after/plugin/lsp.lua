@@ -125,10 +125,10 @@ lsp.on_attach(function(client, bufnr)
 
     local deny_format = { "tsserver" }
 
-    if client.supports_method('textDocument/formatting') and
-        not vim.tbl_contains(deny_format, client.name) then
-        require("lsp-format").on_attach(client)
-    end
+    -- if client.supports_method('textDocument/formatting') and
+    --     not vim.tbl_contains(deny_format, client.name) then
+    --     require("lsp-format").on_attach(client)
+    -- end
 
     require("clangd_extensions.inlay_hints").setup_autocmd()
     require("clangd_extensions.inlay_hints").set_inlay_hints()
