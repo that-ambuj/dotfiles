@@ -1,0 +1,35 @@
+layouts:
+  - tall
+  - fullscreen
+  - floating
+  - wide
+  - column
+
+mod1:
+  - option
+
+mod2:
+  - option
+  - shift
+
+mouse-follows-focus: true
+enables-layout-hud: true
+enables-layout-hud-on-space-change: false
+
+floating:
+  ["com.apple.systempreferences", "com.apple.finder", "com.apple.FontBook"]
+
+screen-padding-left: 10
+screen-padding-right: 10
+screen-padding-top: 8
+screen-padding-bottom: 8
+
+# Focus the next screen in the list going counter-clockwise.
+focus-screen-ccw:
+  mod: mod1
+  key: "["
+
+# Focus the next screen in the list going clockwise.
+focus-screen-cw:
+  mod: mod1
+  key: "]"
