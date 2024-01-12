@@ -10,11 +10,10 @@ export HISTSIZE=1000000
 export SAVEHIST=1000000
 export HISTFILE="$HOME/.zsh_history"
 
-alias ls="exa -1F"
 alias cl=clear
 alias md=mkdir
 alias lz=lazygit
-
+alias ar="php artisan"
 
 if [ ${PS1+set} ]; then
     export CDPATH=.:$HOME/personal-projects:$HOME/open-source:$HOME/dotfiles:$HOME/work
@@ -25,20 +24,16 @@ mkcd () {
     cd "$1"
 }
 
+source <(starship init zsh --print-full-init)
 
 alias sctl='setxkbmap -option "ctrl:swap_lalt_lctl"'
 alias scap='setxkbmap -option "ctrl:nocaps"'
 
 alias gogh='bash -c "$(wget -qO- https://git.io/vQgMr)"'
 
-alias us-vpn='nmcli c up us-free-21.protonvpn.net.tcp passwd-file ~/.vpn-passwd'
-alias us-vpn-down='nmcli c down us-free-21.protonvpn.net.tcp' 
-
 . "$HOME/.cargo/env"
 
-source <(/home/ambuj/.cargo/bin/starship init zsh --print-full-init)
-
-source <(cargo shuttle generate --shell zsh)
+# source <(cargo shuttle generate --shell zsh)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -51,9 +46,6 @@ fi
 
 export PATH="$HOME/go/bin:$HOME/.yarn/bin:$HOME/.local/bin:$PATH"
 
-export DOTNET_ROOT="$HOME/.dotnet"
-
-export PATH="$HOME/.dotnet:$HOME/.dotnet/tools:$PATH"
 export PATH="$PATH:$(go env GOPATH)/bin"
 
 
@@ -72,7 +64,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
-export DOCKER_HOST=unix:///run/user/1000/docker.sock
+# export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/ambuj/google-cloud-sdk/path.zsh.inc' ]; then . '/home/ambuj/google-cloud-sdk/path.zsh.inc'; fi
@@ -80,10 +72,13 @@ if [ -f '/home/ambuj/google-cloud-sdk/path.zsh.inc' ]; then . '/home/ambuj/googl
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/ambuj/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/ambuj/google-cloud-sdk/completion.zsh.inc'; fi
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f ~/.zsh/fzf-completion.zsh ] && source ~/.zsh/fzf-completion.zsh
-[ -f ~/.zsh/fzf-key-bindings.zsh ] && source ~/.zsh/fzf-key-bindings.zsh
-[ -f ~/.zsh/fzf-tab/fzf-tab.plugin.zsh ] && source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
+# [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+[ -f $HOME/.zsh/fzf-completion.zsh ] && source $HOME/.zsh/fzf-completion.zsh
+[ -f $HOME/.zsh/fzf-key-bindings.zsh ] && source $HOME/.zsh/fzf-key-bindings.zsh
+[ -f $HOME/.zsh/fzf-tab/fzf-tab.plugin.zsh ] && source $HOME/.zsh/fzf-tab/fzf-tab.plugin.zsh
+
+
+
 
 export PATH="$PATH:$HOME/.ghcup/ghc/9.6.2/bin:$HOME/.ghcup/hls/2.0.0.1/bin:$HOME/.ghcup/bin"
 
@@ -91,28 +86,11 @@ export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 
 # export PATH="$PATH:$HOME/.zvm/master"
 
-export PATH="$PATH:$HOME/.config/emacs/bin"
+export TERMINAL=kitty
 
-source $HOME/.zsh/colored-man-pages-zsh.plugin.zsh 
-
-# export TERMINAL=kitty
-
-alias hx=helix
-alias chrome=chromium
-
-alias nvim=helix
-
-# set default browser
-unset BROWSER
-BROWSER=chromium
+# alias hx=helix
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)
 
 echo ambuj | figlet -f slant
-
-# Turso
-export PATH="/home/ambuj/.turso:$PATH"
-
-# opam configuration
-[[ ! -r /home/ambuj/.opam/opam-init/init.zsh ]] || source /home/ambuj/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
