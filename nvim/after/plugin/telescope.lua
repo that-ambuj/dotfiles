@@ -53,4 +53,5 @@ vim.keymap.set("n", "<leader>d", builtin.diagnostics, { desc = "Show Workspace D
 vim.keymap.set("n", "<leader>li", builtin.lsp_incoming_calls, { desc = "Search/Show all Incoming calls to function" })
 vim.keymap.set("n", "<leader>lo", builtin.lsp_outgoing_calls, { desc = "Search/Show all Outgoing calls from function" })
 vim.keymap.set("n", "<leader>lm", builtin.lsp_implementations, { desc = "Search/Show Implementations" })
+vim.keymap.set("n", "<leader>lr", builtin.lsp_references, { desc = "Search/Show References" })
 vim.keymap.set("n", "gR", builtin.lsp_references, { desc = "Go To References" })
