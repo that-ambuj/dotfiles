@@ -73,7 +73,7 @@ require("el").setup({
             { " " },
             { sections.split, },
             { file_icon },
-            { sections.maximum_width(builtin.file_relative, 0.60), },
+            { sections.maximum_width(builtin.file_relative, 0.50), },
             { sections.collapse_builtin({ { " " }, { builtin.modified_flag } }) },
             { sections.split, },
             { diagnostic_display },

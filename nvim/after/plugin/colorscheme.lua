@@ -10,7 +10,7 @@ end
 themes.rose_pine = function()
     require("rose-pine").setup({
         --- @usage 'auto'|'main'|'moon'|'dawn'
-        variant = "main",
+        variant = "moon",
     })
 
     vim.cmd("colorscheme rose-pine")
@@ -160,4 +160,4 @@ themes.onedark = function()
 end
 
 -- Call any of the above functions to use a theme
-themes.sonokai()
+themes.onedark()
