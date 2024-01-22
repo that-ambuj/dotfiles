@@ -12,7 +12,7 @@ mod2:
   - option
   - shift
 
-mouse-follows-focus: true
+mouse-follows-focus: false
 enables-layout-hud: true
 enables-layout-hud-on-space-change: false
 
