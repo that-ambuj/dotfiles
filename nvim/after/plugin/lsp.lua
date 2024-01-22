@@ -138,7 +138,7 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set(
         "n",
         "<leader>fm",
-        function() vim.lsp.buf.format({ async = true, timeout_ms = 10000, bufnr = bufnr }) end,
+        function() vim.lsp.buf.format({ async = true, timeout_ms = 10000 }) end,
         { desc = "Format all code in this file" }
     )
 
@@ -251,7 +251,7 @@ null_ls.setup({
         -- null_ls.builtins.formatting.prettier,
         null_ls.builtins.formatting.prettierd,
         null_ls.builtins.formatting.goimports,
-        null_ls.builtins.formatting.blade_formatter,
+        -- null_ls.builtins.formatting.blade_formatter,
         null_ls.builtins.formatting.pint,
         null_ls.builtins.formatting.sql_formatter,
         null_ls.builtins.formatting.black
