@@ -9,7 +9,7 @@ vim.keymap.set("n", "<leader>w", ":w<CR>", { silent = true, desc = "write" })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set({ "n", "v" }, "<leader>pp", '"_dP', { desc = "Overwrite current line without yanking to Clipboard" })
+-- vim.keymap.set({ "n", "v" }, "<leader>pp", '"_dP', { desc = "Overwrite current line without yanking to Clipboard" })
 
 vim.keymap.set("n", "Q", "<nop>")
 
@@ -54,7 +54,8 @@ vim.keymap.set("v", "<leader>s", [[:s//g<Left><Left>]],
 
 
 -- vim.keymap.set({ "n", "v" }, "<leader>pc", [["*p]], { desc = "Paste from Selection Clipboard" })
-vim.keymap.set({ "n", "v" }, "<leader>ps", [["+p]], { desc = "Pase from System Clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]], { desc = "Paste from System Clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to System Clipboard" })
 
 vim.keymap.set("n", "<leader>bt", function()
     local buftype = vim.bo.buftype

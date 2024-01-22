@@ -74,6 +74,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 200
 
 vim.g.mapleader = " "
+vim.g.PHP_removeCRwhenUnix = 1
 
 -- vim.opt.clipboard = "unnamedplus"
 
