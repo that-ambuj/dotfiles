@@ -3,15 +3,28 @@ vim.g.loaded_matchparen = 1
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+-- Tab Settigns
+local function tabs(tabsize)
+    vim.opt.tabstop = tabsize
+    vim.opt.softtabstop = tabsize
+    vim.opt.shiftwidth = tabsize
+    vim.opt.expandtab = true
 
-vim.opt.smartindent = true
-vim.opt.autoindent = true
+    vim.opt.smartindent = true
+    vim.opt.autoindent = true
+end
 
-vim.o.wrap = true
+tabs(4)
+
+-- Tab size in html
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "html",
+    callback = function()
+        tabs(2)
+    end
+})
+
+vim.opt.wrap = true
 
 vim.opt.background = "dark"
 
@@ -66,6 +79,10 @@ vim.opt.diffopt = { "internal", "filler", "closeoff", "hiddenoff", "algorithm:mi
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.termguicolors = true
+vim.opt.syntax = 'on'
+
+
+vim.cmd [[set syntax=on]]
 
 vim.opt.scrolloff = 99
 vim.opt.signcolumn = "yes"
@@ -74,7 +91,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 200
 
 vim.g.mapleader = " "
-vim.g.PHP_removeCRwhenUnix = 1
 
 -- vim.opt.clipboard = "unnamedplus"
 
