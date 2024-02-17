@@ -1,6 +1,6 @@
 local ht = require('haskell-tools')
 local def_opts = { noremap = true, silent = true, }
-ht.start_or_attach {
+vim.g.haskell_tools = {
     hls = {
         on_attach = function(client, bufnr)
             local opts = vim.tbl_extend('keep', def_opts, { buffer = bufnr, })
@@ -39,4 +39,4 @@ vim.keymap.set('n', '<leader>rq', ht.repl.quit,
 
 -- Detect nvim-dap launch configurations
 -- (requires nvim-dap and haskell-debug-adapter)
-ht.dap.discover_configurations(bufnr)
+-- ht.dap.discover_configurations(bufnr)

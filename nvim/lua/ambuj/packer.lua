@@ -64,7 +64,7 @@ return require("packer").startup(function(use)
 
     use("simrat39/rust-tools.nvim")
     use("akinsho/flutter-tools.nvim")
-    use({ "mrcjkb/haskell-tools.nvim", tag = "1.x.x" })
+    use({ "mrcjkb/haskell-tools.nvim", tag = "2.x.x" })
 
     use("simrat39/inlay-hints.nvim")
 
@@ -91,7 +91,7 @@ return require("packer").startup(function(use)
 
     use("folke/todo-comments.nvim")
 
-    use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate", tag = "0.9.1" })
+    use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate", tag = "0.9.2" })
     use("nvim-treesitter/nvim-treesitter-context")
     use("theprimeagen/harpoon")
     use("mbbill/undotree")
