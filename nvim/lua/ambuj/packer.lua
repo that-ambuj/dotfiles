@@ -188,7 +188,6 @@ return require("packer").startup(function(use)
     use("rest-nvim/rest.nvim")
     use("nvim-orgmode/orgmode")
 
-    use({
-        "f-person/git-blame.nvim",
-    })
+    use({ "f-person/git-blame.nvim" })
+    use("tpope/vim-abolish")
 end)
