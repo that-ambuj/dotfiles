@@ -45,8 +45,8 @@ vim.keymap.set("i", "<C-v>", "<C-r>+")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
     { desc = "Rename All Instances below in the file" })
-vim.keymap.set("v", "<leader>s", [[:s//g<Left><Left>]],
-    { desc = "Rename All Instances below in the file" })
+vim.keymap.set("v", "<leader>s", [[y<Esc>:%s/\V<C-r>"//gI<Left><Left><Left>]],
+    { desc = "Rename Selected Text in the whole file" })
 
 -- vim.keymap.set("n", "<leader>ps", ":PackerSync<CR>",
 --     { desc = "Install and Update packages (:PackerSync)", silent = true })
