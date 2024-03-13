@@ -2,6 +2,29 @@ local lsp = require("lsp-zero").preset("recommended")
 
 local lspconfig = require("lspconfig")
 
+require("mason").setup()
+require("mason-lspconfig").setup()
+--
+-- require('mason-null-ls').setup({
+--     ensure_installed = {},
+--     automatic_installation = true,
+-- })
+
+local null_ls = require("null-ls")
+null_ls.setup({
+    sources = {
+        -- null_ls.builtins.formatting.prettier,
+        -- null_ls.builtins.formatting.prettierd,
+        -- null_ls.builtins.formatting.goimports,
+        null_ls.builtins.formatting.blade_formatter,
+        -- null_ls.builtins.diagnostics.phpstan,
+        null_ls.builtins.formatting.phpcsfixer,
+        -- null_ls.builtins.formatting.pint,
+        -- null_ls.builtins.formatting.sql_formatter,
+        -- null_ls.builtins.formatting.black,
+    }
+})
+
 lspconfig.lua_ls.setup({
     settings = {
         Lua = {
@@ -24,7 +47,7 @@ lsp.setup_nvim_cmp({
     sources = {
         { name = "nvim_lsp" },
         { name = 'path' },
-        { name = 'luasnip', keyword_length = 2 },
+        { name = 'luasnip' },
         { name = 'buffer',  keyword_length = 3 }
     }
 })
@@ -37,7 +60,7 @@ lsp.ensure_installed({
     "clangd",
     "pyright",
     "lua_ls",
-    "zls"
+    "zls",
 })
 
 local cmp = require("cmp")
@@ -51,7 +74,6 @@ local has_words_before = function()
 end
 
 
---- @diagnostic disable-next-line
 cmp.setup({
     enabled = true,
     mapping = cmp.mapping.preset.insert({
@@ -59,7 +81,7 @@ cmp.setup({
         ["<CR>"] = cmp.mapping({
             i = function(fallback)
                 if cmp.visible() and cmp.get_active_entry() then
-                    cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })()
+                    cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })()
                 else
                     fallback()
                 end
@@ -88,10 +110,10 @@ cmp.setup({
             fallback()
         end, { "i", "s" }),
     }),
-    preselect = 'None',
+    preselect = 'Item',
     --- @diagnostic disable-next-line
     completion = {
-        completeopt = 'menu,menuone,noinsert',
+        completeopt = 'menu,menuone,longest,preview,insert',
     },
     snippet = {
         expand = function(args)
@@ -119,15 +141,16 @@ vim.diagnostic.config({
     update_in_insert = true,
 })
 
+require("lsp-format").setup({})
+
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
 
-
-    local deny_format = { "tsserver" }
+    local deny_format = { "tsserver", "phpactor", "html" }
 
     -- if client.supports_method('textDocument/formatting') and
     --     not vim.tbl_contains(deny_format, client.name) then
-    --     require("lsp-format").on_attach(client)
+    --     require("lsp-format").on_attach(client, bufnr)
     -- end
 
     require("clangd_extensions.inlay_hints").setup_autocmd()
@@ -138,7 +161,14 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set(
         "n",
         "<leader>fm",
-        function() vim.lsp.buf.format({ async = true, timeout_ms = 10000 }) end,
+        function()
+            if not vim.tbl_contains(deny_format, client.name) then
+                vim.lsp.buf.format({
+                    async = true,
+                    timeout_ms = 5000,
+                })
+            end
+        end,
         { desc = "Format all code in this file" }
     )
 
@@ -147,11 +177,11 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "Global LSP Rename" })
 
 
-    vim.api.nvim_create_autocmd({ "BufEnter", "BufWrite", "FileWritePost", "InsertLeave" }, {
-        callback = require("plenary.async.async").void(function()
-            vim.diagnostic.setloclist({ open = false })
-        end)
-    })
+    -- vim.api.nvim_create_autocmd({ "BufEnter", "BufWrite", "FileWritePost", "InsertLeave" }, {
+    --     callback = require("plenary.async.async").void(function()
+    --         vim.diagnostic.setloclist({ open = false })
+    --     end)
+    -- })
 
     -- HACK: Omnisharp lsp warnings hacky workarounds
     if client.name == "omnisharp" then
@@ -232,31 +262,21 @@ lsp.on_attach(function(client, bufnr)
     end
 end)
 
+lsp.format_mapping('gq', {
+    format_opts = {
+        async = true,
+        timeout_ms = 10000,
+    },
+    servers = {
+        ['null-ls'] = { 'blade', 'php' },
+        ['phpactor'] = { 'php' }
+    }
+})
 
 --- Rust tools stuff
 lsp.skip_server_setup({ 'rust_analyzer' })
 
 lsp.setup()
-
-require("mason").setup()
-
-require('mason-null-ls').setup({
-    ensure_installed = nil,
-    automatic_installation = false,
-})
-
-local null_ls = require("null-ls")
-null_ls.setup({
-    sources = {
-        -- null_ls.builtins.formatting.prettier,
-        null_ls.builtins.formatting.prettierd,
-        null_ls.builtins.formatting.goimports,
-        -- null_ls.builtins.formatting.blade_formatter,
-        null_ls.builtins.formatting.pint,
-        null_ls.builtins.formatting.sql_formatter,
-        null_ls.builtins.formatting.black
-    }
-})
 
 --- Rust tools stuff
 local rust_tools = require("rust-tools")
@@ -307,9 +327,9 @@ rust_tools.setup({
     server = {
         on_attach = function(client, bufnr)
             -- Hover actions
-            vim.keymap.set("n", "<C-space>", rust_tools.hover_actions.hover_actions, { buffer = bufnr })
+            vim.keymap.set("n", "<C-space>", rust_tools.hover_actions.hover_actions)
             -- Code action groups
-            vim.keymap.set("n", "<leader>a", rust_tools.code_action_group.code_action_group, { buffer = bufnr })
+            vim.keymap.set("n", "<leader>a", rust_tools.code_action_group.code_action_group)
 
             rust_tools.inlay_hints.enable()
             rust_tools.inlay_hints.set()

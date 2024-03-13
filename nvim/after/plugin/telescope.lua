@@ -14,7 +14,10 @@ telescope.setup {
                 ["<c-t>"] = actions.smart_send_to_qflist,
                 ["<c-d>"] = actions.delete_buffer + actions.move_to_top,
             },
-            n = { ["<c-t>"] = actions.smart_send_to_qflist },
+            n = {
+                ["<c-t>"] = actions.smart_send_to_qflist,
+                ["<c-/>"] = actions.which_key,
+            },
         },
     },
 }

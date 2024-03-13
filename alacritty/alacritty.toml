@@ -36,13 +36,13 @@ style = "Beam"
 unfocused_hollow = true
 
 [font]
-size = 18.0
+size = 16.0
 
 [font.bold]
-style = "Medium"
+style = "Bold"
 
 [font.bold_italic]
-style = "Medium Italic"
+style = "Bold Italic"
 
 [font.glyph_offset]
 y = 3
@@ -51,20 +51,21 @@ y = 3
 style = "Italic"
 
 [font.normal]
-family = "Menlo"
+family = "Menlo Nerd Font"
 style = "Regular"
 
 [font.offset]
 y = 6
 
 [mouse]
-hide_when_typing = true
+hide_when_typing = false
 
 [selection]
 save_to_clipboard = true
 
 [window]
 startup_mode = "Maximized"
+decorations = "Buttonless"
 
 [window.padding]
 y = 0

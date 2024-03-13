@@ -3,7 +3,7 @@ name = "rust"
 
 [[language]]
 name = "haskell"
-config = { formattingProvider = "fourmolu" }
+# config = { formattingProvider = "fourmolu" }
 
 [[language]]
 name = "html"

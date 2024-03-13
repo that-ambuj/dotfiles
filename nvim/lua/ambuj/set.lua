@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd("FileType", {
     end
 })
 
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 vim.opt.background = "dark"
 

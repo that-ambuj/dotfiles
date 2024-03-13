@@ -57,12 +57,12 @@ vim.keymap.set("v", "<leader>s", [[:s//g<Left><Left>]],
 vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]], { desc = "Paste from System Clipboard" })
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to System Clipboard" })
 
-vim.keymap.set("n", "<leader>bt", function()
-    local buftype = vim.bo.buftype
-    local filetype = vim.o.filetype
-
-    print(vim.bo.filetype)
-end)
+-- vim.keymap.set("n", "<leader>bt", function()
+--     local buftype = vim.bo.buftype
+--     local filetype = vim.o.filetype
+--
+--     print(vim.bo.filetype)
+-- end)
 
 
 -- Golang specific

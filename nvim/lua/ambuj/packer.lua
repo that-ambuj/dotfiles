@@ -176,6 +176,7 @@ return require("packer").startup(function(use)
     use("wyattferguson/jinja2-kit-vscode")
 
     use("jwalton512/vim-blade")
+    use("tpope/vim-abolish")
 
     -- Indent Highlighting
     -- use("lukas-reineke/indent-blankline.nvim")

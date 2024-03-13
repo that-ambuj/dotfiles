@@ -4,6 +4,6 @@ require("gitblame").setup {
     ignored_filetypes = { "netrw" },
 }
 
-vim.keymap.set("n", "<leader>bg", "<Cmd>GitBlameToggle<CR>", {
-    desc = "Toggle Git Line Blame"
-})
+-- vim.keymap.set("n", "<leader>bg", "<Cmd>GitBlameToggle<CR>", {
+--     desc = "Toggle Git Line Blame"
+-- })

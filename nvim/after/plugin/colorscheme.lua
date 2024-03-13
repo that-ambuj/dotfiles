@@ -46,7 +46,7 @@ end
 
 themes.sonokai = function()
     --- @usage: 'default' | 'atlantis' | 'andromeda' | 'shusia' | 'maia' | 'espresso'
-    vim.g.sonokai_style = "atlantis"
+    vim.g.sonokai_style = "espresso"
     vim.g.sonokai_transparent_background = false
 
     vim.g.sonokai_better_performance = false
@@ -100,7 +100,7 @@ end
 
 themes.catppuccin = function()
     require("catppuccin").setup({
-        flavour = "mocha", -- latte, frappe, macchiato, mocha
+        flavour = "macchiato", -- latte, frappe, macchiato, mocha
         term_colors = true,
     })
 
@@ -136,7 +136,7 @@ end
 themes.gruvbox = function()
     require("gruvbox").setup({
         --- @variants: "soft", "hard", "" (empty string for default )
-        contrast = "",
+        contrast = "soft",
     })
 
     vim.cmd("colorscheme gruvbox")
@@ -148,6 +148,9 @@ end
 
 themes.habamax = function()
     vim.cmd("colorscheme habamax")
+
+    vim.api.nvim_set_hl(0, "StatusLine", { link = "Normal", nocombine = true })
+    vim.api.nvim_set_hl(0, "StatusLineNC", { link = "Comment", nocombine = true })
 end
 
 themes.onedark = function()
@@ -160,4 +163,4 @@ themes.onedark = function()
 end
 
 -- Call any of the above functions to use a theme
-themes.onedark()
+themes.jellybeans()
