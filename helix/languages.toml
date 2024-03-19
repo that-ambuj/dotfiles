@@ -29,6 +29,24 @@ formatter = { command = "prettier", args = ["--parser", "typescript"] }
 auto-format = true
 # language-servers = ["typescript-language-server"]
 
+[[language]]
+name = "php"
+auto-format = true
+language-servers = ["phpactor"]
+
+[[language]]
+name = "blade"
+scope = "source.blade.php"
+injection-regex = "blade.php"
+file-types = ["blade.php", "device-info.blade.php"]
+auto-format = true
+formatter = { command =  "blade-formatter", args = ["--stdin"] } 
+roots = [".bladeformatterrc", ".bladeformatterrc.json"]
+
+[[grammar]]
+name = "blade"
+source = { git = "https://github.com/EmranMR/tree-sitter-blade", rev = "main" }
+
 [language-server.eslint]
 args = ["--stdio"]
 command = "vscode-eslint-language-server"
@@ -40,3 +58,7 @@ rulesCustomizations = []
 run = "onType"
 problems = { shortenToSingleLine = false }
 nodePath = ""
+
+[language-server.phpactor]
+command = "phpactor"
+args = ["language-server"]

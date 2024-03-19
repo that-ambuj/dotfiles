@@ -8,6 +8,7 @@ auto-format = true
 completion-trigger-len = 1
 color-modes = true
 idle-timeout = 100
+bufferline = "multiple"
 
 [editor.cursor-shape]
 insert = "bar"
