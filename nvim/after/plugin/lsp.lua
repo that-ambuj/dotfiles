@@ -35,6 +35,10 @@ lspconfig.lua_ls.setup({
     },
 })
 
+lspconfig.emmet_language_server.setup({
+    filetypes = { "blade", "html" },
+})
+
 local lsp_util = require("lspconfig.util")
 
 lspconfig.angularls.setup({
