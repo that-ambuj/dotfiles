@@ -21,7 +21,9 @@ return {
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
       local statusline = require 'mini.statusline'
-      statusline.setup()
+      statusline.setup {
+        use_icons = true,
+      }
 
       -- You can configure sections in the statusline by overriding their
       -- default behavior. For example, here we disable the section for
