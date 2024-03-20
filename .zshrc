@@ -95,4 +95,8 @@ echo ambuj | figlet -f slant
 # add npm global packages to path on mac os
 export PATH="$PATH:/opt/homebrew/lib"
 
+export JAVA_HOME=`/usr/libexec/java_home -v 11`
+export PATH=${JAVA_HOME}/bin:$PATH
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
