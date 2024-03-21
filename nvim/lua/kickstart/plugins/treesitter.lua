@@ -16,13 +16,21 @@ return {
           'vim',
           'vimdoc',
           'css',
-          'html',
           'javascript',
         },
         -- Autoinstall languages that are not installed
         auto_install = true,
         highlight = { enable = true },
         indent = { enable = true },
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = '<M-o>',
+            node_incremental = '<M-o>',
+            scope_incremental = '<M-u>',
+            node_decremental = '<M-i>',
+          },
+        },
       }
 
       -- There are additional nvim-treesitter modules that you can use to interact
@@ -33,5 +41,6 @@ return {
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
+  { 'nvim-treesitter/nvim-treesitter-context' },
 }
 -- vim: ts=2 sts=2 sw=2 et
