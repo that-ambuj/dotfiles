@@ -5,6 +5,29 @@ return {
     config = function()
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 
+      local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+
+      ---@diagnostic disable-next-line
+      parser_config.blade = {
+        install_info = {
+          url = 'https://github.com/EmranMR/tree-sitter-blade',
+          files = { 'src/parser.c' },
+          branch = 'main',
+        },
+        filetype = 'blade',
+      }
+
+      -- vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+      --   pattern = '*.blade.php',
+      --   command = 'set ft=blade',
+      -- })
+
+      vim.filetype.add {
+        pattern = {
+          ['.*%.blade%.php'] = 'blade',
+        },
+      }
+
       ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup {
         ensure_installed = {
@@ -17,6 +40,7 @@ return {
           'vimdoc',
           'css',
           'javascript',
+          'blade',
         },
         -- Autoinstall languages that are not installed
         auto_install = true,
@@ -50,10 +74,10 @@ return {
         incremental_selection = {
           enable = true,
           keymaps = {
-            init_selection = '<M-o>',
-            node_incremental = '<M-o>',
-            scope_incremental = '<M-u>',
-            node_decremental = '<M-i>',
+            -- init_selection = '<M-o>',
+            -- node_incremental = '<M-o>',
+            -- scope_incremental = '<M-u>',
+            -- node_decremental = '<M-i>',
           },
         },
       }
