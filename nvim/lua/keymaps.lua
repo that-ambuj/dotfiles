@@ -6,32 +6,32 @@ vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Write and quit remaps
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "Open file explorer aka netrw" })
-vim.keymap.set("i", "jk", "<Esc>", { desc = "Escape" })
+vim.keymap.set('n', '<leader>e', vim.cmd.Ex, { desc = 'Open file explorer aka netrw' })
+vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Escape' })
 
-vim.keymap.set("n", "<leader>q", ":q<CR>", { silent = true, desc = "[Q]uit File" })
-vim.keymap.set("n", "<leader>w", ":w<CR>", { silent = true, desc = "[W]rite File" })
+vim.keymap.set('n', '<leader>q', ':q<CR>', { silent = true, desc = '[Q]uit File' })
+vim.keymap.set('n', '<leader>w', ':w<CR>', { silent = true, desc = '[W]rite File' })
 
-vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set('n', 'Q', '<nop>')
 
--- Quick fix maps (I now know what that is) [Synced with Telescope]
-vim.keymap.set("n", "<C-q>", "<cmd>copen<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
+-- Quick fix maps (I now know what that is)
+vim.keymap.set('n', '<C-q>', '<cmd>copen<CR>zz')
+vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>zz')
+vim.keymap.set('n', '<C-k>', '<cmd>cprev<CR>zz')
 
 -- Location List (Synced with Location List)
-vim.keymap.set("n", "<C-l>", "<cmd>lopen<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz")
+vim.keymap.set('n', '<C-l>', '<cmd>lopen<CR>zz')
+vim.keymap.set('n', '<leader>j', '<cmd>lnext<CR>zz')
+vim.keymap.set('n', '<leader>k', '<cmd>lprev<CR>zz')
 
 -- Remaps Ctrl+Backspace to emacs Ctrl+W, which deletes a word
-vim.keymap.set("i", "<C-BS>", "<C-W>")
-vim.keymap.set("i", "<M-BS>", "<C-W>")
-vim.keymap.set("i", "<C-H>", "<C-W>")
+vim.keymap.set('i', '<C-BS>', '<C-W>')
+vim.keymap.set('i', '<M-BS>', '<C-W>')
+vim.keymap.set('i', '<C-H>', '<C-W>')
 
 -- Clipboard keymaps
-vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]], { desc = "Paste from System Clipboard" })
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to System Clipboard" })
+vim.keymap.set({ 'n', 'v' }, '<leader>p', [["+p]], { desc = 'Paste from System Clipboard' })
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Copy to System Clipboard' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
