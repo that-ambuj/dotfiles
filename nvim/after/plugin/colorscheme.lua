@@ -160,4 +160,4 @@ themes.onedark = function()
 end
 
 -- Call any of the above functions to use a theme
-themes.vscode()
+themes.mellow()
