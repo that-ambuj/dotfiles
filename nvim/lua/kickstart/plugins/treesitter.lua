@@ -35,12 +35,10 @@ return {
           'c',
           'html',
           'lua',
-          'markdown',
           'vim',
           'vimdoc',
           'css',
           'javascript',
-          'blade',
         },
         -- Autoinstall languages that are not installed
         auto_install = true,
