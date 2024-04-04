@@ -33,6 +33,12 @@ return {
         return ''
       end
 
+      local git = statusline.section_git
+
+      statusline.section_git = function()
+        return git { icon = ' ' }
+      end
+
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
