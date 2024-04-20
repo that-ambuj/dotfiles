@@ -5,6 +5,19 @@ vim.opt.relativenumber = true
 -- Don't show the mode, since it's already in status line
 vim.opt.showmode = false
 
+-- Tab Settigns
+local function tabs(tabsize)
+  vim.opt.tabstop = tabsize
+  vim.opt.softtabstop = tabsize
+  vim.opt.shiftwidth = tabsize
+  vim.opt.expandtab = true
+
+  vim.opt.smartindent = true
+  vim.opt.autoindent = true
+end
+
+tabs(4)
+
 -- Enable break indent
 vim.opt.breakindent = true
 
@@ -45,7 +58,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
-vim.opt.belloff = "all"
+vim.opt.belloff = 'all'
 
 vim.opt.wrap = false
 
