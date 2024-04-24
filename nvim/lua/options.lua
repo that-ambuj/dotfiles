@@ -2,6 +2,8 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+vim.opt.background = 'dark'
+
 -- Don't show the mode, since it's already in status line
 vim.opt.showmode = false
 
@@ -20,6 +22,27 @@ tabs(4)
 
 -- Enable break indent
 vim.opt.breakindent = true
+
+-- Tab Settigns
+local function tabs(tabsize)
+  vim.opt.tabstop = tabsize
+  vim.opt.softtabstop = tabsize
+  vim.opt.shiftwidth = tabsize
+  vim.opt.expandtab = true
+
+  vim.opt.smartindent = true
+  vim.opt.autoindent = true
+end
+
+tabs(4)
+
+-- Tab size in html
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'html',
+  callback = function()
+    tabs(2)
+  end,
+})
 
 -- Save undo history
 vim.opt.undofile = true
