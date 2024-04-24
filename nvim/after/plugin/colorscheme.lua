@@ -159,5 +159,33 @@ themes.onedark = function()
   require('onedark').load()
 end
 
+themes.gruvbox_material = function()
+  vim.g.gruvbox_material_background = 'soft'
+  vim.g.gruvbox_material_better_performance = 1
+
+  vim.cmd 'colorscheme gruvbox-material'
+end
+
+themes.lucius = function()
+  -- 'low', 'normal', 'high'
+  vim.g.lucius_contrast = 'normal'
+  -- 'normal', 'high'
+  vim.g.lucius_contrast_bg = 'normal'
+  vim.cmd 'colorscheme lucius'
+end
+
+themes.solarized = function()
+  vim.cmd 'colorscheme solarized'
+end
+
+themes.hybrid = function()
+  -- Available values: 'hard', 'medium'(default), 'soft'
+  vim.cmd 'colorscheme hybrid'
+end
+
+themes.bluloco = function()
+  vim.cmd 'colorscheme bluloco'
+end
+
 -- Call any of the above functions to use a theme
-themes.mellow()
+themes.hybrid()

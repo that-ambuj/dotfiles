@@ -31,6 +31,11 @@ return {
   { 'ellisonleao/gruvbox.nvim' },
   { 'kvrohit/mellow.nvim' },
   { 'navarasu/onedark.nvim' },
+  { 'sainnhe/gruvbox-material' },
+  { 'uloco/bluloco.nvim' },
+  { 'w0ng/vim-hybrid' },
+  { 'maxmx03/solarized.nvim' },
+  { 'jonathanfilip/vim-lucius' },
 
   -- Lush.nvim themes
   { 'rktjmp/lush.nvim' },
