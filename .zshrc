@@ -94,5 +94,3 @@ export TERMINAL=kitty
 # source <(ng completion script)
 
 echo ambuj | figlet -f slant
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
