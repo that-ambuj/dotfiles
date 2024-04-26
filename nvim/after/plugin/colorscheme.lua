@@ -113,7 +113,7 @@ end
 
 themes.kanagawa = function()
   -- @variants: "kanagawa-wave", "kanagawa-dragon" and "kanagawa-lotus"(the light one)
-  vim.cmd 'colorscheme kanagawa-wave'
+  vim.cmd 'colorscheme kanagawa-dragon'
 end
 
 themes.tokyo_night = function()
@@ -188,4 +188,4 @@ themes.bluloco = function()
 end
 
 -- Call any of the above functions to use a theme
-themes.hybrid()
+themes.darcula()
