@@ -47,11 +47,10 @@ vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Show diagn
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
-
 -- Ctrl + Backspace remap
-vim.keymap.set("i", "<C-BS>", "<C-W>")
-vim.keymap.set("i", "<M-BS>", "<C-W>")
-vim.keymap.set("i", "<C-H>", "<C-W>")
+vim.keymap.set('i', '<C-BS>', '<C-W>')
+vim.keymap.set('i', '<M-BS>', '<C-W>')
+vim.keymap.set('i', '<C-H>', '<C-W>')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`

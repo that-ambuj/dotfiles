@@ -23,18 +23,23 @@ return {
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'hrsh7th/cmp-nvim-lsp-signature-help',
 
       -- If you want to add a bunch of pre-configured snippets,
       --    you can use this plugin to help you. It even has snippets
       --    for various frameworks/libraries/etc. but you will have to
       --    set up the ones that are useful for you.
       'rafamadriz/friendly-snippets',
+      -- cmp source based on linux 'look', basically a dictionary
+      -- 'octaltree/cmp-look',
     },
     config = function()
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
-      luasnip.config.setup {}
+      -- luasnip.config.setup {}
+
+      require('luasnip.loaders.from_vscode').lazy_load()
 
       local has_words_before = function()
         unpack = unpack or table.unpack
@@ -48,7 +53,7 @@ return {
             luasnip.lsp_expand(args.body)
           end,
         },
-        completion = { completeopt = 'menu,menuone,noinsert' },
+        completion = { completeopt = 'menu,menuone,preview' },
 
         -- For an understanding of why these mappings were
         -- chosen, you will need to read `:help ins-completion`
@@ -59,6 +64,9 @@ return {
           ['<C-n>'] = cmp.mapping.select_next_item(),
           -- Select the [p]revious item
           ['<C-p>'] = cmp.mapping.select_prev_item(),
+          -- Scroll documentation
+          ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-d>'] = cmp.mapping.scroll_docs(4),
 
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
@@ -111,9 +119,9 @@ return {
           end, { 'i', 's' }),
         },
         sources = {
-          { name = 'nvim_lsp' },
-          { name = 'nvim_lsp_signature_help' },
-          { name = 'luasnip' },
+          { name = 'nvim_lsp', priority = 10 },
+          { name = 'nvim_lsp_signature_help', keyword_length = 0 },
+          { name = 'luasnip', keyword_length = 2 },
           { name = 'path' },
         },
       }
