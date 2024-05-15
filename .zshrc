@@ -77,9 +77,6 @@ if [ -f '/home/ambuj/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/ambuj
 [ -f $HOME/.zsh/fzf-key-bindings.zsh ] && source $HOME/.zsh/fzf-key-bindings.zsh
 [ -f $HOME/.zsh/fzf-tab/fzf-tab.plugin.zsh ] && source $HOME/.zsh/fzf-tab/fzf-tab.plugin.zsh
 
-
-
-
 export PATH="$PATH:$HOME/.ghcup/ghc/9.6.2/bin:$HOME/.ghcup/hls/2.0.0.1/bin:$HOME/.ghcup/bin"
 
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
@@ -92,5 +89,7 @@ export TERMINAL=kitty
 
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
+
+eval "$(fzf --zsh)"
 
 echo ambuj | figlet -f slant
