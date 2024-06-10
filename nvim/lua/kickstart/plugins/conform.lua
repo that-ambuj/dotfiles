@@ -4,13 +4,14 @@ return {
     opts = {
       notify_on_error = false,
       format_on_save = {
-        timeout_ms = 1000,
+        timeout_ms = 5000,
         lsp_fallback = false,
       },
       formatters_by_ft = {
         lua = { 'stylua' },
         blade = { 'blade-formatter' },
-        php = { { 'php_cs_fixer', 'phpactor' } },
+        php = { { 'phpcbf', 'php_cs_fixer', 'phpactor' } },
+        rust = { 'rustfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -20,6 +21,22 @@ return {
         typescript = { { 'prettierd', 'prettier' } },
         typescriptreact = { { 'prettierd', 'prettier' } },
         javascriptreact = { { 'prettierd', 'prettier' } },
+      },
+      formatters = {
+        phpcbf = function(bufnr)
+          return {
+            command = require('conform.util').find_executable({ 'vendor/bin/phpcbf' }, 'phpcbf'),
+            args = { '--standard=PSR12', '$FILENAME' },
+            stdin = false,
+            -- phpcbf ignores hidden files, so we have to override the default here
+            tmpfile_format = 'conform.$RANDOM.$FILENAME',
+            -- 0: no errors found
+            -- 1: errors found
+            -- 2: fixable errors found
+            -- 3: processing error
+            exit_codes = { 0, 1, 2 },
+          }
+        end,
       },
     },
   },
