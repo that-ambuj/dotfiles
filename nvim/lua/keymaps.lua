@@ -6,7 +6,7 @@ vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Write and quit remaps
-vim.keymap.set('n', '<leader>e', vim.cmd.Ex, { desc = 'Open file explorer aka netrw' })
+vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = 'Open file explorer aka netrw' })
 vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Escape' })
 
 vim.keymap.set('n', '<leader>q', ':q<CR>', { silent = true, desc = '[Q]uit File' })
