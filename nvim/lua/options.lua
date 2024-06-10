@@ -85,4 +85,6 @@ vim.opt.belloff = 'all'
 
 vim.opt.wrap = false
 
+vim.g.netrw_banner = false
+
 -- vim: ts=2 sts=2 sw=2 et
