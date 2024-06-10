@@ -52,6 +52,9 @@ vim.keymap.set('i', '<C-BS>', '<C-W>')
 vim.keymap.set('i', '<M-BS>', '<C-W>')
 vim.keymap.set('i', '<C-H>', '<C-W>')
 
+vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Rename All Instances below in the file' })
+vim.keymap.set('v', '<leader>s', [[y<Esc>:%s/\V<C-r>"//gI<Left><Left><Left>]], { desc = 'Rename Selected Text in the whole file' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
