@@ -55,8 +55,8 @@ new_window pixel 1
 # hide_edge_borders both
 
 # Set inner/outer gaps
-gaps inner 6
-gaps outer 3
+gaps inner 0
+gaps outer 0
 
 # show window title bars (not officially supported with i3gaps)
 #default_border normal
@@ -173,7 +173,7 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id xfce4-terminal
+bindsym $mod+Return exec --no-startup-id kitty
 
 # kill focused window
 bindsym $mod+q kill
@@ -185,7 +185,7 @@ bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu
 # lock with a picture:
 #bindsym $mod+l exec --no-startup-id i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 # lock by blurring the screen:
-bindsym $mod+Super+l exec --no-startup-id ~/.config/i3/scripts/blur-lock
+bindsym $mod+Super+l exec --no-startup-id ~/.config/i3/scripts/xscreensaver
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -290,7 +290,17 @@ bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 ## App shortcuts
 # bindsym $mod+w exec --no-startup-id /usr/bin/firefox
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
-bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
+# bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
+
+## Screenshots
+bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/$(date).png"
+bindsym $mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).png"
+bindsym Shift+Print exec --no-startup-id maim --format=png --select "/home/$USER/Pictures/$(date).png"
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
@@ -312,8 +322,8 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-set $main_monitor DP-1
-set $side_monitor HDMI-1
+set $main_monitor DP1
+set $side_monitor HDMI1
 
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
