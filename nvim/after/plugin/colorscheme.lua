@@ -46,7 +46,7 @@ end
 
 themes.sonokai = function()
   --- @usage: 'default' | 'atlantis' | 'andromeda' | 'shusia' | 'maia' | 'espresso'
-  vim.g.sonokai_style = 'atlantis'
+  vim.g.sonokai_style = 'shusia'
   vim.g.sonokai_transparent_background = false
 
   vim.g.sonokai_better_performance = false
@@ -136,7 +136,7 @@ end
 themes.gruvbox = function()
   require('gruvbox').setup {
     --- @variants: "soft", "hard", "" (empty string for default )
-    contrast = '',
+    contrast = 'soft',
   }
 
   vim.cmd 'colorscheme gruvbox'
@@ -160,6 +160,7 @@ themes.onedark = function()
 end
 
 themes.gruvbox_material = function()
+  -- soft, medium, hard
   vim.g.gruvbox_material_background = 'soft'
   vim.g.gruvbox_material_better_performance = 1
 
@@ -187,5 +188,13 @@ themes.bluloco = function()
   vim.cmd 'colorscheme bluloco'
 end
 
+themes.papercolor = function()
+  vim.cmd 'colorscheme PaperColor'
+end
+
+themes.deus = function()
+  vim.cmd 'colorscheme deus'
+end
+
 -- Call any of the above functions to use a theme
-themes.darcula()
+themes.deus()

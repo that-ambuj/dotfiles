@@ -19,11 +19,13 @@ return {
   { 'projekt0n/github-nvim-theme' },
 
   { 'rose-pine/neovim', as = 'rose-pine' },
-
   { 'catppuccin/nvim', as = 'catppuccin' },
-
   { 'sainnhe/everforest', as = 'everforest' },
   { 'sainnhe/sonokai', as = 'sonokai' },
+
+  { 'NLKNguyen/papercolor-theme' },
+  { 'ajmwagar/vim-deus' },
+
   { 'nyoom-engineering/oxocarbon.nvim' },
   { 'rebelot/kanagawa.nvim' },
   { 'folke/tokyonight.nvim' },
