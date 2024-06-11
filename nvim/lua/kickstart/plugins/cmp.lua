@@ -120,8 +120,8 @@ return {
         },
         sources = {
           { name = 'nvim_lsp', priority = 10 },
-          { name = 'nvim_lsp_signature_help', keyword_length = 0 },
-          { name = 'luasnip', keyword_length = 2 },
+          { name = 'nvim_lsp_signature_help', keyword_length = 5 },
+          { name = 'luasnip', keyword_length = 1 },
           { name = 'path' },
         },
       }
