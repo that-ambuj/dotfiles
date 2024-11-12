@@ -146,6 +146,23 @@ return {
             },
           },
         },
+
+        ts_ls = {
+          init_options = {
+            plugins = {
+              {
+                name = '@vue/typescript-plugin',
+                location = '/home/ambuj/.nvm/versions/node/v20.15.1/lib/node_modules/@vue/typescript-plugin',
+                languages = { 'javascript', 'typescript', 'vue' },
+              },
+            },
+          },
+          filetypes = {
+            'javascript',
+            'typescript',
+            'vue',
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed

@@ -1,5 +1,6 @@
 return {
   'jose-elias-alvarez/typescript.nvim',
+  enabled = false,
   opts = {
     server = {
       on_attach = function(client, bufnr)

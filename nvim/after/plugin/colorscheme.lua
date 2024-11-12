@@ -11,6 +11,11 @@ themes.rose_pine = function()
   require('rose-pine').setup {
     --- @usage 'auto'|'main'|'moon'|'dawn'
     variant = 'moon',
+    styles = {
+      bold = true,
+      italic = false,
+      transparency = false,
+    },
   }
 
   vim.cmd 'colorscheme rose-pine'
@@ -197,4 +202,4 @@ themes.deus = function()
 end
 
 -- Call any of the above functions to use a theme
-themes.deus()
+themes.sonokai()

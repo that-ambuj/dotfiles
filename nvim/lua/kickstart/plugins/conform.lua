@@ -10,17 +10,19 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         blade = { 'blade-formatter' },
-        php = { { 'phpcbf', 'php_cs_fixer', 'phpactor' } },
+        php = { 'phpcbf', 'php_cs_fixer', 'phpactor' },
         rust = { 'rustfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
-        javascript = { { 'prettierd', 'prettier' } },
-        typescript = { { 'prettierd', 'prettier' } },
-        typescriptreact = { { 'prettierd', 'prettier' } },
-        javascriptreact = { { 'prettierd', 'prettier' } },
+        javascript = { 'prettierd', 'prettier' },
+        html = { 'prettierd', 'prettier' },
+        typescript = { 'prettierd', 'prettier' },
+        -- typescriptreact = { { 'prettierd', 'prettier' } },
+        javascriptreact = { 'prettierd', 'prettier' },
+        sql = { 'sql_formatter' },
       },
       formatters = {
         phpcbf = function(bufnr)
@@ -37,6 +39,20 @@ return {
             exit_codes = { 0, 1, 2 },
           }
         end,
+        sql_formatter = {
+          prepend_args = {
+            '--config',
+            [[{"language": "postgresql", 
+            "tabWidth": 4, 
+            "keywordCase": "upper",
+            "dataTypeCase": "lower",
+            "logicalOperatorNewline": "before"
+            }]],
+          },
+        },
+        rustfmt = {
+          prepend_args = { '+nightly' },
+        },
       },
     },
   },
