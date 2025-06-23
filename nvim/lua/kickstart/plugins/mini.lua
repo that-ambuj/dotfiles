@@ -36,7 +36,7 @@ return {
       local git = statusline.section_git
 
       statusline.section_git = function()
-        return git { icon = ' ' }
+        return git { icon = ' ', trunc_width = 8 }
       end
 
       -- ... and there is more!
