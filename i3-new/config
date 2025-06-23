@@ -429,6 +429,9 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 # https://wiki.archlinux.org/title/Session_lock#xautolock
 #exec --no-startup-id xautolock -time 60 -locker "systemctl suspend"
 
+# use unclutter to hide the cursor when typing in a window
+# https://wiki.archlinux.org/title/Unclutter
+exec_always --no-startup-id unclutter
 
 # xscreensaver
 # https://www.jwz.org/xscreensaver
