@@ -75,6 +75,13 @@ return {
           ['<CR>'] = cmp.mapping.confirm { select = true },
 
           ['<Tab>'] = cmp.mapping(function(fallback)
+            local suggestion = require 'supermaven-nvim.completion_preview'
+
+            if suggestion.has_suggestion() then
+              suggestion.on_accept_suggestion()
+              return
+            end
+
             if cmp.visible() then
               cmp.mapping.confirm { select = true }()
               return
