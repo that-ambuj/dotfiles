@@ -113,7 +113,12 @@ CDPATH="$CDPATH:$HOME/work"
 
 alias lz="lazygit"
 alias cs="claude-squad"
+alias vim="nvim"
 
 PATH="$PATH:$HOME/.docker/bin"
 
-export GEMINI_API_KEY="AIzaSyAtE8J3S9I_2amLd8K0gd49p_T2jrkDQ6c"
+export GPG_TTY=$(tty)
+export EDITOR=nvim
+
+alias serenamcp="claude mcp add serena --  uv run --directory /Users/ambuj/personal/serena serena-mcp-server --context ide-assistant --project $(pwd)"
+

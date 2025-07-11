@@ -20,9 +20,11 @@ return {
         javascript = { 'prettierd', 'prettier' },
         html = { 'prettierd', 'prettier' },
         typescript = { 'prettierd', 'prettier' },
-        -- typescriptreact = { { 'prettierd', 'prettier' } },
+        svelte = { 'prettierd', 'prettier' },
+        json = { 'prettierd', 'prettier' },
+        typescriptreact = { { 'prettierd', 'prettier' } },
         javascriptreact = { 'prettierd', 'prettier' },
-        sql = { 'sql_formatter' },
+        sql = { 'sqruff' },
       },
       formatters = {
         phpcbf = function(bufnr)
