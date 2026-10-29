@@ -13,7 +13,7 @@ return {
         php = { 'phpcbf', 'php_cs_fixer', 'phpactor' },
         rust = { 'rustfmt' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
+        python = { 'ruff', 'isort', 'black' },
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
@@ -22,9 +22,10 @@ return {
         typescript = { 'prettierd', 'prettier' },
         svelte = { 'prettierd', 'prettier' },
         json = { 'prettierd', 'prettier' },
-        typescriptreact = { { 'prettierd', 'prettier' } },
+        typescriptreact = { 'prettierd', 'prettier' },
         javascriptreact = { 'prettierd', 'prettier' },
-        sql = { 'sqruff' },
+        go = { 'gofmt' },
+        -- sql = { 'sleek' },
       },
       formatters = {
         phpcbf = function(bufnr)
@@ -51,9 +52,6 @@ return {
             "logicalOperatorNewline": "before"
             }]],
           },
-        },
-        rustfmt = {
-          prepend_args = { '+nightly' },
         },
       },
     },
