@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+# fpath=("$HOME/.oh-my-zsh/custom/completions" $fpath)
+# autoload -Uz compinit
+# compinit
+# OPENSPEC:END
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -8,7 +15,21 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="bira"
+
+# Double line themes
+# ZSH_THEME="sporty_256"
+# ZSH_THEME="bira"
+# ZSH_THEME="re5et"
+# ZSH_THEME="Soliah"
+# ZSH_THEME="gnzh"
+# ZSH_THEME="intheloop"
+# ZSH_THEME="takashiyoshida"
+#
+# Favourites Single line themes
+# ZSH_THEME="norm"
+# ZSH_THEME="half-life"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,9 +91,40 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf rust npm)
+plugins=(git fzf rust npm nvm vi-mode zsh-autosuggestions zsh-completions)
+
+# Keep path/fpath free of duplicates. A duplicated fpath makes oh-my-zsh
+# invalidate its completion dump on every startup.
+typeset -U path fpath
+
+# Completion directories must join fpath before compinit runs, which
+# oh-my-zsh does exactly once when sourced below.
+fpath=(
+  $HOME/.zsh/completions      # deno
+  $HOME/.docker/completions   # docker desktop
+  $fpath
+)
+
+# Load nvm on first use of node/npm/npx/etc rather than on every shell.
+export NVM_DIR="$HOME/.nvm"
+zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' lazy-cmd bun deno nvim yarn tsc eslint prettier
 
 source $ZSH/oh-my-zsh.sh
+
+VI_MODE_SET_CURSOR=true
+MODE_INDICATOR=true
+
+ENABLE_CORRECTION=true
+
+zstyle ':completion:*' menu select
+
+bindkey -v
+KEYTIMEOUT=20
+bindkey -M viins 'jk' vi-cmd-mode
+bindkey '^[^?' backward-kill-word
+bindkey -M viins '^R' fzf-history-widget
+bindkey -M vicmd '^R' fzf-history-widget
 
 # User configuration
 
@@ -105,20 +157,77 @@ source $ZSH/oh-my-zsh.sh
 
 . $HOME/.cargo/env
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 CDPATH="$CDPATH:$HOME/work"
 
 alias lz="lazygit"
 alias cs="claude-squad"
 alias vim="nvim"
 
-PATH="$PATH:$HOME/.docker/bin"
+# PATH="$PATH:$HOME/.docker/bin"
 
 export GPG_TTY=$(tty)
 export EDITOR=nvim
 
-alias serenamcp="claude mcp add serena --  uv run --directory /Users/ambuj/personal/serena serena-mcp-server --context ide-assistant --project $(pwd)"
+. "$HOME/.deno/env"
+. "$HOME/.local/bin/env"
 
+alias zed="/Applications/Zed.app/Contents/MacOS/cli"
+
+# Added by Windsurf
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
+
+export JAVA_HOME=$(/usr/libexec/java_home -v 21)
+export PATH="$JAVA_HOME/bin:$PATH"
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Added by Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+
+# export CLAUDE_CODE_USE_BEDROCK=1
+# export AWS_REGION="us-east-1"
+
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/84/"
+
+
+# Herd injected PHP binary.
+export PATH="$HOME/Library/Application Support/Herd/bin/":$PATH
+
+# alias claude="claude --permission-mode=bypassPermissions /remote-control"
+alias codex="codex --yolo"
+
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+export SUPERMEMORY_BASE_URL="http://localhost:6767"
+
+export SUPERMEMORY_LOCAL_EMBEDDING_POOL_SIZE=1
+export SUPERMEMORY_LOCAL_EMBEDDING_IDLE_TIMEOUT_MS=60000   # reclaim sooner when ingestion pauses
+
+# API keys and other credentials. Deliberately outside this repository.
+[ -f "$HOME/.zsh_secrets" ] && source "$HOME/.zsh_secrets"
+
+# Machine-local configuration and tool wrappers. Deliberately outside this repository.
+[ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
+
+# chunk shell completion
+source <(chunk completion zsh)
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r "$HOME/.opam/opam-init/init.zsh" ]] || source "$HOME/.opam/opam-init/init.zsh" > /dev/null 2> /dev/null; true
+# END opam configuration

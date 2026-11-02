@@ -117,7 +117,7 @@ themes.oxocarbon = function()
 end
 
 themes.kanagawa = function()
-  -- @variants: "kanagawa-wave", "kanagawa-dragon" and "kanagawa-lotus"(the light one)
+  --- @variants: "kanagawa-wave", "kanagawa-dragon" and "kanagawa-lotus"(the light one)
   vim.cmd 'colorscheme kanagawa-dragon'
 end
 
@@ -158,7 +158,7 @@ end
 themes.onedark = function()
   require('onedark').setup {
     -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-    style = 'warm',
+    style = 'darker',
   }
 
   require('onedark').load()
@@ -202,4 +202,4 @@ themes.deus = function()
 end
 
 -- Call any of the above functions to use a theme
-themes.sonokai()
+themes.ayu()
