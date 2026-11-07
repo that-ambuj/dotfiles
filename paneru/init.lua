@@ -16,7 +16,7 @@
 local gap = 8
 -- Friction: finger travel in cm for each three-finger window step.
 -- A lower value gives a shorter stroke. The value must be more than 0.
-local friction = 0.8
+local friction = 0.9
 
 paneru.setup({
 	options = {
